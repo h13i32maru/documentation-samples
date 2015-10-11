@@ -1,26 +1,29 @@
 # JSDoc
 - http://usejsdoc.org/
 - https://github.com/jsdoc3/jsdoc
-- first commit
+- 開始
   - https://github.com/jsdoc3/jsdoc/commit/bf9c65d03d5c347900422dba5876c087ae38d3fc
   - 2010/03/13
-- owner
+  - [JSDoc SourceForge](http://sourceforge.net/projects/jsdoc/) によると 2001-07-06 にはあったらしい
+  - その次はJSDoc Toolkitとしてgoogle codeでホストされていて
+  - いまはv3としてgithubでホストされている
+- オーナー
   - https://github.com/hegemonic
 - バージョン 2015/10/11
   - npm: 3.3.3
   - github: https://github.com/jsdoc3/jsdoc/commit/bd1cb9d1663bdccc68f1ba242a7882f020e78a03
 
 # ES対応状況
-## ES5サポート
+## ES5
 - メインでサポートしている
 
-## ES6サポート
+## ES6
 - まだサポートしていない
   - https://github.com/jsdoc3/jsdoc/issues/555 で進行中
   - 3.3.4で対応予定
   - 今のところ``npm install jsdoc3/jsdoc``で直接githubからインストールする
 
-## ES7サポート
+## ES7
 - サポートしてない
 
 # 特徴

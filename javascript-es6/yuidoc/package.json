@@ -1,0 +1,10 @@
+{
+  "name": "for-yuidoc",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "./node_modules/.bin/yuidoc -c ./yuidoc.json ./src/"
+  },
+  "dependencies": {
+    "yuidocjs": "0.9.0"
+  }
+}
