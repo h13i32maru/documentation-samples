@@ -2,7 +2,8 @@
   "name": "for-jsdoc",
   "version": "0.0.0",
   "scripts": {
-    "build": "./node_modules/.bin/jsdoc ./src -c ./jsdoc.json"
+    "build": "./node_modules/.bin/jsdoc ./src -c ./jsdoc.json",
+    "build-self": "./node_modules/.bin/jsdoc ./self/lib -c ./jsdoc-self.json"
   },
   "dependencies": {
     "jsdoc": "jsdoc3/jsdoc"
