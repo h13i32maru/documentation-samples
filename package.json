@@ -1,0 +1,17 @@
+{
+  "name": "documentation-samples",
+  "version": "0.0.0",
+  "description": "Documentation Samples",
+  "author": "h13i32maru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h13i32maru/documentation-samples"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/http-server ./ -p 9000 -c -1"
+  },
+  "dependencies": {
+    "http-server": "~0.8.0"
+  }
+}

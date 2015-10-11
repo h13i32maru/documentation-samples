@@ -1,0 +1,10 @@
+{
+  "MyClass": {
+    "title": "MyClass Tutorial Title",
+    "children": {
+      "MyClass-child": {
+        "title": "MyClass Child Tutorial Title"
+      }
+    }
+  }
+}
