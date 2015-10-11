@@ -1,0 +1,11 @@
+{
+  "name": "for-esdoc",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "./node_modules/.bin/esdoc -c ./esdoc.json",
+    "build-self": "./node_modules/.bin/esdoc -c ./esdoc-self.json"
+  },
+  "dependencies": {
+    "esdoc": "0.4.0"
+  }
+}

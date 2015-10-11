@@ -45,3 +45,7 @@
 - `` --lint Lint your docs, will print parser warnings and exit code 1 if there are any``
 - これつけると全然動かなくなってしまう。よくわからない。
 
+# 結果
+- シンタックス参照しないので、新しい構文に強いのは良い
+- 出力されるHTMLもまあまあ見やすい
+- まあでもES5ならJSDocのほうが良さそう

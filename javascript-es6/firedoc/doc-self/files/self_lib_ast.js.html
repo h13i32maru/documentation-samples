@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>self_lib_ast.js</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="../assets/vendor/yui-min.js"></script>
+</head>
+<body>
+
+<div id="doc">
+    <header class="main-header">
+        <div class="content">
+            <div class="project-title">
+                <a href="http://docs-zh.fireball-x.com">
+                        <img class="logo" src="http://docs-zh.fireball-x.com/images/logo.png" title="Fireball Engine API">
+                </a>
+                    <h1 class="project-name">Fireball Engine API</h1>
+                    <p class="description">Fireball is the game engine for the future.</p>
+            </div>
+            <ul class="jump-links">
+                <li><a href="#index" class="index-jump-link">index</a></li>
+                <li><a href="#top" class="top-jump-link">top</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="bd" class="main-body">
+
+        <div id="docs-sidebar" class="sidebar apidocs"><div id="api-list">
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+            <li><a href="#api-enums">Enums</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+
+            <ul id="api-classes" class="apis classes">
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/MyClass.html">MyClass.MyClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/MyClass.html" class="api-list-item-module">@MyClass</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/MySuperClass.html">MySuperClass.MySuperClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/MySuperClass.html" class="api-list-item-module">@MySuperClass</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/DocParser.html">firedoc.DocParser</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/AST.html">firedoc.AST</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/BuilderContext.html">firedoc.BuilderContext</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/DocView.html">firedoc.DocView</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/Firedoc.html">firedoc.Firedoc</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/Locals.html">firedoc.Locals</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/ParserContext.html">firedoc.ParserContext</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/ClazzExample.html">undefinedmodule.ClazzExample</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/SecondClazz.html">undefinedmodule.SecondClazz</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/ThirdClazz.html">undefinedmodule.ThirdClazz</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/ExampleClass.html">exampleModule.ExampleClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/exampleModule.html" class="api-list-item-module">@exampleModule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/class1.html">mod1.class1</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/Example.html">mod1.Example</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/SubExample.html">submod1.SubExample</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/submod1.html" class="api-list-item-module">@submod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/missing_extends.html">warnings.missing_extends</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/warnings.html" class="api-list-item-module">@warnings</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/cls1.html">mod1.cls1</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/classes/cls2.html">mod1.cls2</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/javascript-es6/firedoc/doc-self/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+                <li><a class="module" href="/modules/MyClass.html">MyClass</a></li>
+                <li><a class="module" href="/modules/MySuperClass.html">MySuperClass</a></li>
+                <li><a class="module" href="/modules/digesters.html">digesters</a></li>
+                <li><a class="module" href="/modules/exampleModule.html">exampleModule</a></li>
+                <li><a class="module" href="/modules/firedoc.html">firedoc</a></li>
+                <li><a class="module" href="/modules/helpers.html">helpers</a></li>
+                <li><a class="module" href="/modules/mod1.html">mod1</a></li>
+                <li><a class="module" href="/modules/mod2.html">mod2</a></li>
+                <li><a class="module" href="/modules/submod1.html">submod1</a></li>
+                <li><a class="module" href="/modules/submod2.html">submod2</a></li>
+                <li><a class="module" href="/modules/tags.html">tags</a></li>
+                <li><a class="module" href="/modules/testmembers.html">testmembers</a></li>
+                <li><a class="module" href="/modules/undefinedmodule.html">undefinedmodule</a></li>
+                <li><a class="module" href="/modules/utils.html">utils</a></li>
+                <li><a class="module" href="/modules/warnings.html">warnings</a></li>
+            </ul>
+
+            <ul id="api-enums" class="apis enums">
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+        <div id="docs-main" class="apidocs">
+            <div class="content container"><h1 class="file-heading">File: </h1>
+
+<div class="file">
+  <pre class="code prettyprint linenums">
+/**
+ * @module firedoc
+ */
+
+const _ = require(&#x27;underscore&#x27;);
+const fs = require(&#x27;graceful-fs&#x27;);
+const path = require(&#x27;path&#x27;);
+const utils = require(&#x27;./utils&#x27;);
+const debug = require(&#x27;debug&#x27;)(&#x27;firedoc:ast&#x27;);
+const ParserContext = require(&#x27;./ast/context&#x27;).ParserContext;
+const CWD = process.cwd();
+const REGEX_LINES = /\r\n|\n/;
+const REGEX_START_COMMENT = {
+  js: /^\s*\/\*\*/,
+  coffee: /^\s*###\*/
+};
+const REGEX_END_COMMENT = {
+  js: /\*\/\s*$/,
+  coffee: /###\s*$/
+};
+const REGEX_LINE_HEAD_CHAR = {
+  js: /^\s*\*/,
+  coffee: /^\s*[#\*]/
+};
+
+/**
+ * A list of ignored tags. These tags should be ignored because there is
+ * likely to be used for purposes other than JSDoc tags in JavaScript comments.
+ * @property IGNORE_TAGLIST
+ * @type Array
+ * @final
+ */
+const IGNORE_TAGLIST = [&#x27;media&#x27;];
+
+/**
+ * Common errors will get scrubbed instead of being ignored.
+ * @property CORRECTIONS
+ * @type Object
+ * @final
+ */
+const CORRECTIONS = require(&#x27;./ast/corrections&#x27;);
+
+/**
+ * Short tags
+ * @property SHORT_TAGS
+ * @type Object
+ * @final
+ */
+const SHORT_TAGS = require(&#x27;./ast/short-tags&#x27;);
+
+/**
+ * A list of known tags.  This populates a member variable
+ * during initialization, and will be updated if additional
+ * digesters are added.
+ *
+ * @property TAGLIST
+ * @type Array
+ * @final
+ * @for DocParser
+ */
+const TAGLIST = require(&#x27;./ast/tags&#x27;);
+const DIGESTERS = require(&#x27;./ast/digesters&#x27;);
+
+/**
+ * The AST(Abstract syntax tree) of the comment
+ *
+ * @class AST
+ */
+var AST = {
+  
+  /**
+   * @property {Object} project - About the project
+   */
+  project: {},
+
+  /**
+   * @property {Object} files - The files
+   */
+  files: {},
+
+  /**
+   * @property {Object} codes - The source codes
+   */
+  codes: {},
+
+  /**
+   * @property {Object} modules - The modules
+   */
+  modules: {},
+
+  /**
+   * @property {Object} classes - The classes
+   */
+  classes: {},
+
+  /**
+   * @property {Array} members - The members
+   */
+  members: [],
+
+  /**
+   * @property {Array} inheritedMembers - The inherited members
+   */
+  inheritedMembers: [],
+
+  /**
+   * @property {Object} namespacesMap - The namespaces map object
+   */
+  namespacesMap: {},
+
+  /**
+   * @property {Object} commentsMap - The comments map object
+   */
+  commentsMap: {},
+
+  /**
+   * @property {String} syntaxType - The syntax type
+   */
+  syntaxType: &#x27;js&#x27;,
+
+  /**
+   * @property {Context} context - The context object
+   */
+  context: null,
+
+  /**
+   * @proerty {Array} warnings - The parser warnings
+   */
+  warnings: [],
+
+  /**
+   * Create a AST object
+   *
+   * @method create
+   * @param {Object} files - The files
+   * @param {Object} dirs - The directorys
+   * @param {String} [syntaxType] - The syntax type: &#x60;coffee&#x60; or &#x60;js&#x60;
+   * @return {AST} the created AST object
+   */
+  create: function (files, dirs, syntaxType) {
+    var instance = AST;
+    instance.syntaxType = syntaxType || instance.syntaxType;
+    instance.context = ParserContext;
+    instance.context.ast = instance;
+    instance.extract(files, dirs);
+    instance.transform();
+    return instance;
+  },
+
+  /**
+   * Reset the AST instance
+   *
+   * @method reset
+   */
+  reset: function () {
+    AST.project = {};
+    AST.files = {};
+    AST.codes = {};
+    AST.modules = {};
+    AST.classes = {};
+    AST.members = [];
+    AST.inheritedMembers = [];
+    AST.commentsMap = {};
+    AST.syntaxType = &#x27;js&#x27;;
+    AST.warnings = [];
+    if (AST.context &amp;&amp; AST.context.reset) {
+      AST.context.reset();
+      AST.context = null;
+    }
+    return AST;
+  },
+
+  /**
+   *
+   * @method oncomment
+   * @param {String} comment
+   * @param {String} filename
+   * @param {String} linenum
+   * @return {Object}
+   */
+  oncomment: function (comment, filename, linenum) {
+    var lines = comment.split(REGEX_LINES);
+    const len = lines.length;
+    const lineHeadCharRegex = REGEX_LINE_HEAD_CHAR[this.syntaxType];
+    const hasLineHeadChar = lines[0] &amp;&amp; lineHeadCharRegex.test(lines[0]);
+    const r = new RegExp(&#x27;(?:^|\\n)\\s*((?!@&#x27; + IGNORE_TAGLIST.join(&#x27;)(?!@&#x27;) + &#x27;)@\\w*)&#x27;);
+
+    var results = [
+      {
+        &#x27;tag&#x27;: &#x27;file&#x27;,
+        &#x27;value&#x27;: filename
+      },
+      {
+        &#x27;tag&#x27;: &#x27;line&#x27;,
+        &#x27;value&#x27;: linenum
+      }
+    ];
+
+    if (hasLineHeadChar) {
+      lines = _.map(lines, function (line) {
+        return line.trim().replace(lineHeadCharRegex, &#x27;&#x27;);
+      });
+    }
+
+    const unidented = utils.unindent(lines.join(&#x27;\n&#x27;));
+    const parts = unidented.split(r);
+
+    var cursor = 0;
+    for (; cursor &lt; parts.length; cursor++) {
+      var skip;
+      var val = &#x27;&#x27;;
+      var part = parts[cursor];
+      if (part === &#x27;&#x27;) continue;
+
+      skip = false;
+      // the first token may be the description, otherwise it should be a tag
+      if (cursor === 0 &amp;&amp; part.substr(0, 1) !== &#x27;@&#x27;) {
+        if (part) {
+          tag = &#x27;@description&#x27;;
+          val = part;
+        } else {
+          skip = true;
+        }
+      } else {
+        tag = part;
+        // lookahead for the tag value
+        var peek = parts[cursor + 1];
+        if (peek) {
+          val = peek;
+          cursor += 1;
+        }
+      }
+      if (!skip &amp;&amp; tag) {
+        results.push({
+          tag: tag.substr(1).toLowerCase(),
+          value: val || &#x27;&#x27;
+        });
+      }
+    }
+    return results;
+  },
+
+  /**
+   * Processes all the tags in a single comment block
+   * @method onblock
+   * @param {Array} an array of the tag/text pairs
+   */
+  onblock: function (block) {
+    var raw = _.reduce(block, onreduce, {});
+    raw.line = Number(raw.line);
+
+    this.context.block = {
+      &#x27;self&#x27;: block,
+      &#x27;target&#x27;: {
+        &#x27;file&#x27;: raw.file,
+        &#x27;line&#x27;: raw.line,
+        &#x27;_raw&#x27;: raw
+      },
+      &#x27;host&#x27;: null,
+      &#x27;digesters&#x27;: []
+    };
+
+    function onreduce (map, item) {
+      var key = utils.safetrim(item.tag);
+      var val = utils.safetrim(item.value);
+      if (!map[key]) {
+        map[key] = val;
+      } else if (!_.isArray(map[key])) {
+        map[key] = [map[key], val];
+      } else {
+        map[key].push(val);
+      }
+      return map;
+    }
+
+    // handle tags and push digesters to context.block.digesters
+    _.each(block, this.ontag, this);
+    // run digiesters
+    _.each(this.context.block.digesters, ondigester, this);
+
+    function ondigester (ctx) {
+      var ret = ctx.fn.call(this, ctx.name, ctx.value,
+        this.context.block.target, this.context.block.self);
+      this.context.block.host = this.context.block.host || ret;
+    }
+
+    // post process
+    if (this.context.block.host) {
+      this.context.block.host = _.extend(
+        this.context.block.host, this.context.block.target);
+    } else {
+      var target = this.context.block.target;
+      target.clazz = this.context.clazz;
+      target.module = this.context.module;
+      target.isGlobal = (this.context.clazz === &#x27;&#x27;);
+      target.submodule = this.context.submodule;
+
+      // set namespace
+      var ns = utils.getNamespace(target);
+      if (ns) {
+        this.namespacesMap[ns] = target;
+        target.namespace = ns;
+
+        var parent = this.classes[target.clazz] || this.modules[target.module];
+        Object.defineProperty(target, &#x27;parent&#x27;, {
+          enumerable: true,
+          get: function () {
+            return parent;
+          }
+        });
+
+        target.process = target.process || parent.process;
+      }
+
+      if (target.itemtype) {
+        this.members.push(target);
+      } else if (target.isTypeDef) {
+        var parent = this.classes[this.context.clazz] ||
+          this.modules[this.context.module];
+        if (!parent) return;
+        parent.types[target.name] = target;
+      }
+    }
+  },
+
+  /**
+   * Process tag
+   * @method ontag
+   * @param {Object} item
+   * @param {String} item.tag
+   * @param {Object} item.value
+   */
+  ontag: function (item) {
+    var name = utils.safetrim(item.tag);
+    var value = utils.safetrim(item.value);
+    var file = this.context.block.target.file;
+
+    if (SHORT_TAGS[name] &amp;&amp; value === &#x27;&#x27;) {
+      value = 1;
+    }
+
+    if (TAGLIST.indexOf(name) === -1) {
+      if (_.has(CORRECTIONS, name)) {
+        // correction part
+        // TODO(Yorkie): log the correction
+        name = CORRECTIONS[name];
+        item.tag = name;
+      } else {
+        // TODO(Yorkie): report the unknown correction
+      }
+    }
+
+    if (_.has(DIGESTERS, name) === -1) {
+      this.context.block.target[name] = value;
+    } else {
+      var digest = DIGESTERS[name];
+      if (_.isString(digest)) {
+        digest = DIGESTERS[digest];
+      }
+
+      var block = this.context.block;
+      var target = block.target;
+      if (target._raw.description)
+        target.description = target._raw.description;
+      if (target._raw.type)
+        target.type = utils.fixType(target._raw.type);
+      if (target._raw.extends)
+        target.extends = utils.fixType(target._raw.extends);
+
+      if (_.isFunction(digest)) {
+        // here we only push and run later
+        // because CORRECTION perhaps doesn&#x27;t apply the later tags.
+        block.digesters.push({
+          fn: digest,
+          name: name,
+          value: value
+        });
+      }
+    }
+  },
+
+  /**
+   * Accepts a map of filenames to file content.  Returns
+   * a map of filenames to an array of API comment block
+   * text.  This expects the comment to start with / **
+   * on its own line, and end with * / on its own
+   * line.  Override this function to provide an
+   * alternative comment parser.
+   *
+   * @method extract
+   * @param {Object} files
+   * @param {Object} dirs
+   */
+  extract: function (files, dirs) {
+    _.each(files, function (code, filename) {
+      filename = path.relative(CWD, filename);
+      this.codes[filename] = code;
+      const lines = code.split(REGEX_LINES);
+      const len = lines.length;
+      var comment;
+      var cursor = 0;
+      for (; cursor &lt; len; cursor++) {
+        var line = lines[cursor];
+        if (REGEX_START_COMMENT[this.syntaxType].test(line)) {
+          var comments = [];
+          var linenum = cursor + 1;
+          while (cursor &lt; len &amp;&amp;
+            (!REGEX_END_COMMENT[this.syntaxType].test(line))) {
+            comments.push(line);
+            cursor += 1;
+            line = lines[cursor];
+          }
+          comments.shift();
+          comment = comments.join(&#x27;\n&#x27;);
+          this.commentsMap[filename] = this.commentsMap[filename] || [];
+          this.commentsMap[filename].push(this.oncomment(comment, filename, linenum));
+        }
+      }
+    }, this);
+  },
+
+  /**
+   * Transforms a map of filenames to arrays of comment blocks into a
+   * JSON structure that represents the entire processed API doc info
+   * and relationships between elements for the entire project.
+   *
+   * @method transform
+   * @param {Object} commentmap The hash of files and parsed comment blocks
+   * @return {Object} The transformed data for the project
+   */
+  transform: function () {
+    _.each(this.commentsMap, function (blocks, filename) {
+      this.context.file = filename;
+      _.each(blocks, this.onblock, this);
+    }, this);
+  }
+
+};
+
+exports.AST = AST;
+exports.DIGESTERS = DIGESTERS;
+</pre>
+</div>
+</div>
+        </div>
+
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/vendor/jquery.min.js"></script>
+<script src="../assets/js/jquery-offscreen-trigger.js"></script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

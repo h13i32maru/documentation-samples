@@ -1,0 +1,1494 @@
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title> </title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,500,700' rel='stylesheet' type='text/css'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='container'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed md-show fix-3 overflow-auto max-height-100'>
+        <div class='px1 py1'>
+          <a href='/' class='h5 button block button-transparent'> </a>
+          <div class='px2'>
+            <input
+              placeholder='Filter'
+              id='filter-input'
+              class='col12 block field-light'
+              type='text' />
+          </div>
+          <div id='toc' class='px2'>
+              <a
+                href='#access'
+                class='block bold'>
+                access
+              </a>
+              <a
+                href='#access'
+                class='block bold'>
+                access
+              </a>
+              <a
+                href='#addpath'
+                class='block bold'>
+                addPath
+              </a>
+              <a
+                href='#autolink'
+                class='block bold'>
+                autolink
+              </a>
+              <a
+                href='#commentshebang'
+                class='block bold'>
+                commentShebang
+              </a>
+              <a
+                href='#dependencystream'
+                class='block bold'>
+                dependencyStream
+              </a>
+              <a
+                href='#documentation'
+                class='block bold'>
+                documentation
+              </a>
+              <a
+                href='#exports'
+                class='block bold'>
+                exports
+              </a>
+              <a
+                href='#exports'
+                class='block bold'>
+                exports
+              </a>
+              <a
+                href='#exports'
+                class='block bold'>
+                exports
+              </a>
+              <a
+                href='#exports'
+                class='block bold'>
+                exports
+              </a>
+              <a
+                href='#externals'
+                class='block bold'>
+                externals
+              </a>
+              <a
+                href='#findgit'
+                class='block bold'>
+                findGit
+              </a>
+              <a
+                href='#flatten'
+                class='block bold'>
+                flatten
+              </a>
+              <a
+                href='#formatmarkdown'
+                class='block bold'>
+                formatMarkdown
+              </a>
+              <a
+                href='#formatparameter'
+                class='block bold'>
+                formatParameter
+              </a>
+              <a
+                href='#formatparameters'
+                class='block bold'>
+                formatParameters
+              </a>
+              <a
+                href='#formattype'
+                class='block bold'>
+                formatType
+              </a>
+              <a
+                href='#highlight'
+                class='block bold'>
+                highlight
+              </a>
+              <a
+                href='#html'
+                class='block bold'>
+                html
+              </a>
+              <a
+                href='#inferhierarchy'
+                class='block bold'>
+                inferHierarchy
+              </a>
+              <a
+                href='#inferkind'
+                class='block bold'>
+                inferKind
+              </a>
+              <a
+                href='#infermembership'
+                class='block bold'>
+                inferMembership
+              </a>
+              <a
+                href='#infername'
+                class='block bold'>
+                inferName
+              </a>
+              <a
+                href='#inferparams'
+                class='block bold'>
+                inferParams
+              </a>
+              <a
+                href='#inferreturn'
+                class='block bold'>
+                inferReturn
+              </a>
+              <a
+                href='#isjsdoccomment'
+                class='block bold'>
+                isJSDocComment
+              </a>
+              <a
+                href='#linkgithub'
+                class='block bold'>
+                linkGitHub
+              </a>
+              <a
+                href='#lint'
+                class='block bold'>
+                lint
+              </a>
+              <a
+                href='#markdown'
+                class='block bold'>
+                markdown
+              </a>
+              <a
+                href='#markdown'
+                class='block bold'>
+                markdown
+              </a>
+              <a
+                href='#markdownlink'
+                class='block bold'>
+                markdownLink
+              </a>
+              <a
+                href='#nestparams'
+                class='block bold'>
+                nestParams
+              </a>
+              <a
+                href='#normalize'
+                class='block bold'>
+                normalize
+              </a>
+              <a
+                href='#parse'
+                class='block bold'>
+                parse
+              </a>
+              <a
+                href='#parse'
+                class='block bold'>
+                parse
+              </a>
+              <a
+                href='#parsecomment'
+                class='block bold'>
+                parseComment
+              </a>
+              <a
+                href='#resolvetheme'
+                class='block bold'>
+                resolveTheme
+              </a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        <div class='px2'>
+<div class='py1'><section class='py2 clearfix'>
+  <h2 id='access' class='mt0'>
+    access<span class='gray'>([levels], comment)</span>
+  </h2>
+  <p>Exclude given access levels from the generated documentation: this allows
+users to write documentation for non-public members by using the
+<code>@private</code> tag.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>>]</code> <strong>levels</strong>
+            (default <code>[private</code>)
+          :
+          <span class='force-inline'>
+            <p>] excluded access levels.</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>a parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>whether the comment should be output</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='access' class='mt0'>
+    access<span class='gray'>(data)</span>
+  </h2>
+  <p>Node &amp; browserify support requiring JSON files. JSON files can't be documented
+with JSDoc or parsed with espree, so we filter them out before
+they reach documentation's machinery.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>data</strong>
+          :
+          <span class='force-inline'>
+            <p>a file as an object with 'file' property</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>whether the file is json</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='addpath' class='mt0'>
+    addPath<span class='gray'>(comment, prefix, namepath)</span>
+  </h2>
+  <p>Add paths to each comment, making it possible to generate permalinks
+that differentiate between instance functions with the same name but
+different <code>@memberof</code> values.</p>
+<pre><code>Person#say  // the instance method named &quot;say.&quot;
+Person.say  // the static method named &quot;say.&quot;
+Person~say  // the inner method named &quot;say.&quot;</code></pre>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>the jsdoc comment</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>prefix</strong>
+          :
+          <span class='force-inline'>
+            <p>an array of strings representing names</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>namepath</strong>
+          :
+          <span class='force-inline'>
+            <p>the namepath so far</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>changes its input by reference.</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='autolink' class='mt0'>
+    autolink<span class='gray'>(paths, text)</span>
+  </h2>
+  <p>Link text to this page or to a central resource.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>paths</strong>
+          :
+          <span class='force-inline'>
+            <p>list of valid namespace paths that are linkable</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>text</strong>
+          :
+          <span class='force-inline'>
+            <p>inner text of the link</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>potentially linked HTML</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='commentshebang' class='mt0'>
+    commentShebang<span class='gray'>(code)</span>
+  </h2>
+  <p>Comment-out a shebang line that may sit at the top of a file,
+making it executable on linux-like systems.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>code</strong>
+          :
+          <span class='force-inline'>
+            <p>the source code in full</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>code</p>
+
+      </span>
+    <h4>Examples</h4>
+<pre class='overflow-auto'><span class="hljs-keyword">var</span> foo = commentShebang(<span class="hljs-string">'#!/usr/bin/env/node'</span>);
+foo === <span class="hljs-string">'//#!/usr/bin/env/node'</span>;</pre>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='dependencystream' class='mt0'>
+    dependencyStream<span class='gray'>(indexes, options, callback)</span>
+  </h2>
+  <p>Returns a readable stream of dependencies, given an array of entry
+points and an object of options to provide to module-deps.</p>
+<p>This stream requires filesystem access, and thus isn't suitable
+for a browser environment.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>indexes</strong>
+          :
+          <span class='force-inline'>
+            <p>paths to entry files as strings</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+          :
+          <span class='force-inline'>
+            <p>optional options passed</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>called with (err, inputs)</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='documentation' class='mt0'>
+    documentation<span class='gray'>(indexes, options, callback)</span>
+  </h2>
+  <p>Generate JavaScript documentation as a list of parsed JSDoc
+comments, given a root file as a path.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>indexes</strong>
+          :
+          <span class='force-inline'>
+            <p>files to process</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+          :
+          <span class='force-inline'>
+            <p>options</p>
+
+          </span>
+        </li>
+          <ul>
+              <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> options.external
+                <p>a string regex / glob match pattern
+that defines what external modules will be whitelisted and included in the
+generated documentation.</p>
+</li>
+              <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> options.transform
+                <p>source transforms given as strings
+passed to <a href="https://github.com/substack/module-deps">the module-deps transform option</a></p>
+</li>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code> options.polyglot
+                  (default <code>false</code>)
+                <p>parse comments with a regex rather than
+a proper parser. This enables support of non-JavaScript languages but
+reduces documentation's ability to infer structure of code.</p>
+</li>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>]</code> options.shallow
+                  (default <code>false</code>)
+                <p>whether to avoid dependency parsing
+even in JavaScript code. With the polyglot option set, this has no effect.</p>
+</li>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>>]</code> options.order
+                  (default <code>[</code>)
+                <p>] optional array that
+defines sorting order of documentation</p>
+</li>
+          </ul>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>to be called when the documentation generation
+is complete, with (err, result) argumentsj</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='exports' class='mt0'>
+    exports<span class='gray'>(comment, loc, context)</span>
+  </h2>
+  <p>Parse a comment with doctrine, decorate the result with file position and code
+context, handle parsing errors, and fix up various infelicities in the structure
+outputted by doctrine.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>input to be parsed</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>loc</strong>
+          :
+          <span class='force-inline'>
+            <p>location of the input</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>context</strong>
+          :
+          <span class='force-inline'>
+            <p>code context of the input</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>an object conforming to the
+<a href="https://github.com/documentationjs/api-json">documentation JSON API</a> schema</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='exports' class='mt0'>
+    exports<span class='gray'>(Handlebars, paths)</span>
+  </h2>
+  <p>Given a Handlebars instance, register helpers</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>Handlebars</strong>
+          :
+          <span class='force-inline'>
+            <p>template instance</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>paths</strong>
+          :
+          <span class='force-inline'>
+            <p>list of valid namespace paths that are linkable</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>invokes side effects on Handlebars</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='exports' class='mt0'>
+    exports<span class='gray'>(indexes, options, callback)</span>
+  </h2>
+  <p>A readable source for content that doesn't do dependency resolution, but
+simply reads files and pushes them onto a stream.</p>
+<p>If an array of strings is provided as input to this method, then
+they will be treated as filenames and read into the stream.</p>
+<p>If an array of objects is provided, then we assume that they are valid
+objects with <code>source</code> and <code>file</code> properties, and don't use the filesystem
+at all. This is one way of getting documentation.js to run in a browser
+or without fs access.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>> <strong>indexes</strong>
+          :
+          <span class='force-inline'>
+            <p>entry points</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+          :
+          <span class='force-inline'>
+            <p>parsing options</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>called with (err, inputs)</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='exports' class='mt0'>
+    exports<span class='gray'>(Handlebars, themeModule, name)</span>
+  </h2>
+  <p>Get a Handlebars template file out of a theme and compile it into
+a template function</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>Handlebars</strong>
+          :
+          <span class='force-inline'>
+            <p>handlebars instance</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>themeModule</strong>
+          :
+          <span class='force-inline'>
+            <p>base directory of themey</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>name</strong>
+          :
+          <span class='force-inline'>
+            <p>template name</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>template function</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='externals' class='mt0'>
+    externals<span class='gray'>(indexes, options)</span>
+  </h2>
+  <p>Create a filter function for use with module-deps, allowing the specified
+external modules through.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>indexes</strong>
+          :
+          <span class='force-inline'>
+            <p>the list of entry points that will be
+used by module-deps</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+          :
+          <span class='force-inline'>
+            <p>An options object with <code>external</code> being a
+micromatch-compaitible glob. <em>NOTE:</em> the glob will be matched relative to
+the top-level node_modules directory for each entry point.</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>A function for use as the module-deps <code>postFilter</code>
+options.</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='findgit' class='mt0'>
+    findGit<span class='gray'>(filename)</span>
+  </h2>
+  <p>Given a full path to a single file, iterate upwards through the filesystem
+to find a directory with a .git file indicating that it is a git repository</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>filename</strong>
+          :
+          <span class='force-inline'>
+            <p>any file within a repository</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>repository path</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='flatten' class='mt0'>
+    flatten<span class='gray'>(comment)</span>
+  </h2>
+  <p>Flattens tags in an opinionated way.</p>
+<p>The following tags are assumed to be singletons, and are flattened
+to a top-level property on the result whose value is extracted from
+the tag:</p>
+<ul>
+<li><code>@name</code></li>
+<li><code>@memberof</code></li>
+<li><code>@classdesc</code></li>
+<li><code>@kind</code></li>
+<li><code>@class</code></li>
+<li><code>@constant</code></li>
+<li><code>@event</code></li>
+<li><code>@external</code></li>
+<li><code>@file</code></li>
+<li><code>@function</code></li>
+<li><code>@member</code></li>
+<li><code>@mixin</code></li>
+<li><code>@module</code></li>
+<li><code>@namespace</code></li>
+<li><code>@typedef</code></li>
+<li><code>@access</code></li>
+<li><code>@lends</code></li>
+</ul>
+<p>The following tags are flattened to a top-level array-valued property:</p>
+<ul>
+<li><code>@param</code> (to <code>params</code> property)</li>
+<li><code>@property</code> (to <code>properties</code> property)</li>
+<li><code>@returns</code> (to <code>returns</code> property)</li>
+<li><code>@augments</code> (to <code>augments</code> property)</li>
+<li><code>@example</code> (to <code>examples</code> property)</li>
+<li><code>@throws</code> (to <code>throws</code> property)</li>
+</ul>
+<p>The <code>@global</code>, <code>@static</code>, <code>@instance</code>, and <code>@inner</code> tags are flattened
+to a <code>scope</code> property whose value is <code>&quot;global&quot;</code>, <code>&quot;static&quot;</code>, <code>&quot;instance&quot;</code>,
+or <code>&quot;inner&quot;</code>.</p>
+<p>The <code>@access</code>, <code>@public</code>, <code>@protected</code>, and <code>@private</code> tags are flattened
+to an <code>access</code> property whose value is <code>&quot;protected&quot;</code> or <code>&quot;private&quot;</code>.
+The assumed default value is <code>&quot;public&quot;</code>, so <code>@access public</code> or <code>@public</code>
+tags result in no <code>access</code> property.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>a parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with tags flattened</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='formatmarkdown' class='mt0'>
+    formatMarkdown<span class='gray'>(string)</span>
+  </h2>
+  <p>This helper is exposed in templates as <code>md</code> and is useful for showing
+Markdown-formatted text as proper HTML.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>string</strong>
+          :
+          <span class='force-inline'>
+            
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>string</p>
+
+      </span>
+    <h4>Examples</h4>
+<pre class='overflow-auto'><span class="hljs-keyword">var</span> x = <span class="hljs-string">'## foo'</span>;
+<span class="hljs-comment">// in template</span>
+<span class="hljs-comment">// {{ md x }}</span>
+<span class="hljs-comment">// generates &lt;h2&gt;foo&lt;/h2&gt;</span></pre>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='formatparameter' class='mt0'>
+    formatParameter<span class='gray'>(param)</span>
+  </h2>
+  <p>Format a parameter name. This is used in formatParameters
+and just needs to be careful about differentiating optional
+parameters</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>param</strong>
+          :
+          <span class='force-inline'>
+            <p>a param as a type spec</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>formatted parameter representation.</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='formatparameters' class='mt0'>
+    formatParameters<span class='gray'></span>
+  </h2>
+  <p>Format the parameters of a function into a quickly-readable
+summary that resembles how you would call the function
+initially.</p>
+
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>formatted parameters</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='formattype' class='mt0'>
+    formatType<span class='gray'>(type, paths)</span>
+  </h2>
+  <p>Helper used to format JSDoc-style type definitions into HTML.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>type</strong>
+          :
+          <span class='force-inline'>
+            <p>type object in doctrine style</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>> <strong>paths</strong>
+          :
+          <span class='force-inline'>
+            <p>valid namespace paths that can be linked</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>string</p>
+
+      </span>
+    <h4>Examples</h4>
+<pre class='overflow-auto'><span class="hljs-keyword">var</span> x = { type: <span class="hljs-string">'NameExpression'</span>, name: <span class="hljs-string">'String'</span> };
+<span class="hljs-comment">// in template</span>
+<span class="hljs-comment">// {{ type x }}</span>
+<span class="hljs-comment">// generates String</span></pre>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='highlight' class='mt0'>
+    highlight<span class='gray'>(comment)</span>
+  </h2>
+  <p>Highlights the contents of the <code>example</code> tag.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with highlighted code</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='html' class='mt0'>
+    html<span class='gray'>(comments, opts, callback)</span>
+  </h2>
+  <p>Formats documentation as HTML.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>> <strong>comments</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comments</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>opts</strong>
+          :
+          <span class='force-inline'>
+            <p>Options that can customize the output</p>
+
+          </span>
+        </li>
+          <ul>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code> opts.theme
+                <p>Name of a module used for an HTML theme.</p>
+</li>
+          </ul>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>called with array of results as vinyl-fs objects</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='inferhierarchy' class='mt0'>
+    inferHierarchy<span class='gray'>(comments)</span>
+  </h2>
+  
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>> <strong>comments</strong>
+          :
+          <span class='force-inline'>
+            <p>an array of parsed comments</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>></code>
+      :
+      <span class='force-inline'>
+        <p>nested comments, with only root comments
+at the top level.</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='inferkind' class='mt0'>
+    inferKind<span class='gray'>(comment)</span>
+  </h2>
+  <p>Infers a <code>kind</code> tag from other tags or from the context.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with kind inferred</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='infermembership' class='mt0'>
+    inferMembership<span class='gray'>(comment)</span>
+  </h2>
+  <p>Uses code structure to infer <code>memberof</code>, <code>instance</code>, and <code>static</code>
+tags from the placement of JSDoc
+annotations within a file</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with membership inferred</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='infername' class='mt0'>
+    inferName<span class='gray'>(comment)</span>
+  </h2>
+  <p>Infers a <code>name</code> tag from the context,
+and adopt <code>@class</code> and other other tags as implied name tags.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with name inferred</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='inferparams' class='mt0'>
+    inferParams<span class='gray'>(comment)</span>
+  </h2>
+  <p>Infers param tags by reading function parameter names</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with parameters</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='inferreturn' class='mt0'>
+    inferReturn<span class='gray'>(comment)</span>
+  </h2>
+  <p>Infers returns tags by using Flow return type annotations</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with return tag inferred</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='isjsdoccomment' class='mt0'>
+    isJSDocComment<span class='gray'>(comment)</span>
+  </h2>
+  <p>Detect whether a comment is a JSDoc comment: it must be a block
+comment which starts with two asterisks, not any other number of asterisks.</p>
+<p>The code parser automatically strips out the first asterisk that's
+required for the comment to be a comment at all, so we count the remaining
+comments.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>an ast-types node of the comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>whether it is valid</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='linkgithub' class='mt0'>
+    linkGitHub<span class='gray'>(comment)</span>
+  </h2>
+  <p>Attempts to link code to its place on GitHub.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with github inferred</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='lint' class='mt0'>
+    lint<span class='gray'>(comment)</span>
+  </h2>
+  <p>Passively lints and checks documentation data.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>></code>
+      :
+      <span class='force-inline'>
+        <p>array of errors</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='markdown' class='mt0'>
+    markdown<span class='gray'>(comments, opts, callback)</span>
+  </h2>
+  <p>Formats documentation as
+<a href="http://daringfireball.net/projects/markdown/">Markdown</a>.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>> <strong>comments</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comments</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>opts</strong>
+          :
+          <span class='force-inline'>
+            <p>Options that can customize the output</p>
+
+          </span>
+        </li>
+          <ul>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code> opts.template
+                  (default <code>&#x27;../../share/markdown.hbs&#x27;</code>)
+                <p>Path to a Handlebars template file that
+takes the place of the default.</p>
+</li>
+          </ul>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>called with null, string</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='markdown' class='mt0'>
+    markdown<span class='gray'>(comments, opts, callback)</span>
+  </h2>
+  <p>Formats documentation as
+<a href="http://daringfireball.net/projects/markdown/">Markdown</a>.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>> <strong>comments</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comments</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>opts</strong>
+          :
+          <span class='force-inline'>
+            <p>Options that can customize the output</p>
+
+          </span>
+        </li>
+          <ul>
+              <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>]</code> opts.template
+                  (default <code>&#x27;../../share/markdown.hbs&#x27;</code>)
+                <p>Path to a Handlebars template file that
+takes the place of the default.</p>
+</li>
+          </ul>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></code> <strong>callback</strong>
+          :
+          <span class='force-inline'>
+            <p>called with array of results as vinyl-fs objects</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>calls callback</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='markdownlink' class='mt0'>
+    markdownLink<span class='gray'>(description, href)</span>
+  </h2>
+  <p>Format a description and target as a Markdown link.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>description</strong>
+          :
+          <span class='force-inline'>
+            <p>the text seen as the link</p>
+
+          </span>
+        </li>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>href</strong>
+          :
+          <span class='force-inline'>
+            <p>where the link goes</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>markdown formatted link</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='nestparams' class='mt0'>
+    nestParams<span class='gray'>(comment)</span>
+  </h2>
+  <p>Nests
+<a href="http://usejsdoc.org/tags-param.html#parameters-with-properties">parameters with properties</a>.</p>
+<p>A parameter <code>employee.name</code> will be attached to the parent parameter <code>employee</code> in
+a <code>properties</code> array.</p>
+<p>This assumes that incoming comments have been flattened.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>input comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>nested comment</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='normalize' class='mt0'>
+    normalize<span class='gray'>(comment)</span>
+  </h2>
+  <p>Normalizes synonymous tags to the canonical tag type listed on http://usejsdoc.org/.</p>
+<p>For example, given the input object:</p>
+<pre><code>{ tags: [
+  { title: &quot;virtual&quot; },
+  { title: &quot;return&quot;, ... }
+]}
+</code></pre>
+<p>The output object will be:</p>
+<pre><code>{ tags: [
+  { title: &quot;abstract&quot; },
+  { title: &quot;returns&quot;, ... }
+]}
+</code></pre>
+<p>The following synonyms are normalized:</p>
+<ul>
+<li>virtual -&gt; abstract</li>
+<li>extends -&gt; augments</li>
+<li>constructor -&gt; class</li>
+<li>const -&gt; constant</li>
+<li>defaultvalue -&gt; default</li>
+<li>desc -&gt; description</li>
+<li>host -&gt; external</li>
+<li>fileoverview, overview -&gt; file</li>
+<li>emits -&gt; fires</li>
+<li>func, method -&gt; function</li>
+<li>var -&gt; member</li>
+<li>arg, argument -&gt; param</li>
+<li>prop -&gt; property</li>
+<li>return -&gt; returns</li>
+<li>exception -&gt; throws</li>
+<li>linkcode, linkplain -&gt; link</li>
+</ul>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>parsed comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>comment with normalized properties</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='parse' class='mt0'>
+    parse<span class='gray'>(data)</span>
+  </h2>
+  <p>Documentation stream parser: this receives a module-dep item,
+reads the file, parses the JavaScript, parses the JSDoc, and
+emits parsed comments.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>data</strong>
+          :
+          <span class='force-inline'>
+            <p>a chunk of data provided by module-deps</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>></code>
+      :
+      <span class='force-inline'>
+        <p>adds to memo</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='parse' class='mt0'>
+    parse<span class='gray'>(data)</span>
+  </h2>
+  <p>Receives a module-dep item,
+reads the file, parses the JavaScript, and parses the JSDoc.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>data</strong>
+          :
+          <span class='force-inline'>
+            <p>a chunk of data provided by module-deps</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>></code>
+      :
+      <span class='force-inline'>
+        <p>an array of parsed comments</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='parsecomment' class='mt0'>
+    parseComment<span class='gray'>(comment)</span>
+  </h2>
+  <p>Parse a comment with doctrine and decorate the result with file position and code context.</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>comment</strong>
+          :
+          <span class='force-inline'>
+            <p>the current state of the parsed JSDoc comment</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code></code>
+      :
+      <span class='force-inline'>
+        <p>this emits data</p>
+
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='resolvetheme' class='mt0'>
+    resolveTheme<span class='gray'>(theme)</span>
+  </h2>
+  <p>Given the name of a theme as a module, return the directory it
+resides in, or throw an error if it is not found</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>theme</strong>
+          :
+          <span class='force-inline'>
+            <p>the module name</p>
+
+          </span>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>directory</p>
+
+      </span>
+    <h4>Throws</h4>
+    <table class='table-light overflow-hidden bg-cloudy-light'>
+      <thead>
+        <th class='col-3'>exception</th>
+        <th class='col-9'>description</th>
+      </thead>
+        <tr>
+          <td><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></code></td>
+          <td>
+            <p>if theme is not found</p>
+
+          </td>
+        </tr>
+    </table>
+</section>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
