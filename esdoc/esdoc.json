@@ -1,0 +1,5 @@
+{
+  "source": "./repo/src",
+  "destination": "./doc",
+  "excludes": ["Publisher/Builder/template/", "BuiltinExternal/"]
+}

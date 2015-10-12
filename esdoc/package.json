@@ -1,0 +1,7 @@
+{
+  "name": "for-esdoc",
+  "version": "0.0.0",
+  "dependencies": {
+    "esdoc": "0.4.0"
+  }
+}

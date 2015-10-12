@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AST - test</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="../assets/vendor/yui-min.js"></script>
+</head>
+<body>
+
+<div id="doc">
+    <header class="main-header">
+        <div class="content">
+            <div class="project-title">
+                <a href="http://docs-zh.fireball-x.com">
+                        <img class="logo" src="https://github.com/fireball-x/firedoc" title="test">
+                </a>
+                    <h1 class="project-name">test</h1>
+                    <p class="description">test</p>
+            </div>
+            <ul class="jump-links">
+                <li><a href="#index" class="index-jump-link">index</a></li>
+                <li><a href="#top" class="top-jump-link">top</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="bd" class="main-body">
+
+        <div id="docs-sidebar" class="sidebar apidocs"><div id="api-list">
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+            <li><a href="#api-enums">Enums</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+
+            <ul id="api-classes" class="apis classes">
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/MyClass.html">MyClass.MyClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/MyClass.html" class="api-list-item-module">@MyClass</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/MySuperClass.html">MySuperClass.MySuperClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/MySuperClass.html" class="api-list-item-module">@MySuperClass</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/DocParser.html">firedoc.DocParser</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/AST.html">firedoc.AST</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/BuilderContext.html">firedoc.BuilderContext</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/DocView.html">firedoc.DocView</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/Firedoc.html">firedoc.Firedoc</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/Locals.html">firedoc.Locals</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/ParserContext.html">firedoc.ParserContext</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html" class="api-list-item-module">@firedoc</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/ExampleClass.html">exampleModule.ExampleClass</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/exampleModule.html" class="api-list-item-module">@exampleModule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/ClazzExample.html">undefinedmodule.ClazzExample</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/SecondClazz.html">undefinedmodule.SecondClazz</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/ThirdClazz.html">undefinedmodule.ThirdClazz</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/undefinedmodule.html" class="api-list-item-module">@undefinedmodule</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/class1.html">mod1.class1</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/Example.html">mod1.Example</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/SubExample.html">submod1.SubExample</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/submod1.html" class="api-list-item-module">@submod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/cls1.html">mod1.cls1</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/cls2.html">mod1.cls2</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod1.html" class="api-list-item-module">@mod1</a>
+                </li>
+                <li>
+                    <a class="class" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/classes/missing_extends.html">warnings.missing_extends</a>
+                    <a href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/warnings.html" class="api-list-item-module">@warnings</a>
+                </li>
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/MyClass.html">MyClass</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/MySuperClass.html">MySuperClass</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/digesters.html">digesters</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/exampleModule.html">exampleModule</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/firedoc.html">firedoc</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/helpers.html">helpers</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod1.html">mod1</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/mod2.html">mod2</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/submod1.html">submod1</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/submod2.html">submod2</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/tags.html">tags</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/testmembers.html">testmembers</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/undefinedmodule.html">undefinedmodule</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/utils.html">utils</a></li>
+                <li><a class="module" href="/Users/h13i32maru/work/documentation-samples/firedoc/doc-sample/modules/warnings.html">warnings</a></li>
+            </ul>
+
+            <ul id="api-enums" class="apis enums">
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+        <div id="docs-main" class="apidocs">
+            <div class="content container"><h1>AST Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/repo_lib_ast.js.html#l65"><code>repo&#x2F;lib&#x2F;ast.js:65</code></a>
+        </div>
+
+            Module: <a href="../modules/firedoc.html">firedoc</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>The AST(Abstract syntax tree) of the comment</p>
+
+</div>
+
+<!-- Class member index -->
+
+
+<a name="index" class="anchor-link"></a>
+<div class="index">
+    <h2>Index</h2>
+    <div id="api-options">
+        Show:
+    
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+    
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+    
+    </div>
+
+<div class="index-section properties">
+    <h3>Properties</h3>
+    <ul class="index-list properties">
+        <li class="index-item property">
+            <a href="#property_project">project</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_files">files</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_codes">codes</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_modules">modules</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_classes">classes</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_members">members</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_inheritedMembers">inheritedMembers</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_namespacesMap">namespacesMap</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_commentsMap">commentsMap</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_syntaxType">syntaxType</a>
+        </li>
+        <li class="index-item property">
+            <a href="#property_context">context</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="index-section methods">
+    <h3>Methods</h3>
+    <ul class="index-list methods">
+
+        <li class="index-item method">
+            <a href="#method_create">create</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_reset">reset</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_oncomment">oncomment</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_onblock">onblock</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_ontag">ontag</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_extract">extract</a>
+        </li>
+        <li class="index-item method">
+            <a href="#method_transform">transform</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+</div>
+<div class="class-detail">
+
+    <div class="properties-detail">
+        <h2>Properties</h2>
+        <a name="property_project" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>project</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l72"><code>repo&#x2F;lib&#x2F;ast.js:72</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>About the project</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_files" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>files</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l77"><code>repo&#x2F;lib&#x2F;ast.js:77</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The files</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_codes" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>codes</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l82"><code>repo&#x2F;lib&#x2F;ast.js:82</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The source codes</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_modules" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>modules</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l87"><code>repo&#x2F;lib&#x2F;ast.js:87</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The modules</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_classes" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>classes</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l92"><code>repo&#x2F;lib&#x2F;ast.js:92</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The classes</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_members" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>members</code>
+    <span class="type">Array</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l97"><code>repo&#x2F;lib&#x2F;ast.js:97</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The members</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_inheritedMembers" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>inheritedMembers</code>
+    <span class="type">Array</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l102"><code>repo&#x2F;lib&#x2F;ast.js:102</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The inherited members</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_namespacesMap" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>namespacesMap</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l107"><code>repo&#x2F;lib&#x2F;ast.js:107</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The namespaces map object</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_commentsMap" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>commentsMap</code>
+    <span class="type">Object</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l112"><code>repo&#x2F;lib&#x2F;ast.js:112</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The comments map object</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_syntaxType" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>syntaxType</code>
+    <span class="type">String</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l117"><code>repo&#x2F;lib&#x2F;ast.js:117</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The syntax type</p>
+</div>
+
+
+
+    </div>
+</div>
+<a name="property_context" class="anchor-link"></a>
+<div class="property item">
+    <h3 class="name"><code>context</code>
+    <span class="type">Context</span>
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l122"><code>repo&#x2F;lib&#x2F;ast.js:122</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="extended-detail">
+        <div class="description"><p>The context object</p>
+</div>
+
+
+
+    </div>
+</div>
+
+        <div class="no-visible-items-message">
+            <p>There are no properties that match your current filter settings. You can change your filter settings in the index section on this page. <a href="#index" class="index-jump-link">index</a></p>
+        </div>
+    </div>
+
+
+
+    <div class="methods-detail">
+        <h2>Methods</h2>
+        <a name="method_create" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>create</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>files</code>
+                </li>
+                <li class="arg">
+                        <code>dirs</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[syntaxType]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/AST.html" class="crosslink">AST</a></span>
+        </span>
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l132"><code>repo&#x2F;lib&#x2F;ast.js:132</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Create a AST object</p>
+
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">files</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            <p>The files</p>
+
+                        </div>
+
+                    </li>
+                    <li class="param">
+                            <code class="param-name">dirs</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            <p>The directorys</p>
+
+                        </div>
+
+                    </li>
+                    <li class="param">
+                            <code class="param-name optional">syntaxType</code>
+                            <span class="type">String</span>
+                            <span class="flag optional" title="This parameter is optional."></span>
+
+
+                        <div class="param-description">
+                            <p>The syntax type: <code>coffee</code> or <code>js</code></p>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="returns">
+                <h4>returns:</h4>
+
+                <div class="returns-description">
+                        <span>type:</span>
+                        <span class="type"><a href="../classes/AST.html" class="crosslink">AST</a></span>
+                    <p>
+                        the created AST object
+                    </p>
+                </div>
+            </div>
+
+    </div>
+</div>
+<a name="method_reset" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>reset</code>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l151"><code>repo&#x2F;lib&#x2F;ast.js:151</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Reset the AST instance</p>
+
+        </div>
+
+
+
+    </div>
+</div>
+<a name="method_oncomment" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>oncomment</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>comment</code>
+                </li>
+                <li class="arg">
+                        <code>filename</code>
+                </li>
+                <li class="arg">
+                        <code>linenum</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l174"><code>repo&#x2F;lib&#x2F;ast.js:174</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">comment</code>
+                            <span class="type">String</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                    </li>
+                    <li class="param">
+                            <code class="param-name">filename</code>
+                            <span class="type">String</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                    </li>
+                    <li class="param">
+                            <code class="param-name">linenum</code>
+                            <span class="type">String</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="returns">
+                <h4>returns:</h4>
+
+                <div class="returns-description">
+                        <span>type:</span>
+                        <span class="type">Object</span>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+
+    </div>
+</div>
+<a name="method_onblock" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>onblock</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>an</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l244"><code>repo&#x2F;lib&#x2F;ast.js:244</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Processes all the tags in a single comment block</p>
+
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">an</code>
+                            <span class="type">Array</span>
+
+
+                        <div class="param-description">
+                            <p>array of the tag/text pairs</p>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+
+    </div>
+</div>
+<a name="method_ontag" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>ontag</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>item</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l327"><code>repo&#x2F;lib&#x2F;ast.js:327</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Process tag</p>
+
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">item</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                            <ul class="params-list">
+                                <li class="param">
+                                        <code class="param-name">tag</code>
+                                        <span class="type">String</span>
+
+                                    <div class="param-description">
+                                        
+                                    </div>
+
+                                </li>
+                                <li class="param">
+                                        <code class="param-name">value</code>
+                                        <span class="type">Object</span>
+
+                                    <div class="param-description">
+                                        
+                                    </div>
+
+                                </li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+    </div>
+</div>
+<a name="method_extract" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>extract</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>files</code>
+                </li>
+                <li class="arg">
+                        <code>dirs</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l383"><code>repo&#x2F;lib&#x2F;ast.js:383</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Accepts a map of filenames to file content.  Returns
+a map of filenames to an array of API comment block
+text.  This expects the comment to start with / **
+on its own line, and end with * / on its own
+line.  Override this function to provide an
+alternative comment parser.</p>
+
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">files</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                    </li>
+                    <li class="param">
+                            <code class="param-name">dirs</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+
+    </div>
+</div>
+<a name="method_transform" class="anchor-link"></a>
+<div class="method item">
+    <h3 class="name"><code>transform</code>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>commentmap</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    </h3>
+
+    <div class="meta">
+                <p>
+                    Defined in
+        <a href="../files/repo_lib_ast.js.html#l423"><code>repo&#x2F;lib&#x2F;ast.js:423</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="extended-detail">
+
+        <div class="description">
+            <p>Transforms a map of filenames to arrays of comment blocks into a
+JSON structure that represents the entire processed API doc info
+and relationships between elements for the entire project.</p>
+
+        </div>
+
+            <div class="params">
+                <h4>parameters:</h4>
+
+                <ul class="params-list">
+                    <li class="param">
+                            <code class="param-name">commentmap</code>
+                            <span class="type">Object</span>
+
+
+                        <div class="param-description">
+                            <p>The hash of files and parsed comment blocks</p>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="returns">
+                <h4>returns:</h4>
+
+                <div class="returns-description">
+                        <span>type:</span>
+                        <span class="type">Object</span>
+                    <p>
+                        The transformed data for the project
+                    </p>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+        <div class="no-visible-items-message">
+            <p>There are no methods that match your current filter settings. You can change your filter settings in the index section on this page. <a href="#index" class="index-jump-link">index</a></p>
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+        </div>
+
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/vendor/jquery.min.js"></script>
+<script src="../assets/js/jquery-offscreen-trigger.js"></script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

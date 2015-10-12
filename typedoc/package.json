@@ -1,0 +1,7 @@
+{
+  "name": "for-typedoc",
+  "version": "0.0.0",
+  "dependencies": {
+    "typedoc": "0.3.12"
+  }
+}

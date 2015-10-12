@@ -1,0 +1,6 @@
+{
+  "options": {
+    "paths": "*/js",
+    "outdir": "./doc-sample"
+  }
+}

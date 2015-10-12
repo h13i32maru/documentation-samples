@@ -1,0 +1,166 @@
+{
+    "project": {},
+    "files": {
+        "src/MyClass.js": {
+            "name": "src/MyClass.js",
+            "modules": {
+                "MyClass": 1
+            },
+            "classes": {
+                "MyClass": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/MySuperClass.js": {
+            "name": "src/MySuperClass.js",
+            "modules": {
+                "MySuperClass": 1
+            },
+            "classes": {
+                "MySuperClass": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "MyClass": {
+            "name": "MyClass",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "MyClass": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/MyClass.js",
+            "line": 8
+        },
+        "MySuperClass": {
+            "name": "MySuperClass",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "MySuperClass": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/MySuperClass.js",
+            "line": 6
+        }
+    },
+    "classes": {
+        "MyClass": {
+            "name": "MyClass",
+            "shortname": "MyClass",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "MyClass",
+            "namespace": "",
+            "file": "src/MyClass.js",
+            "line": 8,
+            "description": "this is MyClass.",
+            "extends": "MySuperClass",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "p",
+                    "description": "- this is p.",
+                    "type": "Number"
+                }
+            ]
+        },
+        "MySuperClass": {
+            "name": "MySuperClass",
+            "shortname": "MySuperClass",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "MySuperClass",
+            "namespace": "",
+            "file": "src/MySuperClass.js",
+            "line": 6,
+            "description": "this is MySuperClass.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "p",
+                    "description": "- this is p.",
+                    "type": "Number"
+                }
+            ]
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/MyClass.js",
+            "line": 17,
+            "description": "this is p.",
+            "itemtype": "property",
+            "name": "p",
+            "type": "{number}",
+            "class": "MyClass",
+            "module": "MyClass"
+        },
+        {
+            "file": "src/MyClass.js",
+            "line": 25,
+            "description": "this is method.",
+            "itemtype": "method",
+            "name": "method",
+            "params": [
+                {
+                    "name": "p",
+                    "description": "- this is p.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "this is result.",
+                "type": "String"
+            },
+            "class": "MyClass",
+            "module": "MyClass"
+        },
+        {
+            "file": "src/MySuperClass.js",
+            "line": 13,
+            "description": "this is p.",
+            "itemtype": "property",
+            "name": "superP",
+            "type": "{number}",
+            "class": "MySuperClass",
+            "module": "MySuperClass"
+        },
+        {
+            "file": "src/MySuperClass.js",
+            "line": 21,
+            "description": "this is superMethod.",
+            "itemtype": "method",
+            "name": "superMethod",
+            "params": [
+                {
+                    "name": "p",
+                    "description": "- this is p.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "this is result.",
+                "type": "String"
+            },
+            "class": "MySuperClass",
+            "module": "MySuperClass"
+        }
+    ],
+    "warnings": []
+}

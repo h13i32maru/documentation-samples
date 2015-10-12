@@ -1,0 +1,10 @@
+{
+  "source": {
+    "includePattern": ".+\\.js(doc)?$"
+  },
+  "opts": {
+    "destination": "./doc-sample/",
+    "recurse": true,
+    "tutorials": "./tutorial/"
+  }
+}

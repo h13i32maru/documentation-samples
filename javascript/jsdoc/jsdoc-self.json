@@ -1,9 +1,0 @@
-{
-  "source": {
-    "includePattern": ".+\\.js(doc)?$"
-  },
-  "opts": {
-    "destination": "./doc-self/",
-    "recurse": true
-  }
-}

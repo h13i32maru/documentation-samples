@@ -1,0 +1,7 @@
+{
+  "name": "for-firedoc",
+  "version": "0.0.0",
+  "dependencies": {
+    "firedoc": "1.10.0"
+  }
+}

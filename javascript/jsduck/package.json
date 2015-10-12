@@ -1,9 +1,0 @@
-{
-  "name": "for-jsduck",
-  "version": "0.0.0",
-  "scripts": {
-    "install": "gem install jsduck",
-    "build": "",
-    "build-self": "./node_modules/.bin/yuidoc -c ./yuidoc-self.json ./self/lib"
-  }
-}

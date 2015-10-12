@@ -1,5 +1,0 @@
-{
-  "source": "./self/src",
-  "destination": "./doc-self",
-  "excludes": ["Publisher/Builder/template/", "BuiltinExternal/"]
-}
