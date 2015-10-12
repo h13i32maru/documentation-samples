@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: YARD::Handlers::Ruby
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!YARD/Handlers/Ruby.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Handlers.html" title="YARD::Handlers (module)">Handlers</a></span></span>
+     &raquo; 
+    <span class="title">Ruby</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: YARD::Handlers::Ruby
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">repo/lib/yard/autoload.rb<span class="defines">,<br />
+  repo/lib/yard/handlers/ruby/base.rb,<br /> repo/lib/yard/handlers/ruby/dsl_handler.rb,<br /> repo/lib/yard/handlers/ruby/legacy/dsl_handler.rb,<br /> repo/lib/yard/handlers/ruby/dsl_handler_methods.rb,<br /> repo/lib/yard/handlers/ruby/private_constant_handler.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>All Ruby handlers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Ruby/DSLHandlerMethods.html" title="YARD::Handlers::Ruby::DSLHandlerMethods (module)">DSLHandlerMethods</a></span>, <span class='object_link'><a href="Ruby/Legacy.html" title="YARD::Handlers::Ruby::Legacy (module)">Legacy</a></span>, <span class='object_link'><a href="Ruby/StructHandlerMethods.html" title="YARD::Handlers::Ruby::StructHandlerMethods (module)">StructHandlerMethods</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Ruby/AliasHandler.html" title="YARD::Handlers::Ruby::AliasHandler (class)">AliasHandler</a></span>, <span class='object_link'><a href="Ruby/AttributeHandler.html" title="YARD::Handlers::Ruby::AttributeHandler (class)">AttributeHandler</a></span>, <span class='object_link'><a href="Ruby/Base.html" title="YARD::Handlers::Ruby::Base (class)">Base</a></span>, <span class='object_link'><a href="Ruby/ClassConditionHandler.html" title="YARD::Handlers::Ruby::ClassConditionHandler (class)">ClassConditionHandler</a></span>, <span class='object_link'><a href="Ruby/ClassHandler.html" title="YARD::Handlers::Ruby::ClassHandler (class)">ClassHandler</a></span>, <span class='object_link'><a href="Ruby/ClassVariableHandler.html" title="YARD::Handlers::Ruby::ClassVariableHandler (class)">ClassVariableHandler</a></span>, <span class='object_link'><a href="Ruby/CommentHandler.html" title="YARD::Handlers::Ruby::CommentHandler (class)">CommentHandler</a></span>, <span class='object_link'><a href="Ruby/ConstantHandler.html" title="YARD::Handlers::Ruby::ConstantHandler (class)">ConstantHandler</a></span>, <span class='object_link'><a href="Ruby/DSLHandler.html" title="YARD::Handlers::Ruby::DSLHandler (class)">DSLHandler</a></span>, <span class='object_link'><a href="Ruby/ExceptionHandler.html" title="YARD::Handlers::Ruby::ExceptionHandler (class)">ExceptionHandler</a></span>, <span class='object_link'><a href="Ruby/ExtendHandler.html" title="YARD::Handlers::Ruby::ExtendHandler (class)">ExtendHandler</a></span>, <span class='object_link'><a href="Ruby/HandlesExtension.html" title="YARD::Handlers::Ruby::HandlesExtension (class)">HandlesExtension</a></span>, <span class='object_link'><a href="Ruby/MethodCallWrapper.html" title="YARD::Handlers::Ruby::MethodCallWrapper (class)">MethodCallWrapper</a></span>, <span class='object_link'><a href="Ruby/MethodConditionHandler.html" title="YARD::Handlers::Ruby::MethodConditionHandler (class)">MethodConditionHandler</a></span>, <span class='object_link'><a href="Ruby/MethodHandler.html" title="YARD::Handlers::Ruby::MethodHandler (class)">MethodHandler</a></span>, <span class='object_link'><a href="Ruby/MixinHandler.html" title="YARD::Handlers::Ruby::MixinHandler (class)">MixinHandler</a></span>, <span class='object_link'><a href="Ruby/ModuleFunctionHandler.html" title="YARD::Handlers::Ruby::ModuleFunctionHandler (class)">ModuleFunctionHandler</a></span>, <span class='object_link'><a href="Ruby/ModuleHandler.html" title="YARD::Handlers::Ruby::ModuleHandler (class)">ModuleHandler</a></span>, <span class='object_link'><a href="Ruby/PrivateClassMethodHandler.html" title="YARD::Handlers::Ruby::PrivateClassMethodHandler (class)">PrivateClassMethodHandler</a></span>, <span class='object_link'><a href="Ruby/PrivateConstantHandler.html" title="YARD::Handlers::Ruby::PrivateConstantHandler (class)">PrivateConstantHandler</a></span>, <span class='object_link'><a href="Ruby/TestNodeWrapper.html" title="YARD::Handlers::Ruby::TestNodeWrapper (class)">TestNodeWrapper</a></span>, <span class='object_link'><a href="Ruby/VisibilityHandler.html" title="YARD::Handlers::Ruby::VisibilityHandler (class)">VisibilityHandler</a></span>, <span class='object_link'><a href="Ruby/YieldHandler.html" title="YARD::Handlers::Ruby::YieldHandler (class)">YieldHandler</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:11 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

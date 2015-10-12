@@ -1,0 +1,1657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: YARD::CodeObjects::MacroObject
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!YARD/CodeObjects/MacroObject.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../CodeObjects.html" title="YARD::CodeObjects (module)">CodeObjects</a></span></span>
+     &raquo; 
+    <span class="title">MacroObject</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: YARD::CodeObjects::MacroObject
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">Base</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">Base</a></span></li>
+          
+            <li class="next">YARD::CodeObjects::MacroObject</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">repo/lib/yard/code_objects/macro_object.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A MacroObject represents a docstring defined through <tt>@!macro NAME</tt> and can
+be reused by specifying the tag <tt>@!macro NAME</tt>. You can also provide the
+<code>attached</code> type flag to the macro definition to have it attached
+to the specific DSL method so it will be implicitly reused.</p>
+
+<p>Macros are fully described in the <a href="../../file.Tags.html#macro" title="Tags Overview">Tags Overview</a>
+document.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Creating a basic named macro</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># @!macro prop
+</span><span class='comment'>#   @!method $1(${3-})
+</span><span class='comment'>#   @return [$2] the value of the $0
+</span><span class='id identifier rubyid_property'>property</span> <span class='symbol'>:foo</span><span class='comma'>,</span> <span class='const'>String</span><span class='comma'>,</span> <span class='symbol'>:a</span><span class='comma'>,</span> <span class='symbol'>:b</span>
+
+<span class='comment'># @!macro prop
+</span><span class='id identifier rubyid_property'>property</span> <span class='symbol'>:bar</span><span class='comma'>,</span> <span class='const'>Numeric</span><span class='comma'>,</span> <span class='symbol'>:value</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Creating a macro that is attached to the method call</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># @!macro [attach] prop2
+</span><span class='comment'>#   @!method $1(value)
+</span><span class='id identifier rubyid_property'>property</span> <span class='symbol'>:foo</span>
+
+<span class='comment'># Extra data added to docstring
+</span><span class='id identifier rubyid_property'>property</span> <span class='symbol'>:bar</span></code></pre>
+    
+  </div>
+
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="MACRO_MATCH-constant" class="">MACRO_MATCH =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\\)?\$(?:\{(-?\d+|\*)(-)?(-?\d+)?\}|(-?\d+|\*))</span><span class='regexp_end'>/</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#macro_data-instance_method" title="#macro_data (instance method)">- (String) <strong>macro_data</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The macro data stored on the object.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_object-instance_method" title="#method_object (instance method)">- (CodeObjects::Base) <strong>method_object</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The method object that this macro is attached to.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Base.html#base_docstring-instance_method" title="YARD::CodeObjects::Base#base_docstring (method)">#base_docstring</a></span>, <span class='object_link'><a href="Base.html#dynamic-instance_method" title="YARD::CodeObjects::Base#dynamic (method)">#dynamic</a></span>, <span class='object_link'><a href="Base.html#files-instance_method" title="YARD::CodeObjects::Base#files (method)">#files</a></span>, <span class='object_link'><a href="Base.html#group-instance_method" title="YARD::CodeObjects::Base#group (method)">#group</a></span>, <span class='object_link'><a href="Base.html#namespace-instance_method" title="YARD::CodeObjects::Base#namespace (method)">#namespace</a></span>, <span class='object_link'><a href="Base.html#signature-instance_method" title="YARD::CodeObjects::Base#signature (method)">#signature</a></span>, <span class='object_link'><a href="Base.html#source-instance_method" title="YARD::CodeObjects::Base#source (method)">#source</a></span>, <span class='object_link'><a href="Base.html#source_type-instance_method" title="YARD::CodeObjects::Base#source_type (method)">#source_type</a></span>, <span class='object_link'><a href="Base.html#visibility-instance_method" title="YARD::CodeObjects::Base#visibility (method)">#visibility</a></span></p>
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#apply-class_method" title="apply (class method)">+ (String) <strong>apply</strong>(docstring, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;, method_object = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Applies a macro on a docstring by creating any macro data inside of the
+docstring first.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#apply_macro-class_method" title="apply_macro (class method)">+ (String) <strong>apply_macro</strong>(macro, docstring, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Applies a macro to a docstring, interpolating the macro&#39;s data on the
+docstring and appending any extra local docstring data that was in the
+original <code>docstring</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-class_method" title="create (class method)">+ (MacroObject) <strong>create</strong>(macro_name, data, method_object = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new macro and fills in the relevant properties.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand-class_method" title="expand (class method)">+ (Object) <strong>expand</strong>(macro_data, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Expands <code>macro_data</code> using the interpolation parameters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find-class_method" title="find (class method)">+ (MacroObject<sup>?</sup>) <strong>find</strong>(macro_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Finds a macro using <code>macro_name</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_or_create-class_method" title="find_or_create (class method)">+ (MacroObject<sup>?</sup>) <strong>find_or_create</strong>(macro_name, data, method_object = nil) </a>
+    
+
+    
+      (also: create_docstring)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a given docstring and determines if the macro is “new” or not.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attached%3F-instance_method" title="#attached? (instance method)">- (Boolean) <strong>attached?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Whether this macro is attached to a method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#expand-instance_method" title="#expand (instance method)">- (Object) <strong>expand</strong>(call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Expands the macro using.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Overrides <span class='object_link'><a href="Base.html#path-instance_method" title="YARD::CodeObjects::Base#path (method)">Base#path</a></span> so the macro path is “.macro.MACRONAME”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sep-instance_method" title="#sep (instance method)">- (Object) <strong>sep</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Overrides the separator to be &#39;.&#39;.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Base.html#%3D%3D%3D-class_method" title="YARD::CodeObjects::Base.=== (method)">===</a></span>, <span class='object_link'><a href="Base.html#%5B%5D-instance_method" title="YARD::CodeObjects::Base#[] (method)">#[]</a></span>, <span class='object_link'><a href="Base.html#%5B%5D%3D-instance_method" title="YARD::CodeObjects::Base#[]= (method)">#[]=</a></span>, <span class='object_link'><a href="Base.html#add_file-instance_method" title="YARD::CodeObjects::Base#add_file (method)">#add_file</a></span>, <span class='object_link'><a href="Base.html#add_tag-instance_method" title="YARD::CodeObjects::Base#add_tag (method)">#add_tag</a></span>, <span class='object_link'><a href="Base.html#copy_to-instance_method" title="YARD::CodeObjects::Base#copy_to (method)">#copy_to</a></span>, <span class='object_link'><a href="Base.html#docstring-instance_method" title="YARD::CodeObjects::Base#docstring (method)">#docstring</a></span>, <span class='object_link'><a href="Base.html#docstring%3D-instance_method" title="YARD::CodeObjects::Base#docstring= (method)">#docstring=</a></span>, <span class='object_link'><a href="Base.html#dynamic%3F-instance_method" title="YARD::CodeObjects::Base#dynamic? (method)">#dynamic?</a></span>, <span class='object_link'><a href="Base.html#equal%3F-instance_method" title="YARD::CodeObjects::Base#equal? (method)">#equal?</a></span>, <span class='object_link'><a href="Base.html#file-instance_method" title="YARD::CodeObjects::Base#file (method)">#file</a></span>, <span class='object_link'><a href="Base.html#format-instance_method" title="YARD::CodeObjects::Base#format (method)">#format</a></span>, <span class='object_link'><a href="Base.html#has_tag%3F-instance_method" title="YARD::CodeObjects::Base#has_tag? (method)">#has_tag?</a></span>, <span class='object_link'><a href="Base.html#hash-instance_method" title="YARD::CodeObjects::Base#hash (method)">#hash</a></span>, <span class='object_link'><a href="Base.html#initialize-instance_method" title="YARD::CodeObjects::Base#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Base.html#inspect-instance_method" title="YARD::CodeObjects::Base#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Base.html#line-instance_method" title="YARD::CodeObjects::Base#line (method)">#line</a></span>, <span class='object_link'><a href="Base.html#method_missing-instance_method" title="YARD::CodeObjects::Base#method_missing (method)">#method_missing</a></span>, <span class='object_link'><a href="Base.html#name-instance_method" title="YARD::CodeObjects::Base#name (method)">#name</a></span>, <span class='object_link'><a href="Base.html#new-class_method" title="YARD::CodeObjects::Base.new (method)">new</a></span>, <span class='object_link'><a href="Base.html#relative_path-instance_method" title="YARD::CodeObjects::Base#relative_path (method)">#relative_path</a></span>, <span class='object_link'><a href="Base.html#root%3F-instance_method" title="YARD::CodeObjects::Base#root? (method)">#root?</a></span>, <span class='object_link'><a href="Base.html#tag-instance_method" title="YARD::CodeObjects::Base#tag (method)">#tag</a></span>, <span class='object_link'><a href="Base.html#tags-instance_method" title="YARD::CodeObjects::Base#tags (method)">#tags</a></span>, <span class='object_link'><a href="Base.html#title-instance_method" title="YARD::CodeObjects::Base#title (method)">#title</a></span>, <span class='object_link'><a href="Base.html#to_ary-instance_method" title="YARD::CodeObjects::Base#to_ary (method)">#to_ary</a></span>, <span class='object_link'><a href="Base.html#type-instance_method" title="YARD::CodeObjects::Base#type (method)">#type</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="Base.html#initialize-instance_method" title="YARD::CodeObjects::Base#initialize (method)">YARD::CodeObjects::Base</a></span></p>
+  
+</div>
+<div id="method_missing_details" class="method_details_list">
+  <h2>Dynamic Method Handling</h2>
+  <p class="notice super">
+    This class handles dynamic methods through the <tt>method_missing</tt> method
+    
+      in the class <span class='object_link'><a href="Base.html#method_missing-instance_method" title="YARD::CodeObjects::Base#method_missing (method)">YARD::CodeObjects::Base</a></span>
+    
+  </p>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="macro_data=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="macro_data-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>) <strong>macro_data</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the macro data stored on the object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the macro data stored on the object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_macro_data'>macro_data</span>
+  <span class='ivar'>@macro_data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="method_object=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="method_object-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">CodeObjects::Base</a></span></tt>) <strong>method_object</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the method object that this macro is attached to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">CodeObjects::Base</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the method object that this macro is attached to.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 146</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_method_object'>method_object</span>
+  <span class='ivar'>@method_object</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="apply-class_method">
+  
+    + (<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>) <strong>apply</strong>(docstring, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;, method_object = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Applies a macro on a docstring by creating any macro data inside of the
+docstring first. Equivalent to calling <span class='object_link'><a href="#find_or_create-class_method" title="YARD::CodeObjects::MacroObject.find_or_create (method)">find_or_create</a></span> and <span class='object_link'><a href="#apply_macro-class_method" title="YARD::CodeObjects::MacroObject.apply_macro (method)">apply_macro</a></span>
+on the new macro object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>docstring</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Docstring.html" title="YARD::Docstring (class)">Docstring</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the docstring to create a macro out of</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>call_params</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the method name and parameters to the method call. These arguments will
+fill $0-N</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>full_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the full source line (excluding block) interpolated as $*</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Currently unused. Will support interpolating the block data as a variable.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the expanded macro data</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#find_or_create-class_method" title="YARD::CodeObjects::MacroObject.find_or_create (method)">find_or_create</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122
+123
+124
+125
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_apply'>apply</span><span class='lparen'>(</span><span class='id identifier rubyid_docstring'>docstring</span><span class='comma'>,</span> <span class='id identifier rubyid_call_params'>call_params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_method_object'>method_object</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_docstring'>docstring</span> <span class='op'>=</span> <span class='id identifier rubyid_docstring'>docstring</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span> <span class='kw'>if</span> <span class='const'>Docstring</span> <span class='op'>===</span> <span class='id identifier rubyid_docstring'>docstring</span>
+  <span class='id identifier rubyid_parser'>parser</span> <span class='op'>=</span> <span class='const'>Docstring</span><span class='period'>.</span><span class='id identifier rubyid_parser'>parser</span>
+  <span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='const'>OpenStruct</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_call_params'>call_params</span> <span class='op'>=</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_caller_method'>caller_method</span> <span class='op'>=</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+  <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_statement'>statement</span> <span class='op'>=</span> <span class='const'>OpenStruct</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:source</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_full_source'>full_source</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_parser'>parser</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_docstring'>docstring</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_docstring'>to_docstring</span><span class='period'>.</span><span class='id identifier rubyid_to_raw'>to_raw</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="apply_macro-class_method">
+  
+    + (<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>) <strong>apply_macro</strong>(macro, docstring, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Applies a macro to a docstring, interpolating the macro&#39;s data on the
+docstring and appending any extra local docstring data that was in the
+original <code>docstring</code> object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>macro</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the macro object</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>call_params</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the method name and parameters to the method call. These arguments will
+fill $0-N</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>full_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the full source line (excluding block) interpolated as $*</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Currently unused. Will support interpolating the block data as a variable.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the expanded macro data</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 136</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_apply_macro'>apply_macro</span><span class='lparen'>(</span><span class='id identifier rubyid_macro'>macro</span><span class='comma'>,</span> <span class='id identifier rubyid_docstring'>docstring</span><span class='comma'>,</span> <span class='id identifier rubyid_call_params'>call_params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_apply'>apply</span><span class='lparen'>(</span><span class='id identifier rubyid_docstring'>docstring</span><span class='comma'>,</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt>) <strong>create</strong>(macro_name, data, method_object = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new macro and fills in the relevant properties.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>macro_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the macro, must be unique.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the data the macro should expand when re-used</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>method_object</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">CodeObjects::Base</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an object to attach this macro to. If supplied, <span class='object_link'><a href="#attached%3F-instance_method" title="YARD::CodeObjects::MacroObject#attached? (method)">#attached?</a></span> will be true</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly created object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_name'>macro_name</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_method_object'>method_object</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_obj'>obj</span> <span class='op'>=</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:root</span><span class='comma'>,</span> <span class='id identifier rubyid_macro_name'>macro_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_macro_data'>macro_data</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span>
+  <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_method_object'>method_object</span> <span class='op'>=</span> <span class='id identifier rubyid_method_object'>method_object</span>
+  <span class='id identifier rubyid_obj'>obj</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="expand-class_method">
+  
+    + (<tt>Object</tt>) <strong>expand</strong>(macro_data, call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Expands <code>macro_data</code> using the interpolation parameters.</p>
+
+<p>Interpolation rules:</p>
+<ul><li>
+<p>$0, $1, $2, … = the Nth parameter in <code>call_params</code></p>
+</li><li>
+<p>$* = the full statement source (excluding block)</p>
+</li><li>
+<p>Also supports ${N-M} ranges, as well as negative indexes on N or M</p>
+</li><li>
+<p>Use $ to escape the variable name in a macro.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>macro_data</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the macro data to expand (taken from <span class='object_link'><a href="#macro_data-instance_method" title="YARD::CodeObjects::MacroObject#macro_data (method)">#macro_data</a></span>)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_expand'>expand</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_data'>macro_data</span><span class='comma'>,</span> <span class='id identifier rubyid_call_params'>call_params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_macro_data'>macro_data</span> <span class='op'>=</span> <span class='id identifier rubyid_macro_data'>macro_data</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span> <span class='kw'>if</span> <span class='id identifier rubyid_macro_data'>macro_data</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Docstring</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_macro_data'>macro_data</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='const'>MACRO_MATCH</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_escape'>escape</span><span class='comma'>,</span> <span class='id identifier rubyid_first'>first</span><span class='comma'>,</span> <span class='id identifier rubyid_last'>last</span><span class='comma'>,</span> <span class='id identifier rubyid_rng'>rng</span> <span class='op'>=</span> <span class='backref'>$1</span><span class='comma'>,</span> <span class='backref'>$2</span> <span class='op'>||</span> <span class='backref'>$5</span><span class='comma'>,</span> <span class='backref'>$4</span><span class='comma'>,</span> <span class='backref'>$3</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span>
+    <span class='kw'>next</span> <span class='backref'>$&amp;</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_escape'>escape</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_first'>first</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_last'>last</span> <span class='op'>?</span> <span class='backref'>$&amp;</span> <span class='op'>:</span> <span class='id identifier rubyid_full_source'>full_source</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_first_i'>first_i</span> <span class='op'>=</span> <span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+      <span class='id identifier rubyid_last_i'>last_i</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_last'>last</span> <span class='op'>?</span> <span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>:</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_last_i'>last_i</span> <span class='op'>=</span> <span class='id identifier rubyid_first_i'>first_i</span> <span class='kw'>unless</span> <span class='id identifier rubyid_rng'>rng</span>
+      <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='lbracket'>[</span><span class='id identifier rubyid_first_i'>first_i</span><span class='op'>..</span><span class='id identifier rubyid_last_i'>last_i</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_params'>params</span> <span class='op'>?</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt><sup>?</sup>) <strong>find</strong>(macro_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Finds a macro using <code>macro_name</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>macro_name</span>
+      
+      
+        <span class='type'>(<tt>#to_s</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the macro</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if a macro is found</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if there is no registered macro by that name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_name'>macro_name</span><span class='rparen'>)</span>
+  <span class='const'>Registry</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.macro.</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_macro_name'>macro_name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_or_create-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt><sup>?</sup>) <strong>find_or_create</strong>(macro_name, data, method_object = nil) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='create_docstring-class_method'>create_docstring</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a given docstring and determines if the macro is “new” or not. If
+the macro has $variable names or if it has a @!macro tag with the [new] or
+[attached] flag, it is considered new.</p>
+
+<p>If a new macro is found, the macro is created and registered. Otherwise the
+macro name is searched and returned. If a macro is not found, nil is
+returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>macro_name</span>
+      
+      
+        <span class='type'>(<tt>#to_s</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the macro</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>method_object</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Base.html" title="YARD::CodeObjects::Base (class)">CodeObjects::Base</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an optional method to attach the macro to. Only used if the macro is being
+created, otherwise this argument is ignored.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="YARD::CodeObjects::MacroObject (class)">MacroObject</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly created or existing macro, depending on whether the @!macro tag
+was a new tag or not.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <code>data</code> has no macro tag or if the macro is not new and no
+macro by the macro name is found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_or_create'>find_or_create</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_name'>macro_name</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_method_object'>method_object</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_macro'>macro</span> <span class='op'>=</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_macro'>macro</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_name'>macro_name</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_method_object'>method_object</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="attached?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>attached?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns whether this macro is attached to a method</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>whether this macro is attached to a method</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_attached?'>attached?</span><span class='semicolon'>;</span> <span class='id identifier rubyid_method_object'>method_object</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="expand-instance_method">
+  
+    - (<tt>Object</tt>) <strong>expand</strong>(call_params = [], full_source = &#39;&#39;, block_source = &#39;&#39;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Expands the macro using</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Expanding a Macro</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_macro'>macro</span><span class='period'>.</span><span class='id identifier rubyid_expand'>expand</span><span class='lparen'>(</span><span class='qwords_beg'>%w(</span><span class='tstring_content'>property</span><span class='words_sep'> </span><span class='tstring_content'>foo</span><span class='words_sep'> </span><span class='tstring_content'>bar</span><span class='words_sep'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>property :foo, :bar</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt;
+</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>...macro data interpolating this line of code...</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>call_params</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>[]</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a list of tokens that are passed to the method call</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>full_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the full method call (not including the block)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>block_source</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the source passed in the block of the method call, if there is a block.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#expand-class_method" title="YARD::CodeObjects::MacroObject.expand (method)">expand</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_expand'>expand</span><span class='lparen'>(</span><span class='id identifier rubyid_call_params'>call_params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_expand'>expand</span><span class='lparen'>(</span><span class='id identifier rubyid_macro_data'>macro_data</span><span class='comma'>,</span> <span class='id identifier rubyid_call_params'>call_params</span><span class='comma'>,</span> <span class='id identifier rubyid_full_source'>full_source</span><span class='comma'>,</span> <span class='id identifier rubyid_block_source'>block_source</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>path</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Overrides <span class='object_link'><a href="Base.html#path-instance_method" title="YARD::CodeObjects::Base#path (method)">Base#path</a></span> so the macro path is “.macro.MACRONAME”</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_path'>path</span><span class='semicolon'>;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.macro.</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sep-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sep</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Overrides the separator to be &#39;.&#39;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/code_objects/macro_object.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sep'>sep</span><span class='semicolon'>;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:22 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

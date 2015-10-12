@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: YARD::Handlers::Ruby::Legacy::ModuleHandler
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../../';
+  framesUrl = "../../../../frames.html#!YARD/Handlers/Ruby/Legacy/ModuleHandler.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../../Handlers.html" title="YARD::Handlers (module)">Handlers</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Ruby.html" title="YARD::Handlers::Ruby (module)">Ruby</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Legacy.html" title="YARD::Handlers::Ruby::Legacy (module)">Legacy</a></span></span>
+     &raquo; 
+    <span class="title">ModuleHandler</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: YARD::Handlers::Ruby::Legacy::ModuleHandler
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Base.html" title="YARD::Handlers::Ruby::Legacy::Base (class)">Base</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../../Base.html" title="YARD::Handlers::Base (class)">Base</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="Base.html" title="YARD::Handlers::Ruby::Legacy::Base (class)">Base</a></span></li>
+          
+            <li class="next">YARD::Handlers::Ruby::Legacy::ModuleHandler</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">repo/lib/yard/handlers/ruby/legacy/module_handler.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Handles the declaration of a module</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html" title="YARD::Parser::Ruby::Legacy::RubyToken (module)">Parser::Ruby::Legacy::RubyToken</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_ARG-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_ARG (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_ARG</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_BEG-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_BEG (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_BEG</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_CLASS-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_CLASS (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_CLASS</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_DOT-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_DOT (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_DOT</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_END-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_END (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_END</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_FNAME-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_FNAME (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_FNAME</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#EXPR_MID-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::EXPR_MID (constant)">Parser::Ruby::Legacy::RubyToken::EXPR_MID</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#NEWLINE_TOKEN-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::NEWLINE_TOKEN (constant)">Parser::Ruby::Legacy::RubyToken::NEWLINE_TOKEN</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#TkReading2Token-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::TkReading2Token (constant)">Parser::Ruby::Legacy::RubyToken::TkReading2Token</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#TkSymbol2Token-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::TkSymbol2Token (constant)">Parser::Ruby::Legacy::RubyToken::TkSymbol2Token</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#TokenDefinitions-constant" title="YARD::Parser::Ruby::Legacy::RubyToken::TokenDefinitions (constant)">Parser::Ruby::Legacy::RubyToken::TokenDefinitions</a></span></p>
+
+  
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="../../../CodeObjects.html" title="YARD::CodeObjects (module)">CodeObjects</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../../CodeObjects.html#BUILTIN_ALL-constant" title="YARD::CodeObjects::BUILTIN_ALL (constant)">CodeObjects::BUILTIN_ALL</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#BUILTIN_CLASSES-constant" title="YARD::CodeObjects::BUILTIN_CLASSES (constant)">CodeObjects::BUILTIN_CLASSES</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#BUILTIN_EXCEPTIONS-constant" title="YARD::CodeObjects::BUILTIN_EXCEPTIONS (constant)">CodeObjects::BUILTIN_EXCEPTIONS</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#BUILTIN_EXCEPTIONS_HASH-constant" title="YARD::CodeObjects::BUILTIN_EXCEPTIONS_HASH (constant)">CodeObjects::BUILTIN_EXCEPTIONS_HASH</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#BUILTIN_MODULES-constant" title="YARD::CodeObjects::BUILTIN_MODULES (constant)">CodeObjects::BUILTIN_MODULES</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#CONSTANTMATCH-constant" title="YARD::CodeObjects::CONSTANTMATCH (constant)">CodeObjects::CONSTANTMATCH</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#CONSTANTSTART-constant" title="YARD::CodeObjects::CONSTANTSTART (constant)">CodeObjects::CONSTANTSTART</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#CSEP-constant" title="YARD::CodeObjects::CSEP (constant)">CodeObjects::CSEP</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#CSEPQ-constant" title="YARD::CodeObjects::CSEPQ (constant)">CodeObjects::CSEPQ</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#ISEP-constant" title="YARD::CodeObjects::ISEP (constant)">CodeObjects::ISEP</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#ISEPQ-constant" title="YARD::CodeObjects::ISEPQ (constant)">CodeObjects::ISEPQ</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#METHODMATCH-constant" title="YARD::CodeObjects::METHODMATCH (constant)">CodeObjects::METHODMATCH</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#METHODNAMEMATCH-constant" title="YARD::CodeObjects::METHODNAMEMATCH (constant)">CodeObjects::METHODNAMEMATCH</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#NAMESPACEMATCH-constant" title="YARD::CodeObjects::NAMESPACEMATCH (constant)">CodeObjects::NAMESPACEMATCH</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#NSEP-constant" title="YARD::CodeObjects::NSEP (constant)">CodeObjects::NSEP</a></span>, <span class='object_link'><a href="../../../CodeObjects.html#NSEPQ-constant" title="YARD::CodeObjects::NSEPQ (constant)">CodeObjects::NSEPQ</a></span></p>
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../../Base.html" title="YARD::Handlers::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Base.html#extra_state-instance_method" title="YARD::Handlers::Base#extra_state (method)">#extra_state</a></span>, <span class='object_link'><a href="../../Base.html#globals-instance_method" title="YARD::Handlers::Base#globals (method)">#globals</a></span>, <span class='object_link'><a href="../../Base.html#namespace-instance_method" title="YARD::Handlers::Base#namespace (method)">#namespace</a></span>, <span class='object_link'><a href="../../Base.html#owner-instance_method" title="YARD::Handlers::Base#owner (method)">#owner</a></span>, <span class='object_link'><a href="../../Base.html#parser-instance_method" title="YARD::Handlers::Base#parser (method)">#parser</a></span>, <span class='object_link'><a href="../../Base.html#scope-instance_method" title="YARD::Handlers::Base#scope (method)">#scope</a></span>, <span class='object_link'><a href="../../Base.html#statement-instance_method" title="YARD::Handlers::Base#statement (method)">#statement</a></span>, <span class='object_link'><a href="../../Base.html#visibility-instance_method" title="YARD::Handlers::Base#visibility (method)">#visibility</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#process-instance_method" title="#process (instance method)">- (void) <strong>process</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Main processing callback.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Base.html" title="YARD::Handlers::Ruby::Legacy::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Base.html#call_params-instance_method" title="YARD::Handlers::Ruby::Legacy::Base#call_params (method)">#call_params</a></span>, <span class='object_link'><a href="Base.html#caller_method-instance_method" title="YARD::Handlers::Ruby::Legacy::Base#caller_method (method)">#caller_method</a></span>, <span class='object_link'><a href="Base.html#handles%3F-class_method" title="YARD::Handlers::Ruby::Legacy::Base.handles? (method)">handles?</a></span>, <span class='object_link'><a href="Base.html#parse_block-instance_method" title="YARD::Handlers::Ruby::Legacy::Base#parse_block (method)">#parse_block</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html" title="YARD::Parser::Ruby::Legacy::RubyToken (module)">Parser::Ruby::Legacy::RubyToken</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#Token-instance_method" title="YARD::Parser::Ruby::Legacy::RubyToken#Token (method)">#Token</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#def_token-class_method" title="YARD::Parser::Ruby::Legacy::RubyToken.def_token (method)">def_token</a></span>, <span class='object_link'><a href="../../../Parser/Ruby/Legacy/RubyToken.html#set_token_position-instance_method" title="YARD::Parser::Ruby::Legacy::RubyToken#set_token_position (method)">#set_token_position</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../../Base.html" title="YARD::Handlers::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Base.html#abort%21-instance_method" title="YARD::Handlers::Base#abort! (method)">#abort!</a></span>, <span class='object_link'><a href="../../Base.html#call_params-instance_method" title="YARD::Handlers::Base#call_params (method)">#call_params</a></span>, <span class='object_link'><a href="../../Base.html#caller_method-instance_method" title="YARD::Handlers::Base#caller_method (method)">#caller_method</a></span>, <span class='object_link'><a href="../../Base.html#clear_subclasses-class_method" title="YARD::Handlers::Base.clear_subclasses (method)">clear_subclasses</a></span>, <span class='object_link'><a href="../../Base.html#ensure_loaded%21-instance_method" title="YARD::Handlers::Base#ensure_loaded! (method)">#ensure_loaded!</a></span>, <span class='object_link'><a href="../../Base.html#handlers-class_method" title="YARD::Handlers::Base.handlers (method)">handlers</a></span>, <span class='object_link'><a href="../../Base.html#handles-class_method" title="YARD::Handlers::Base.handles (method)">handles</a></span>, <span class='object_link'><a href="../../Base.html#handles%3F-class_method" title="YARD::Handlers::Base.handles? (method)">handles?</a></span>, <span class='object_link'><a href="../../Base.html#in_file-class_method" title="YARD::Handlers::Base.in_file (method)">in_file</a></span>, <span class='object_link'><a href="../../Base.html#inherited-class_method" title="YARD::Handlers::Base.inherited (method)">inherited</a></span>, <span class='object_link'><a href="../../Base.html#initialize-instance_method" title="YARD::Handlers::Base#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../../Base.html#matches_file%3F-class_method" title="YARD::Handlers::Base.matches_file? (method)">matches_file?</a></span>, <span class='object_link'><a href="../../Base.html#namespace_only-class_method" title="YARD::Handlers::Base.namespace_only (method)">namespace_only</a></span>, <span class='object_link'><a href="../../Base.html#namespace_only%3F-class_method" title="YARD::Handlers::Base.namespace_only? (method)">namespace_only?</a></span>, <span class='object_link'><a href="../../Base.html#parse_block-instance_method" title="YARD::Handlers::Base#parse_block (method)">#parse_block</a></span>, <span class='object_link'><a href="../../Base.html#process-class_method" title="YARD::Handlers::Base.process (method)">process</a></span>, <span class='object_link'><a href="../../Base.html#push_state-instance_method" title="YARD::Handlers::Base#push_state (method)">#push_state</a></span>, <span class='object_link'><a href="../../Base.html#register-instance_method" title="YARD::Handlers::Base#register (method)">#register</a></span>, <span class='object_link'><a href="../../Base.html#register_docstring-instance_method" title="YARD::Handlers::Base#register_docstring (method)">#register_docstring</a></span>, <span class='object_link'><a href="../../Base.html#register_dynamic-instance_method" title="YARD::Handlers::Base#register_dynamic (method)">#register_dynamic</a></span>, <span class='object_link'><a href="../../Base.html#register_ensure_loaded-instance_method" title="YARD::Handlers::Base#register_ensure_loaded (method)">#register_ensure_loaded</a></span>, <span class='object_link'><a href="../../Base.html#register_file_info-instance_method" title="YARD::Handlers::Base#register_file_info (method)">#register_file_info</a></span>, <span class='object_link'><a href="../../Base.html#register_group-instance_method" title="YARD::Handlers::Base#register_group (method)">#register_group</a></span>, <span class='object_link'><a href="../../Base.html#register_module_function-instance_method" title="YARD::Handlers::Base#register_module_function (method)">#register_module_function</a></span>, <span class='object_link'><a href="../../Base.html#register_source-instance_method" title="YARD::Handlers::Base#register_source (method)">#register_source</a></span>, <span class='object_link'><a href="../../Base.html#register_transitive_tags-instance_method" title="YARD::Handlers::Base#register_transitive_tags (method)">#register_transitive_tags</a></span>, <span class='object_link'><a href="../../Base.html#register_visibility-instance_method" title="YARD::Handlers::Base#register_visibility (method)">#register_visibility</a></span>, <span class='object_link'><a href="../../Base.html#subclasses-class_method" title="YARD::Handlers::Base.subclasses (method)">subclasses</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="../../Base.html#initialize-instance_method" title="YARD::Handlers::Base#initialize (method)">YARD::Handlers::Base</a></span></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="process-instance_method">
+  
+    - (<tt>void</tt>) <strong>process</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Main processing callback</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/ruby/legacy/module_handler.rb', line 6</span>
+
+<span class='id identifier rubyid_process'>process</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_modname'>modname</span> <span class='op'>=</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_tokens'>tokens</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^module\s+(</span><span class='embexpr_beg'>#{</span><span class='const'>NAMESPACEMATCH</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='id identifier rubyid_register'>register</span> <span class='const'>ModuleObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_modname'>modname</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_parse_block'>parse_block</span><span class='lparen'>(</span><span class='symbol'>:namespace</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:26 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

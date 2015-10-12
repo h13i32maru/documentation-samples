@@ -1,0 +1,786 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: YARD::Handlers::C::HandlerMethods
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!YARD/Handlers/C/HandlerMethods.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Handlers.html" title="YARD::Handlers (module)">Handlers</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../C.html" title="YARD::Handlers::C (module)">C</a></span></span>
+     &raquo; 
+    <span class="title">HandlerMethods</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: YARD::Handlers::C::HandlerMethods
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><span class='object_link'><a href="../../CodeObjects.html" title="YARD::CodeObjects (module)">CodeObjects</a></span>, <span class='object_link'><a href="../../Parser/C.html" title="YARD::Parser::C (module)">Parser::C</a></span></dd>
+      
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="Base.html" title="YARD::Handlers::C::Base (class)">Base</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">repo/lib/yard/handlers/c/handler_methods.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="../../CodeObjects.html" title="YARD::CodeObjects (module)">CodeObjects</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../CodeObjects.html#BUILTIN_ALL-constant" title="YARD::CodeObjects::BUILTIN_ALL (constant)">CodeObjects::BUILTIN_ALL</a></span>, <span class='object_link'><a href="../../CodeObjects.html#BUILTIN_CLASSES-constant" title="YARD::CodeObjects::BUILTIN_CLASSES (constant)">CodeObjects::BUILTIN_CLASSES</a></span>, <span class='object_link'><a href="../../CodeObjects.html#BUILTIN_EXCEPTIONS-constant" title="YARD::CodeObjects::BUILTIN_EXCEPTIONS (constant)">CodeObjects::BUILTIN_EXCEPTIONS</a></span>, <span class='object_link'><a href="../../CodeObjects.html#BUILTIN_EXCEPTIONS_HASH-constant" title="YARD::CodeObjects::BUILTIN_EXCEPTIONS_HASH (constant)">CodeObjects::BUILTIN_EXCEPTIONS_HASH</a></span>, <span class='object_link'><a href="../../CodeObjects.html#BUILTIN_MODULES-constant" title="YARD::CodeObjects::BUILTIN_MODULES (constant)">CodeObjects::BUILTIN_MODULES</a></span>, <span class='object_link'><a href="../../CodeObjects.html#CONSTANTMATCH-constant" title="YARD::CodeObjects::CONSTANTMATCH (constant)">CodeObjects::CONSTANTMATCH</a></span>, <span class='object_link'><a href="../../CodeObjects.html#CONSTANTSTART-constant" title="YARD::CodeObjects::CONSTANTSTART (constant)">CodeObjects::CONSTANTSTART</a></span>, <span class='object_link'><a href="../../CodeObjects.html#CSEP-constant" title="YARD::CodeObjects::CSEP (constant)">CodeObjects::CSEP</a></span>, <span class='object_link'><a href="../../CodeObjects.html#CSEPQ-constant" title="YARD::CodeObjects::CSEPQ (constant)">CodeObjects::CSEPQ</a></span>, <span class='object_link'><a href="../../CodeObjects.html#ISEP-constant" title="YARD::CodeObjects::ISEP (constant)">CodeObjects::ISEP</a></span>, <span class='object_link'><a href="../../CodeObjects.html#ISEPQ-constant" title="YARD::CodeObjects::ISEPQ (constant)">CodeObjects::ISEPQ</a></span>, <span class='object_link'><a href="../../CodeObjects.html#METHODMATCH-constant" title="YARD::CodeObjects::METHODMATCH (constant)">CodeObjects::METHODMATCH</a></span>, <span class='object_link'><a href="../../CodeObjects.html#METHODNAMEMATCH-constant" title="YARD::CodeObjects::METHODNAMEMATCH (constant)">CodeObjects::METHODNAMEMATCH</a></span>, <span class='object_link'><a href="../../CodeObjects.html#NAMESPACEMATCH-constant" title="YARD::CodeObjects::NAMESPACEMATCH (constant)">CodeObjects::NAMESPACEMATCH</a></span>, <span class='object_link'><a href="../../CodeObjects.html#NSEP-constant" title="YARD::CodeObjects::NSEP (constant)">CodeObjects::NSEP</a></span>, <span class='object_link'><a href="../../CodeObjects.html#NSEPQ-constant" title="YARD::CodeObjects::NSEPQ (constant)">CodeObjects::NSEPQ</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_alias-instance_method" title="#handle_alias (instance method)">- (Object) <strong>handle_alias</strong>(var_name, new_name, old_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_attribute-instance_method" title="#handle_attribute (instance method)">- (Object) <strong>handle_attribute</strong>(var_name, name, read, write) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_class-instance_method" title="#handle_class (instance method)">- (Object) <strong>handle_class</strong>(var_name, class_name, parent, in_module = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_constants-instance_method" title="#handle_constants (instance method)">- (Object) <strong>handle_constants</strong>(type, var_name, const_name, value) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_method-instance_method" title="#handle_method (instance method)">- (Object) <strong>handle_method</strong>(scope, var_name, name, func_name, source_file = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_module-instance_method" title="#handle_module (instance method)">- (Object) <strong>handle_module</strong>(var_name, module_name, in_module = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="handle_alias-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_alias</strong>(var_name, new_name, old_name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_alias'>handle_alias</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_new_name'>new_name</span><span class='comma'>,</span> <span class='id identifier rubyid_old_name'>old_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_new_meth'>new_meth</span><span class='comma'>,</span> <span class='id identifier rubyid_old_meth'>old_meth</span> <span class='op'>=</span> <span class='id identifier rubyid_new_name'>new_name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='comma'>,</span> <span class='id identifier rubyid_old_name'>old_name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='id identifier rubyid_old_obj'>old_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_child'>child</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_old_meth'>old_meth</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:instance</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new_obj'>new_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_register'>register</span> <span class='const'>MethodObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_new_meth'>new_meth</span><span class='comma'>,</span> <span class='symbol'>:instance</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span>
+    <span class='id identifier rubyid_register_visibility'>register_visibility</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='comma'>,</span> <span class='id identifier rubyid_visibility'>visibility</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_register_file_info'>register_file_info</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_old_obj'>old_obj</span>
+    <span class='id identifier rubyid_new_obj'>new_obj</span><span class='period'>.</span><span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='id identifier rubyid_old_obj'>old_obj</span><span class='period'>.</span><span class='id identifier rubyid_signature'>signature</span>
+    <span class='id identifier rubyid_new_obj'>new_obj</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span> <span class='op'>=</span> <span class='id identifier rubyid_old_obj'>old_obj</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span>
+    <span class='id identifier rubyid_new_obj'>new_obj</span><span class='period'>.</span><span class='id identifier rubyid_docstring'>docstring</span> <span class='op'>=</span> <span class='id identifier rubyid_old_obj'>old_obj</span><span class='period'>.</span><span class='id identifier rubyid_docstring'>docstring</span>
+    <span class='id identifier rubyid_new_obj'>new_obj</span><span class='period'>.</span><span class='id identifier rubyid_docstring'>docstring</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span> <span class='op'>=</span> <span class='id identifier rubyid_new_obj'>new_obj</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_new_obj'>new_obj</span><span class='period'>.</span><span class='id identifier rubyid_signature'>signature</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>def </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_meth'>new_meth</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># this is all we know.
+</span>  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_aliases'>aliases</span><span class='lbracket'>[</span><span class='id identifier rubyid_new_obj'>new_obj</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_old_meth'>old_meth</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handle_attribute-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_attribute</strong>(var_name, name, read, write) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_attribute'>handle_attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_read'>read</span><span class='comma'>,</span> <span class='id identifier rubyid_write'>write</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:read</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read'>read</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='symbol'>:write</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_write'>write</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbrace'>}</span>
+  <span class='lbrace'>{</span><span class='symbol'>:read</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:write</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_meth_name'>meth_name</span><span class='op'>|</span>
+    <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_values'>values</span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_obj'>obj</span> <span class='op'>=</span> <span class='id identifier rubyid_handle_method'>handle_method</span><span class='lparen'>(</span><span class='symbol'>:instance</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_meth_name'>meth_name</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:instance</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='const'>SymbolHash</span><span class='lbracket'>[</span><span class='symbol'>:read</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='symbol'>:write</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:instance</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_obj'>obj</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handle_class-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_class</strong>(var_name, class_name, parent, in_module = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_class'>handle_class</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_class_name'>class_name</span><span class='comma'>,</span> <span class='id identifier rubyid_parent'>parent</span><span class='comma'>,</span> <span class='id identifier rubyid_in_module'>in_module</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id identifier rubyid_parent'>parent</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_in_module'>in_module</span> <span class='op'>?</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_in_module'>in_module</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'>Registry</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Parser</span><span class='op'>::</span><span class='const'>UndocumentableError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>class </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_class_name'>class_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot find definition for parent namespace.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_register'>register</span> <span class='const'>ClassObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_class_name'>class_name</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_parent'>parent</span>
+      <span class='id identifier rubyid_parent_class'>parent_class</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_parent'>parent</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_parent_class'>parent_class</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proxy</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>::</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_parent_class'>parent_class</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='symbol'>:class</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_superclass'>superclass</span> <span class='op'>=</span> <span class='id identifier rubyid_parent_class'>parent_class</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_namespaces'>namespaces</span><span class='lbracket'>[</span><span class='id identifier rubyid_var_name'>var_name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_obj'>obj</span>
+    <span class='id identifier rubyid_register_file_info'>register_file_info</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handle_constants-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_constants</strong>(type, var_name, const_name, value) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_constants'>handle_constants</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_const_name'>const_name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>const</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register'>register</span> <span class='const'>ConstantObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_const_name'>const_name</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_source_type'>source_type</span> <span class='op'>=</span> <span class='symbol'>:c</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
+    <span class='id identifier rubyid_register_file_info'>register_file_info</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_find_constant_docstring'>find_constant_docstring</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handle_method-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_method</strong>(scope, var_name, name, func_name, source_file = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_method'>handle_method</span><span class='lparen'>(</span><span class='id identifier rubyid_scope'>scope</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_func_name'>func_name</span><span class='comma'>,</span> <span class='id identifier rubyid_source_file'>source_file</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_visibility'>visibility</span> <span class='op'>=</span> <span class='symbol'>:public</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_scope'>scope</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>singleton_method</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='symbol'>:class</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>module_function</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='symbol'>:module</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>private_method</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='symbol'>:instance</span><span class='semicolon'>;</span> <span class='id identifier rubyid_visibility'>visibility</span> <span class='op'>=</span> <span class='symbol'>:private</span>
+  <span class='kw'>else</span><span class='semicolon'>;</span> <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='symbol'>:instance</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='comment'># XXX: raise UndocumentableError might be too noisy.
+</span>  <span class='id identifier rubyid_register'>register</span> <span class='const'>MethodObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_scope'>scope</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
+    <span class='id identifier rubyid_register_visibility'>register_visibility</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_visibility'>visibility</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_find_method_body'>find_method_body</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_func_name'>func_name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_explicit'>explicit</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_add_tag'>add_tag</span><span class='lparen'>(</span><span class='const'>Tags</span><span class='op'>::</span><span class='const'>Tag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Boolean</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\?$</span><span class='regexp_end'>/</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="handle_module-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_module</strong>(var_name, module_name, in_module = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/handlers/c/handler_methods.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_handle_module'>handle_module</span><span class='lparen'>(</span><span class='id identifier rubyid_var_name'>var_name</span><span class='comma'>,</span> <span class='id identifier rubyid_module_name'>module_name</span><span class='comma'>,</span> <span class='id identifier rubyid_in_module'>in_module</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_namespace'>namespace</span> <span class='op'>=</span> <span class='id identifier rubyid_in_module'>in_module</span> <span class='op'>?</span> <span class='id identifier rubyid_namespace_for_variable'>namespace_for_variable</span><span class='lparen'>(</span><span class='id identifier rubyid_in_module'>in_module</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'>Registry</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Parser</span><span class='op'>::</span><span class='const'>UndocumentableError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>module </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_module_name'>module_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>. </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot find definition for parent namespace.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_register'>register</span> <span class='const'>ModuleObject</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_namespace'>namespace</span><span class='comma'>,</span> <span class='id identifier rubyid_module_name'>module_name</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
+    <span class='id identifier rubyid_namespaces'>namespaces</span><span class='lbracket'>[</span><span class='id identifier rubyid_var_name'>var_name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_obj'>obj</span>
+    <span class='id identifier rubyid_register_file_info'>register_file_info</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_statement'>statement</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:12 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

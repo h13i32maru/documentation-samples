@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: YARD::Templates::Helpers::TextHelper
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!YARD/Templates/Helpers/TextHelper.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Templates.html" title="YARD::Templates (module)">Templates</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Helpers.html" title="YARD::Templates::Helpers (module)">Helpers</a></span></span>
+     &raquo; 
+    <span class="title">TextHelper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: YARD::Templates::Helpers::TextHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">repo/lib/yard/templates/helpers/text_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper methods for text template formats.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#align_right-instance_method" title="#align_right (instance method)">- (String) <strong>align_right</strong>(text, spacer = &#39; &#39;, col = 72) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Aligns text to the right.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#h-instance_method" title="#h (instance method)">- (String) <strong>h</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Escapes text.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hr-instance_method" title="#hr (instance method)">- (String) <strong>hr</strong>(col = 72, sep = &quot;-&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a horizontal rule for output.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#indent-instance_method" title="#indent (instance method)">- (String) <strong>indent</strong>(text, len = 4) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indents <code>text</code> by <code>len</code> characters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#signature-instance_method" title="#signature (instance method)">- (String) <strong>signature</strong>(meth) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The formatted signature for a method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#title_align_right-instance_method" title="#title_align_right (instance method)">- (String) <strong>title_align_right</strong>(text, col = 72) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Aligns a title to the right.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wrap-instance_method" title="#wrap (instance method)">- (String) <strong>wrap</strong>(text, col = 72) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Wraps text at <code>col</code> columns.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="align_right-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>align_right</strong>(text, spacer = &#39; &#39;, col = 72) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns aligns text to the right</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>aligns text to the right</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_align_right'>align_right</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_spacer'>spacer</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>=</span> <span class='int'>72</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='id identifier rubyid_text'>text</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>-</span> <span class='int'>4</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_col'>col</span> <span class='op'>-</span> <span class='int'>1</span> <span class='op'>-</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_spacer'>spacer</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_col'>col</span> <span class='op'>-</span> <span class='int'>1</span> <span class='op'>-</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_text'>text</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="h-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>h</strong>(text) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns escapes text</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>escapes text</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_h'>h</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\n</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_line'>line</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_out'>out</span> <span class='op'>&lt;&lt;</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_line'>line</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\s*$</span><span class='regexp_end'>/</span></span><span class='semicolon'>;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\s+\S</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^=</span><span class='regexp_end'>/</span></span><span class='semicolon'>;</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span><span class='semicolon'>;</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\s+\S</span><span class='regexp_end'>/</span></span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_out'>out</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hr-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>hr</strong>(col = 72, sep = &quot;-&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a horizontal rule for output</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>returns a horizontal rule for output</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hr'>hr</span><span class='lparen'>(</span><span class='id identifier rubyid_col'>col</span> <span class='op'>=</span> <span class='int'>72</span><span class='comma'>,</span> <span class='id identifier rubyid_sep'>sep</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sep'>sep</span> <span class='op'>*</span> <span class='id identifier rubyid_col'>col</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="indent-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>indent</strong>(text, len = 4) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns indents <code>text</code> by <code>len</code> characters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>indents <code>text</code> by <code>len</code> characters.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_indent'>indent</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_len'>len</span> <span class='op'>=</span> <span class='int'>4</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span> <span class='op'>*</span> <span class='id identifier rubyid_len'>len</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="signature-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>signature</strong>(meth) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the formatted signature for a method</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the formatted signature for a method</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_signature'>signature</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+  <span class='comment'># use first overload tag if it has a return type and method itself does not
+</span>  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:overload</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:overload</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_meth'>meth</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:overload</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_default_return'>default_return</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_rmeth'>rmeth</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_rmeth'>rmeth</span><span class='period'>.</span><span class='id identifier rubyid_has_tag?'>has_tag?</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_rmeth'>rmeth</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:object</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rmeth'>rmeth</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_object'>object</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_rmeth'>rmeth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_rmeth'>rmeth</span><span class='period'>.</span><span class='id identifier rubyid_tag'>tag</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_types'>types</span>
+    <span class='id identifier rubyid_types'>types</span> <span class='op'>=</span> <span class='id identifier rubyid_rmeth'>rmeth</span><span class='period'>.</span><span class='id identifier rubyid_tags'>tags</span><span class='lparen'>(</span><span class='symbol'>:return</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_types'>types</span> <span class='op'>?</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_types'>types</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+    <span class='id identifier rubyid_first'>first</span> <span class='op'>=</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>2</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>nil</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_first'>first</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>?</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>2</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(Array)?&lt;</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_quote'>quote</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;$</span><span class='regexp_end'>/</span></span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_first'>first</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>+</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>2</span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_first'>first</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>...</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_types'>types</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>void</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_hide_void_return'>hide_void_return</span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_types'>types</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> -&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_scope'>scope</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span> <span class='op'>==</span> <span class='symbol'>:class</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_blk'>blk</span> <span class='op'>=</span> <span class='id identifier rubyid_format_block'>format_block</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='id identifier rubyid_format_args'>format_args</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_extras'>extras</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_extras_text'>extras_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_rw'>rw</span> <span class='op'>=</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_scope'>scope</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_attname'>attname</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_rw'>rw</span><span class='lbracket'>[</span><span class='symbol'>:read</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>read</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_rw'>rw</span><span class='lbracket'>[</span><span class='symbol'>:write</span><span class='rbracket'>]</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>write</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='kw'>nil</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span>
+    <span class='id identifier rubyid_attname'>attname</span> <span class='op'>=</span> <span class='id identifier rubyid_attname'>attname</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>?</span> <span class='id identifier rubyid_attname'>attname</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>only</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_extras'>extras</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_attname'>attname</span> <span class='kw'>if</span> <span class='id identifier rubyid_attname'>attname</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_extras'>extras</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_visibility'>visibility</span> <span class='kw'>if</span> <span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_visibility'>visibility</span> <span class='op'>!=</span> <span class='symbol'>:public</span>
+  <span class='id identifier rubyid_extras_text'>extras_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>(</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extras'>extras</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>)</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_extras'>extras</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s%s%s %s%s%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_scope'>scope</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='id identifier rubyid_blk'>blk</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_extras_text'>extras_text</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_title'>title</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="title_align_right-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>title_align_right</strong>(text, col = 72) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns aligns a title to the right</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>aligns a title to the right</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_title_align_right'>title_align_right</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>=</span> <span class='int'>72</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_align_right'>align_right</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wrap-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>) <strong>wrap</strong>(text, col = 72) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns wraps text at <code>col</code> columns.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>wraps text at <code>col</code> columns.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'repo/lib/yard/templates/helpers/text_helper.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>=</span> <span class='int'>72</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(.{1,</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_col'>col</span><span class='embexpr_end'>}</span><span class='tstring_content'>})( +|$\n?)|(.{1,</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_col'>col</span><span class='embexpr_end'>}</span><span class='tstring_content'>})</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\1\\3\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:12 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

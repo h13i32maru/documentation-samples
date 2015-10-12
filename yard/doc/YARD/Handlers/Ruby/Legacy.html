@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: YARD::Handlers::Ruby::Legacy
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!YARD/Handlers/Ruby/Legacy.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../YARD.html" title="YARD (module)">YARD</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Handlers.html" title="YARD::Handlers (module)">Handlers</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Ruby.html" title="YARD::Handlers::Ruby (module)">Ruby</a></span></span>
+     &raquo; 
+    <span class="title">Legacy</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: YARD::Handlers::Ruby::Legacy
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">repo/lib/yard/autoload.rb<span class="defines">,<br />
+  repo/lib/yard/handlers/ruby/legacy/base.rb,<br /> repo/lib/yard/handlers/ruby/legacy/dsl_handler.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Handlers for old Ruby 1.8 parser</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Legacy/AliasHandler.html" title="YARD::Handlers::Ruby::Legacy::AliasHandler (class)">AliasHandler</a></span>, <span class='object_link'><a href="Legacy/AttributeHandler.html" title="YARD::Handlers::Ruby::Legacy::AttributeHandler (class)">AttributeHandler</a></span>, <span class='object_link'><a href="Legacy/Base.html" title="YARD::Handlers::Ruby::Legacy::Base (class)">Base</a></span>, <span class='object_link'><a href="Legacy/ClassConditionHandler.html" title="YARD::Handlers::Ruby::Legacy::ClassConditionHandler (class)">ClassConditionHandler</a></span>, <span class='object_link'><a href="Legacy/ClassHandler.html" title="YARD::Handlers::Ruby::Legacy::ClassHandler (class)">ClassHandler</a></span>, <span class='object_link'><a href="Legacy/ClassVariableHandler.html" title="YARD::Handlers::Ruby::Legacy::ClassVariableHandler (class)">ClassVariableHandler</a></span>, <span class='object_link'><a href="Legacy/CommentHandler.html" title="YARD::Handlers::Ruby::Legacy::CommentHandler (class)">CommentHandler</a></span>, <span class='object_link'><a href="Legacy/ConstantHandler.html" title="YARD::Handlers::Ruby::Legacy::ConstantHandler (class)">ConstantHandler</a></span>, <span class='object_link'><a href="Legacy/DSLHandler.html" title="YARD::Handlers::Ruby::Legacy::DSLHandler (class)">DSLHandler</a></span>, <span class='object_link'><a href="Legacy/ExceptionHandler.html" title="YARD::Handlers::Ruby::Legacy::ExceptionHandler (class)">ExceptionHandler</a></span>, <span class='object_link'><a href="Legacy/ExtendHandler.html" title="YARD::Handlers::Ruby::Legacy::ExtendHandler (class)">ExtendHandler</a></span>, <span class='object_link'><a href="Legacy/MethodHandler.html" title="YARD::Handlers::Ruby::Legacy::MethodHandler (class)">MethodHandler</a></span>, <span class='object_link'><a href="Legacy/MixinHandler.html" title="YARD::Handlers::Ruby::Legacy::MixinHandler (class)">MixinHandler</a></span>, <span class='object_link'><a href="Legacy/ModuleFunctionHandler.html" title="YARD::Handlers::Ruby::Legacy::ModuleFunctionHandler (class)">ModuleFunctionHandler</a></span>, <span class='object_link'><a href="Legacy/ModuleHandler.html" title="YARD::Handlers::Ruby::Legacy::ModuleHandler (class)">ModuleHandler</a></span>, <span class='object_link'><a href="Legacy/PrivateClassMethodHandler.html" title="YARD::Handlers::Ruby::Legacy::PrivateClassMethodHandler (class)">PrivateClassMethodHandler</a></span>, <span class='object_link'><a href="Legacy/PrivateConstantHandler.html" title="YARD::Handlers::Ruby::Legacy::PrivateConstantHandler (class)">PrivateConstantHandler</a></span>, <span class='object_link'><a href="Legacy/VisibilityHandler.html" title="YARD::Handlers::Ruby::Legacy::VisibilityHandler (class)">VisibilityHandler</a></span>, <span class='object_link'><a href="Legacy/YieldHandler.html" title="YARD::Handlers::Ruby::Legacy::YieldHandler (class)">YieldHandler</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Oct 12 13:39:11 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

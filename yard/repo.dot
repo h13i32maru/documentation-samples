@@ -1,0 +1,1159 @@
+digraph yard {
+  graph [rankdir=BT rank=sink outputMode=nodesfirst packMode="graph" splines=true];
+  node [shape=record rank=sink rankType=sink];
+  Root [label="{root root||+ \#__p\l+ \#init\l+ \#javascripts\l+ \#log\ \:\ YARD\:\:Logger\l+ \#P\l+ \#search\l+ \#stylesheets\l}" rank=sink];
+  File [label="{class File||+ cleanpath\ \:\ String\l+ open\!\l+ read_binary\ \:\ String\l+ relative_path\ \:\ String\l}" rank=sink];
+  subgraph cluster_File {
+    label = "File"; labelloc=b;
+  }
+  Hash [label="{class Hash||+ create\l}" rank=sink];
+  subgraph cluster_Hash {
+    label = "Hash"; labelloc=b;
+  }
+  Array [label="{class Array||+ \#place\ \:\ Insertion\l}" rank=sink];
+  subgraph cluster_Array {
+    label = "Array"; labelloc=b;
+  }
+  String [label="{class String||+ \#shell_split\ \:\ Array\l}" rank=sink];
+  subgraph cluster_String {
+    label = "String"; labelloc=b;
+  }
+  Module [label="{class Module||+ \#class_name\ \:\ String\l+ \#namespace_name\ \:\ String\l}" rank=sink];
+  subgraph cluster_Module {
+    label = "Module"; labelloc=b;
+  }
+  Insertion [label="{class Insertion||+ \#after\l+ \#after_any\l+ \#before\l+ \#before_any\l+ \#initialize\ \:\ Insertion\l}" rank=sink];
+  subgraph cluster_Insertion {
+    label = "Insertion"; labelloc=b;
+  }
+  SymbolHash [label="{class SymbolHash||+ \[\]\l+ \#\[\]\ \:\ Object\l+ \#\[\]\=\l+ \#delete\ \:\ void\l+ \#has_key\?\ \:\ Boolean\l+ \#initialize\ \:\ SymbolHash\l+ \#merge\ \:\ SymbolHash\l+ \#update\ \:\ SymbolHash\l}" rank=sink];
+  subgraph cluster_SymbolHash {
+    label = "SymbolHash"; labelloc=b;
+  }
+  SymbolHash -> Hash;
+  subgraph cluster_ {
+    label = ""; labelloc=b;
+    YARD [label="{module YARD||+ load_plugins\ \:\ Boolean\l+ parse\l+ parse_string\l+ ruby18\?\ \:\ Boolean\l+ ruby19\?\ \:\ Boolean\l+ ruby2\?\ \:\ Boolean\l+ windows\?\ \:\ Boolean\l}" rank=sink];
+    YARD_Config [label="{class Config|+ options [RW]\l|+ load\ \:\ void\l+ load_plugin\ \:\ Boolean\l+ load_plugins\ \:\ Boolean\l+ save\ \:\ void\l}" rank=sink];
+    subgraph cluster_YARD_Config {
+      label = "Config"; labelloc=b;
+    }
+    YARD_Options [label="{class Options||+ default_attr\l+ \#\=\=\ \:\ Boolean\l+ \#\[\]\l+ \#\[\]\=\ \:\ Object\l+ \#delete\ \:\ Object\l+ \#each\ \:\ void\l+ \#inspect\l+ \#merge\ \:\ Options\l+ \#method_missing\l+ \#reset_defaults\ \:\ void\l+ \#to_hash\ \:\ Hash\l+ \#update\ \:\ self\l}" rank=sink];
+    subgraph cluster_YARD_Options {
+      label = "Options"; labelloc=b;
+    }
+    YARD_Logger [label="{class Logger|+ \#show_backtraces [RW]\l+ \#show_progress [RW]\l|+ instance\ \:\ Logger\l+ \#backtrace\ \:\ void\l+ \#capture\ \:\ void\l+ \#clear_progress\ \:\ void\l+ \#debug\l+ \#enter_level\l+ \#initialize\ \:\ Logger\l+ \#io\ \:\ IO\l+ \#io\=\l+ \#print\ \:\ void\l+ \#progress\ \:\ void\l+ \#puts\ \:\ void\l+ \#warn_no_continuations\ \:\ void\l}" rank=sink];
+    subgraph cluster_YARD_Logger {
+      label = "Logger"; labelloc=b;
+    }
+    YARD_Logger -> Logger;
+    YARD_Verifier [label="{class Verifier|+ \#expressions [RW]\l# \#object [R]\l|+ \#add_expressions\ \:\ void\l+ \#call\ \:\ Boolean\l+ \#initialize\ \:\ Verifier\l+ \#method_missing\l+ \#run\ \:\ Array\<CodeObjects\:\:Base\>\l}" rank=sink];
+    subgraph cluster_YARD_Verifier {
+      label = "Verifier"; labelloc=b;
+    }
+    YARD_Docstring [label="{class Docstring|+ default_parser [RW]\l+ \#all [R]\l+ \#hash_flag [RW]\l+ \#line_range [RW]\l+ \#object [RW]\l+ \#ref_tags [R]\l|+ new\!\l+ parser\ \:\ DocstringParser\l+ \#\+\ \:\ Docstring\l+ \#add_tag\ \:\ void\l+ \#blank\?\ \:\ Boolean\l+ \#delete_tag_if\ \:\ void\l+ \#delete_tags\ \:\ void\l+ \#dup\ \:\ Docstring\l+ \#has_tag\?\ \:\ Boolean\l+ \#initialize\ \:\ Docstring\l+ \#line\ \:\ Fixnum\l+ \#replace\l+ \#resolve_reference\ \:\ void\l+ \#summary\ \:\ String\l+ \#tag\ \:\ Tags\:\:Tag\l+ \#tags\ \:\ Array\<Tags\:\:Tag\>\l+ \#to_raw\ \:\ String\l+ \#to_s\l}" rank=sink];
+    subgraph cluster_YARD_Docstring {
+      label = "Docstring"; labelloc=b;
+    }
+    YARD_Docstring -> String;
+    YARD_RegistryStore [label="{class RegistryStore|+ \#checksums [R]\l+ \#file [R]\l+ \#proxy_types [R]\l|+ \#delete\ \:\ void\l+ \#destroy\ \:\ Boolean\l+ \#get\ \:\ CodeObjects\:\:Base\l+ \#initialize\ \:\ RegistryStore\l+ \#keys\ \:\ Array\<Symbol\>\l+ \#load\ \:\ Boolean\l+ \#load\!\ \:\ Boolean\l+ \#load_all\ \:\ void\l+ \#locale\ \:\ I18n\:\:Locale\l+ \#paths_for_type\ \:\ Array\<String\>\l+ \#put\ \:\ CodeObjects\:\:Base\l+ \#root\ \:\ CodeObjects\:\:RootObject\l+ \#save\ \:\ Boolean\l+ \#values\ \:\ Array\<CodeObjects\:\:Base\>\l+ \#values_for_type\ \:\ Array\<CodeObjects\:\:Base\>\l}" rank=sink];
+    subgraph cluster_YARD_RegistryStore {
+      label = "RegistryStore"; labelloc=b;
+    }
+    YARD_DocstringParser [label="{class DocstringParser|+ \#directives [RW]\l+ \#handler [RW]\l+ \#library [RW]\l+ \#object [RW]\l+ \#raw_text [RW]\l+ \#reference [RW]\l+ \#state [RW]\l+ \#tags [RW]\l+ \#text [RW]\l|+ after_parse\ \:\ void\l+ after_parse_callbacks\ \:\ Array\<Proc\>\l+ \#create_directive\ \:\ Directive\l+ \#create_ref_tag\l+ \#create_tag\ \:\ Tags\:\:Tag\l+ \#initialize\ \:\ DocstringParser\l+ \#parse\ \:\ self\l+ \#parse_content\l+ \#tag_is_directive\?\ \:\ Boolean\l+ \#to_docstring\ \:\ Docstring\l}" rank=sink];
+    subgraph cluster_YARD_DocstringParser {
+      label = "DocstringParser"; labelloc=b;
+    }
+    YARD_StubProxy [label="{class StubProxy||+ _load\l+ \#_dump\l+ \#hash\l+ \#initialize\ \:\ StubProxy\l+ \#method_missing\l}" rank=sink];
+    subgraph cluster_YARD_StubProxy {
+      label = "StubProxy"; labelloc=b;
+    }
+    subgraph cluster_YARD {
+      label = "YARD"; labelloc=b;
+      YARD_Server [label="{module Server||+ register_static_path\ \:\ void\l}" rank=sink];
+      YARD_Server_Router [label="{class Router|+ \#adapter [RW]\l+ \#request [RW]\l|+ \#call\ \:\ Array\(Numeric\,Hash\,Array\)\l+ \#docs_prefix\ \:\ String\l+ \#initialize\ \:\ Router\l+ \#list_prefix\ \:\ String\l+ \#parse_library_from_path\ \:\ Array\(LibraryVersion\,\ Array\<String\>\)\l+ \#search_prefix\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Server_Router {
+        label = "Router"; labelloc=b;
+      }
+      YARD_Server_FinishRequest [label="{class FinishRequest||}" rank=sink];
+      subgraph cluster_YARD_Server_FinishRequest {
+        label = "FinishRequest"; labelloc=b;
+      }
+      YARD_Server_FinishRequest -> RuntimeError;
+      YARD_Server_NotFoundError [label="{class NotFoundError||}" rank=sink];
+      subgraph cluster_YARD_Server_NotFoundError {
+        label = "NotFoundError"; labelloc=b;
+      }
+      YARD_Server_NotFoundError -> RuntimeError;
+      YARD_Server_Adapter [label="{class Adapter|+ \#document_root [RW]\l+ \#libraries [RW]\l+ \#options [RW]\l+ \#router [RW]\l+ \#server_options [RW]\l|+ setup\ \:\ void\l+ shutdown\ \:\ void\l+ \#add_library\l+ \#initialize\ \:\ Adapter\l+ \#start\l}" rank=sink];
+      subgraph cluster_YARD_Server_Adapter {
+        label = "Adapter"; labelloc=b;
+      }
+      YARD_Server_RackMiddleware [label="{class RackMiddleware||+ \#call\l+ \#initialize\ \:\ RackMiddleware\l}" rank=sink];
+      subgraph cluster_YARD_Server_RackMiddleware {
+        label = "RackMiddleware"; labelloc=b;
+      }
+      YARD_Server_RackAdapter [label="{class RackAdapter||+ \#call\ \:\ Array\(Numeric\,Hash\,Array\)\l+ \#start\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_Server_RackAdapter {
+        label = "RackAdapter"; labelloc=b;
+      }
+      YARD_Server_RackAdapter -> YARD_Server_Adapter;
+      YARD_Server_LibraryNotPreparedError [label="{class LibraryNotPreparedError||}" rank=sink];
+      subgraph cluster_YARD_Server_LibraryNotPreparedError {
+        label = "LibraryNotPreparedError"; labelloc=b;
+      }
+      YARD_Server_LibraryNotPreparedError -> RuntimeError;
+      YARD_Server_LibraryVersion [label="{class LibraryVersion|+ \#name [RW]\l+ \#source [RW]\l+ \#source_path [RW]\l+ \#version [RW]\l+ \#yardoc_file [RW]\l|+ \#eql\?\ \:\ Boolean\l+ \#gemspec\ \:\ Gem\:\:Specification\l+ \#hash\ \:\ Fixnum\l+ \#initialize\ \:\ LibraryVersion\l+ \#prepare\!\l+ \#to_s\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Server_LibraryVersion {
+        label = "LibraryVersion"; labelloc=b;
+      }
+      YARD_Server_WebrickAdapter [label="{class WebrickAdapter||+ \#start\l}" rank=sink];
+      subgraph cluster_YARD_Server_WebrickAdapter {
+        label = "WebrickAdapter"; labelloc=b;
+      }
+      YARD_Server_WebrickAdapter -> YARD_Server_Adapter;
+      YARD_Server_WebrickServlet [label="{class WebrickServlet|+ \#adapter [RW]\l|+ \#do_GET\l+ \#initialize\ \:\ WebrickServlet\l}" rank=sink];
+      subgraph cluster_YARD_Server_WebrickServlet {
+        label = "WebrickServlet"; labelloc=b;
+      }
+      YARD_Server_WebrickServlet -> WEBrick_HTTPServlet_AbstractServlet;
+      YARD_Server_DocServerSerializer [label="{class DocServerSerializer||+ \#initialize\ \:\ DocServerSerializer\l+ \#serialized_path\l}" rank=sink];
+      subgraph cluster_YARD_Server_DocServerSerializer {
+        label = "DocServerSerializer"; labelloc=b;
+      }
+      YARD_Server_DocServerSerializer -> YARD_Serializers_FileSystemSerializer;
+      subgraph cluster_YARD_Server {
+        label = "Server"; labelloc=b;
+        YARD_Server_Commands [label="{module Commands||}" rank=sink];
+        YARD_Server_Commands_Base [label="{class Base|+ \#adapter [RW]\l+ \#body [RW]\l+ \#caching [RW]\l+ \#command_options [RW]\l+ \#headers [RW]\l+ \#path [RW]\l+ \#request [RW]\l+ \#status [RW]\l|+ \#call\ \:\ Array\(Numeric\,Hash\,Array\<String\>\)\l+ \#initialize\ \:\ Base\l+ \#run\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_Base {
+          label = "Base"; labelloc=b;
+        }
+        YARD_Server_Commands_ListCommand [label="{class ListCommand||+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_ListCommand {
+          label = "ListCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_ListCommand -> YARD_Server_Commands_LibraryCommand;
+        YARD_Server_Commands_SearchCommand [label="{class SearchCommand|+ \#query [RW]\l+ \#results [RW]\l|+ \#run\l+ \#visible_results\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_SearchCommand {
+          label = "SearchCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_SearchCommand -> YARD_Server_Commands_LibraryCommand;
+        YARD_Server_Commands_FramesCommand [label="{class FramesCommand||+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_FramesCommand {
+          label = "FramesCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_FramesCommand -> YARD_Server_Commands_DisplayObjectCommand;
+        YARD_Server_Commands_LibraryOptions [label="{class LibraryOptions|+ \#command [RW]\l+ \#frames [RW]\l|+ \#adapter\l+ \#each\l+ \#library\l+ \#serialize\l+ \#serializer\l+ \#single_library\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_LibraryOptions {
+          label = "LibraryOptions"; labelloc=b;
+        }
+        YARD_Server_Commands_LibraryOptions -> YARD_CLI_YardocOptions;
+        YARD_Server_Commands_LibraryCommand [label="{class LibraryCommand|+ \#incremental [RW]\l+ \#library [RW]\l+ \#options [RW]\l+ \#serializer [RW]\l+ \#single_library [RW]\l|+ \#call\l+ \#initialize\ \:\ LibraryCommand\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_LibraryCommand {
+          label = "LibraryCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_LibraryCommand -> YARD_Server_Commands_Base;
+        YARD_Server_Commands_StaticFileCommand [label="{class StaticFileCommand||+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_StaticFileCommand {
+          label = "StaticFileCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_StaticFileCommand -> YARD_Server_Commands_Base;
+        YARD_Server_Commands_DisplayFileCommand [label="{class DisplayFileCommand|+ \#index [RW]\l|+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_DisplayFileCommand {
+          label = "DisplayFileCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_DisplayFileCommand -> YARD_Server_Commands_LibraryCommand;
+        YARD_Server_Commands_LibraryIndexCommand [label="{class LibraryIndexCommand|+ \#options [RW]\l|+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_LibraryIndexCommand {
+          label = "LibraryIndexCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_LibraryIndexCommand -> YARD_Server_Commands_Base;
+        YARD_Server_Commands_DisplayObjectCommand [label="{class DisplayObjectCommand||+ \#index\l+ \#not_found\l+ \#run\l}" rank=sink];
+        subgraph cluster_YARD_Server_Commands_DisplayObjectCommand {
+          label = "DisplayObjectCommand"; labelloc=b;
+        }
+        YARD_Server_Commands_DisplayObjectCommand -> YARD_Server_Commands_LibraryCommand;
+        subgraph cluster_YARD_Server_Commands {
+          label = "Commands"; labelloc=b;
+        }
+        YARD_Server_StaticCaching [label="{module StaticCaching||+ \#check_static_cache\ \:\ Array\(Numeric\,Hash\,Array\)\l}" rank=sink];
+        subgraph cluster_YARD_Server_StaticCaching {
+          label = "StaticCaching"; labelloc=b;
+        }
+        YARD_Server_DocServerHelper [label="{module DocServerHelper||+ \#base_path\ \:\ String\l+ \#router\ \:\ Router\l+ \#url_for\ \:\ String\l+ \#url_for_file\ \:\ String\l+ \#url_for_frameset\ \:\ String\l+ \#url_for_index\ \:\ String\l+ \#url_for_list\ \:\ String\l+ \#url_for_main\ \:\ String\l}" rank=sink];
+        subgraph cluster_YARD_Server_DocServerHelper {
+          label = "DocServerHelper"; labelloc=b;
+        }
+      }
+      YARD_CLI [label="{module CLI||}" rank=sink];
+      YARD_CLI_YRI [label="{class YRI||+ run\l+ \#description\l+ \#initialize\ \:\ YRI\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_YRI {
+        label = "YRI"; labelloc=b;
+      }
+      YARD_CLI_YRI -> YARD_CLI_Command;
+      YARD_CLI_List [label="{class List||+ \#description\l+ \#run\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CLI_List {
+        label = "List"; labelloc=b;
+      }
+      YARD_CLI_List -> YARD_CLI_Command;
+      YARD_CLI_Help [label="{class Help||+ \#description\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Help {
+        label = "Help"; labelloc=b;
+      }
+      YARD_CLI_Help -> YARD_CLI_Command;
+      YARD_CLI_I18n [label="{class I18n||+ \#description\l+ \#initialize\ \:\ I18n\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_I18n {
+        label = "I18n"; labelloc=b;
+      }
+      YARD_CLI_I18n -> YARD_CLI_Yardoc;
+      YARD_CLI_Gems [label="{class Gems||+ \#description\l+ \#initialize\ \:\ Gems\l+ \#run\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Gems {
+        label = "Gems"; labelloc=b;
+      }
+      YARD_CLI_Gems -> YARD_CLI_Command;
+      YARD_CLI_Diff [label="{class Diff||+ \#description\l+ \#initialize\ \:\ Diff\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Diff {
+        label = "Diff"; labelloc=b;
+      }
+      YARD_CLI_Diff -> YARD_CLI_Command;
+      YARD_CLI_GraphOptions [label="{class GraphOptions|+ \#contents [RW]\l+ \#dependencies [RW]\l+ \#full [RW]\l|+ \#format\ \:\ \:dot\l}" rank=sink];
+      subgraph cluster_YARD_CLI_GraphOptions {
+        label = "GraphOptions"; labelloc=b;
+      }
+      YARD_CLI_GraphOptions -> YARD_Templates_TemplateOptions;
+      YARD_CLI_Graph [label="{class Graph|+ \#objects [R]\l+ \#options [R]\l|+ \#description\l+ \#initialize\ \:\ Graph\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Graph {
+        label = "Graph"; labelloc=b;
+      }
+      YARD_CLI_Graph -> YARD_CLI_YardoptsCommand;
+      YARD_CLI_Stats [label="{class Stats|+ \#parse [RW]\l|+ \#all_objects\ \:\ Array\<CodeObjects\:\:Base\>\l+ \#description\l+ \#initialize\ \:\ Stats\l+ \#output\ \:\ void\l+ \#print_statistics\l+ \#print_undocumented_objects\l+ \#run\ \:\ void\l+ \#stats_for_classes\l+ \#stats_for_constants\l+ \#stats_for_files\l+ \#stats_for_methods\l+ \#stats_for_modules\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Stats {
+        label = "Stats"; labelloc=b;
+      }
+      YARD_CLI_Stats -> YARD_CLI_Yardoc;
+      YARD_CLI_YardocOptions [label="{class YardocOptions|+ \#file [RW]\l+ \#index [RW]\l+ \#item [RW]\l+ \#locale [RW]\l+ \#objects [RW]\l+ \#readme [RW]\l|+ \#files\ \:\ Array\<CodeObjects\:\:ExtraFileObject\>\l+ \#format\ \:\ Symbol\l+ \#onefile\ \:\ Boolean\l+ \#serializer\ \:\ Serializers\:\:Base\l+ \#title\ \:\ String\l+ \#verifier\ \:\ Verifier\l}" rank=sink];
+      subgraph cluster_YARD_CLI_YardocOptions {
+        label = "YardocOptions"; labelloc=b;
+      }
+      YARD_CLI_YardocOptions -> YARD_Templates_TemplateOptions;
+      YARD_CLI_Yardoc [label="{class Yardoc|+ \#apis [RW]\l+ \#assets [RW]\l+ \#excluded [RW]\l+ \#files [RW]\l+ \#generate [RW]\l+ \#has_markup [RW]\l+ \#hidden_apis [RW]\l+ \#hidden_tags [RW]\l+ \#list [RW]\l+ \#options [R]\l+ \#save_yardoc [RW]\l+ \#statistics [RW]\l+ \#use_cache [RW]\l+ \#visibilities [RW]\l|+ \#all_objects\ \:\ Array\<CodeObjects\:\:Base\>\l+ \#description\l+ \#initialize\ \:\ Yardoc\l+ \#parse_arguments\ \:\ Boolean\l+ \#run\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Yardoc {
+        label = "Yardoc"; labelloc=b;
+      }
+      YARD_CLI_Yardoc -> YARD_CLI_YardoptsCommand;
+      YARD_CLI_Config [label="{class Config|+ \#append [RW]\l+ \#as_list [RW]\l+ \#key [RW]\l+ \#reset [RW]\l+ \#values [RW]\l|+ \#description\l+ \#initialize\ \:\ Config\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Config {
+        label = "Config"; labelloc=b;
+      }
+      YARD_CLI_Config -> YARD_CLI_Command;
+      YARD_CLI_Server [label="{class Server|+ \#adapter [RW]\l+ \#libraries [RW]\l+ \#options [RW]\l+ \#scripts [RW]\l+ \#server_options [RW]\l+ \#template_paths [RW]\l|+ \#description\l+ \#initialize\ \:\ Server\l+ \#run\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Server {
+        label = "Server"; labelloc=b;
+      }
+      YARD_CLI_Server -> YARD_CLI_Command;
+      YARD_CLI_Command [label="{class Command||+ run\l+ \#description\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Command {
+        label = "Command"; labelloc=b;
+      }
+      YARD_CLI_Display [label="{class Display||+ \#description\l+ \#format_objects\ \:\ String\l+ \#initialize\ \:\ Display\l+ \#output_options\l+ \#parse_arguments\l+ \#run\ \:\ void\l+ \#wrap_layout\l}" rank=sink];
+      subgraph cluster_YARD_CLI_Display {
+        label = "Display"; labelloc=b;
+      }
+      YARD_CLI_Display -> YARD_CLI_Yardoc;
+      YARD_CLI_MarkupTypes [label="{class MarkupTypes||+ \#description\l+ \#run\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CLI_MarkupTypes {
+        label = "MarkupTypes"; labelloc=b;
+      }
+      YARD_CLI_MarkupTypes -> YARD_CLI_Command;
+      YARD_CLI_CommandParser [label="{class CommandParser|+ commands [RW]\l+ default_command [RW]\l|+ run\ \:\ void\l+ \#initialize\ \:\ CommandParser\l+ \#run\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CLI_CommandParser {
+        label = "CommandParser"; labelloc=b;
+      }
+      YARD_CLI_YardoptsCommand [label="{class YardoptsCommand|+ \#options_file [RW]\l+ \#use_document_file [RW]\l+ \#use_yardopts_file [RW]\l|+ \#initialize\ \:\ YardoptsCommand\l+ \#parse_arguments\ \:\ Boolean\l}" rank=sink];
+      subgraph cluster_YARD_CLI_YardoptsCommand {
+        label = "YardoptsCommand"; labelloc=b;
+      }
+      YARD_CLI_YardoptsCommand -> YARD_CLI_Command;
+      subgraph cluster_YARD_CLI {
+        label = "CLI"; labelloc=b;
+      }
+      YARD_Registry [label="{module Registry|+ po_dir [RW]\l+ single_object_db [RW]\l+ yardoc_file [RW]\l|+ all\ \:\ Array\<CodeObjects\:\:Base\>\l+ at\ \:\ CodeObjects\:\:Base\l+ checksum_for\ \:\ String\l+ checksums\ \:\ Hash\{String\ \=\>\ String\}\l+ clear\ \:\ void\l+ delete\ \:\ void\l+ delete_from_disk\ \:\ void\l+ each\l+ instance\ \:\ Registry\l+ load\ \:\ Registry\l+ load\!\ \:\ Registry\l+ load_all\ \:\ Registry\l+ load_yardoc\ \:\ Registry\l+ locale\ \:\ I18n\:\:Locale\l+ paths\ \:\ Array\<String\>\l+ proxy_types\ \:\ \{String\ \=\>\ Symbol\}\l+ register\ \:\ CodeObjects\:\:Base\l+ resolve\ \:\ CodeObjects\:\:Base\l+ root\ \:\ CodeObjects\:\:RootObject\l+ save\ \:\ Boolean\l+ yardoc_file_for_gem\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Registry {
+        label = "Registry"; labelloc=b;
+      }
+      YARD_Tags [label="{module Tags||}" rank=sink];
+      YARD_Tags_Tag [label="{class Tag|+ \#name [RW]\l+ \#object [RW]\l+ \#tag_name [RW]\l+ \#text [RW]\l+ \#types [RW]\l|+ \#initialize\ \:\ Tag\l+ \#type\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Tags_Tag {
+        label = "Tag"; labelloc=b;
+      }
+      YARD_Tags_Library [label="{class Library|+ default_factory [RW]\l+ instance [RW]\l+ labels [R]\l+ transitive_tags [RW]\l+ visible_tags [RW]\l+ \#factory [RW]\l|+ define_directive\l+ define_tag\l+ directive_method_name\l+ factory_method_for\ \:\ Symbol\l+ factory_method_for_directive\ \:\ Symbol\l+ sorted_labels\ \:\ Array\<Symbol\>\l+ tag_method_name\l+ \#directive_create\ \:\ Directive\l+ \#has_directive\?\ \:\ Boolean\l+ \#has_tag\?\ \:\ Boolean\l+ \#initialize\ \:\ Library\l+ \#tag_create\ \:\ Tag\l}" rank=sink];
+      subgraph cluster_YARD_Tags_Library {
+        label = "Library"; labelloc=b;
+      }
+      YARD_Tags_Directive [label="{class Directive|+ \#expanded_text [RW]\l+ \#handler [R]\l+ \#object [R]\l# \#parser [RW]\l+ \#tag [RW]\l|+ \#after_parse\ \:\ void\l+ \#call\ \:\ void\l+ \#initialize\ \:\ Directive\l}" rank=sink];
+      subgraph cluster_YARD_Tags_Directive {
+        label = "Directive"; labelloc=b;
+      }
+      YARD_Tags_EndGroupDirective [label="{class EndGroupDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_EndGroupDirective {
+        label = "EndGroupDirective"; labelloc=b;
+      }
+      YARD_Tags_EndGroupDirective -> YARD_Tags_Directive;
+      YARD_Tags_GroupDirective [label="{class GroupDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_GroupDirective {
+        label = "GroupDirective"; labelloc=b;
+      }
+      YARD_Tags_GroupDirective -> YARD_Tags_Directive;
+      YARD_Tags_MacroDirective [label="{class MacroDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_MacroDirective {
+        label = "MacroDirective"; labelloc=b;
+      }
+      YARD_Tags_MacroDirective -> YARD_Tags_Directive;
+      YARD_Tags_MethodDirective [label="{class MethodDirective||+ \#after_parse\l+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_MethodDirective {
+        label = "MethodDirective"; labelloc=b;
+      }
+      YARD_Tags_MethodDirective -> YARD_Tags_Directive;
+      YARD_Tags_AttributeDirective [label="{class AttributeDirective||+ \#after_parse\l}" rank=sink];
+      subgraph cluster_YARD_Tags_AttributeDirective {
+        label = "AttributeDirective"; labelloc=b;
+      }
+      YARD_Tags_AttributeDirective -> YARD_Tags_MethodDirective;
+      YARD_Tags_ParseDirective [label="{class ParseDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_ParseDirective {
+        label = "ParseDirective"; labelloc=b;
+      }
+      YARD_Tags_ParseDirective -> YARD_Tags_Directive;
+      YARD_Tags_ScopeDirective [label="{class ScopeDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_ScopeDirective {
+        label = "ScopeDirective"; labelloc=b;
+      }
+      YARD_Tags_ScopeDirective -> YARD_Tags_Directive;
+      YARD_Tags_VisibilityDirective [label="{class VisibilityDirective||+ \#call\l}" rank=sink];
+      subgraph cluster_YARD_Tags_VisibilityDirective {
+        label = "VisibilityDirective"; labelloc=b;
+      }
+      YARD_Tags_VisibilityDirective -> YARD_Tags_Directive;
+      YARD_Tags_OptionTag [label="{class OptionTag|+ \#pair [RW]\l|+ \#initialize\ \:\ OptionTag\l}" rank=sink];
+      subgraph cluster_YARD_Tags_OptionTag {
+        label = "OptionTag"; labelloc=b;
+      }
+      YARD_Tags_OptionTag -> YARD_Tags_Tag;
+      YARD_Tags_DefaultTag [label="{class DefaultTag|+ \#defaults [R]\l|+ \#initialize\ \:\ DefaultTag\l}" rank=sink];
+      subgraph cluster_YARD_Tags_DefaultTag {
+        label = "DefaultTag"; labelloc=b;
+      }
+      YARD_Tags_DefaultTag -> YARD_Tags_Tag;
+      YARD_Tags_RefTagList [label="{class RefTagList|+ \#name [RW]\l+ \#owner [RW]\l+ \#tag_name [RW]\l|+ \#initialize\ \:\ RefTagList\l+ \#tags\l}" rank=sink];
+      subgraph cluster_YARD_Tags_RefTagList {
+        label = "RefTagList"; labelloc=b;
+      }
+      YARD_Tags_OverloadTag [label="{class OverloadTag|+ \#docstring [R]\l+ \#parameters [R]\l+ \#signature [R]\l|+ \#has_tag\?\ \:\ Boolean\l+ \#initialize\ \:\ OverloadTag\l+ \#is_a\?\ \:\ Boolean\l+ \#method_missing\l+ \#name\l+ \#object\=\l+ \#tag\l+ \#tags\l+ \#type\l}" rank=sink];
+      subgraph cluster_YARD_Tags_OverloadTag {
+        label = "OverloadTag"; labelloc=b;
+      }
+      YARD_Tags_OverloadTag -> YARD_Tags_Tag;
+      YARD_Tags_DefaultFactory [label="{class DefaultFactory||+ \#parse_tag\ \:\ Tag\l+ \#parse_tag_with_name\ \:\ Tag\l+ \#parse_tag_with_options\l+ \#parse_tag_with_title_and_text\l+ \#parse_tag_with_types\ \:\ Tag\l+ \#parse_tag_with_types_and_name\ \:\ Tag\l+ \#parse_tag_with_types_and_title\ \:\ Tag\l+ \#parse_tag_with_types_name_and_default\l}" rank=sink];
+      subgraph cluster_YARD_Tags_DefaultFactory {
+        label = "DefaultFactory"; labelloc=b;
+      }
+      YARD_Tags_TagFormatError [label="{class TagFormatError||}" rank=sink];
+      subgraph cluster_YARD_Tags_TagFormatError {
+        label = "TagFormatError"; labelloc=b;
+      }
+      YARD_Tags_TagFormatError -> Exception;
+      subgraph cluster_YARD_Tags {
+        label = "Tags"; labelloc=b;
+        YARD_Tags_RefTag [label="{module RefTag|+ \#owner [RW]\l|}" rank=sink];
+        subgraph cluster_YARD_Tags_RefTag {
+          label = "RefTag"; labelloc=b;
+        }
+      }
+      YARD_CodeObjects [label="{module CodeObjects||}" rank=sink];
+      YARD_CodeObjects_CodeObjectList [label="{class CodeObjectList||+ \#initialize\ \:\ CodeObjectList\l+ \#push\ \:\ CodeObjectList\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_CodeObjectList {
+        label = "CodeObjectList"; labelloc=b;
+      }
+      YARD_CodeObjects_CodeObjectList -> Array;
+      YARD_CodeObjects_Base [label="{class Base|+ \#base_docstring [R]\l+ \#dynamic [RW]\l+ \#files [R]\l+ \#group [RW]\l+ \#namespace [RW]\l+ \#signature [RW]\l+ \#source [RW]\l+ \#source_type [RW]\l+ \#visibility [RW]\l|+ \=\=\=\ \:\ Boolean\l+ new\ \:\ Base\l+ \#\[\]\ \:\ Object\l+ \#\[\]\=\ \:\ void\l+ \#add_file\l+ \#add_tag\l+ \#copy_to\ \:\ Base\l+ \#docstring\ \:\ Docstring\l+ \#docstring\=\l+ \#dynamic\?\ \:\ Boolean\l+ \#equal\?\ \:\ Boolean\l+ \#file\ \:\ String\l+ \#format\ \:\ String\l+ \#has_tag\?\ \:\ Boolean\l+ \#hash\ \:\ Integer\l+ \#initialize\ \:\ Base\l+ \#inspect\ \:\ String\l+ \#line\ \:\ Fixnum\l+ \#method_missing\l+ \#name\ \:\ Symbol\l+ \#path\ \:\ String\l+ \#relative_path\ \:\ String\l+ \#root\?\ \:\ Boolean\l+ \#sep\ \:\ String\l+ \#tag\l+ \#tags\l+ \#title\ \:\ String\l+ \#to_ary\ \:\ nil\l+ \#type\ \:\ Symbol\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_Base {
+        label = "Base"; labelloc=b;
+      }
+      YARD_CodeObjects_ProxyMethodError [label="{class ProxyMethodError||}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ProxyMethodError {
+        label = "ProxyMethodError"; labelloc=b;
+      }
+      YARD_CodeObjects_ProxyMethodError -> NoMethodError;
+      YARD_CodeObjects_Proxy [label="{class Proxy|+ \#namespace [R]\l|+ \=\=\=\l+ \#\<\=\>\ \:\ Boolean\l+ \#\=\=\=\ \:\ Boolean\l+ \#class\ \:\ Class\l+ \#equal\?\ \:\ Boolean\l+ \#hash\ \:\ Integer\l+ \#initialize\ \:\ Proxy\l+ \#inspect\ \:\ String\l+ \#instance_of\?\ \:\ Boolean\l+ \#is_a\?\ \:\ Boolean\l+ \#kind_of\?\ \:\ Boolean\l+ \#method_missing\l+ \#name\ \:\ Symbol\l+ \#path\ \:\ String\l+ \#respond_to\?\ \:\ Boolean\l+ \#root\?\ \:\ Boolean\l+ \#type\ \:\ Symbol\l+ \#type\=\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_Proxy {
+        label = "Proxy"; labelloc=b;
+      }
+      YARD_CodeObjects_RootObject [label="{class RootObject||+ \#equal\?\ \:\ Boolean\l+ \#hash\l+ \#inspect\l+ \#path\l+ \#root\?\ \:\ Boolean\l+ \#title\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_RootObject {
+        label = "RootObject"; labelloc=b;
+      }
+      YARD_CodeObjects_RootObject -> YARD_CodeObjects_ModuleObject;
+      YARD_CodeObjects_ClassObject [label="{class ClassObject|+ \#superclass [RW]\l|+ \#constants\ \:\ Array\<ConstantObject\>\l+ \#inheritance_tree\ \:\ Array\<NamespaceObject\>\l+ \#inherited_constants\ \:\ Array\<ConstantObject\>\l+ \#inherited_meths\ \:\ Array\<MethodObject\>\l+ \#initialize\ \:\ ClassObject\l+ \#is_exception\?\ \:\ Boolean\l+ \#meths\ \:\ Array\<MethodObject\>\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ClassObject {
+        label = "ClassObject"; labelloc=b;
+      }
+      YARD_CodeObjects_ClassObject -> YARD_CodeObjects_NamespaceObject;
+      YARD_CodeObjects_MacroObject [label="{class MacroObject|+ \#macro_data [RW]\l+ \#method_object [RW]\l|+ apply\ \:\ String\l+ apply_macro\ \:\ String\l+ create\ \:\ MacroObject\l+ expand\l+ find\ \:\ MacroObject\l+ find_or_create\ \:\ MacroObject\l+ \#attached\?\ \:\ Boolean\l+ \#expand\l+ \#path\l+ \#sep\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_MacroObject {
+        label = "MacroObject"; labelloc=b;
+      }
+      YARD_CodeObjects_MacroObject -> YARD_CodeObjects_Base;
+      YARD_CodeObjects_MethodObject [label="{class MethodObject|+ \#explicit [RW]\l+ \#parameters [RW]\l+ \#scope [RW]\l|+ \#aliases\ \:\ Array\<Symbol\>\l+ \#attr_info\ \:\ SymbolHash\l+ \#constructor\?\ \:\ Boolean\l+ \#initialize\ \:\ MethodObject\l+ \#is_alias\?\ \:\ Boolean\l+ \#is_attribute\?\ \:\ Boolean\l+ \#is_explicit\?\ \:\ Boolean\l+ \#module_function\?\ \:\ Boolean\l+ \#name\ \:\ String\l+ \#overridden_method\ \:\ MethodObject\l+ \#path\ \:\ String\l+ \#reader\?\ \:\ Boolean\l+ \#sep\ \:\ String\l+ \#writer\?\ \:\ Boolean\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_MethodObject {
+        label = "MethodObject"; labelloc=b;
+      }
+      YARD_CodeObjects_MethodObject -> YARD_CodeObjects_Base;
+      YARD_CodeObjects_ModuleObject [label="{class ModuleObject||+ \#inheritance_tree\ \:\ Array\<NamespaceObject\>\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ModuleObject {
+        label = "ModuleObject"; labelloc=b;
+      }
+      YARD_CodeObjects_ModuleObject -> YARD_CodeObjects_NamespaceObject;
+      YARD_CodeObjects_ConstantObject [label="{class ConstantObject|+ \#value [RW]\l|}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ConstantObject {
+        label = "ConstantObject"; labelloc=b;
+      }
+      YARD_CodeObjects_ConstantObject -> YARD_CodeObjects_Base;
+      YARD_CodeObjects_NamespaceObject [label="{class NamespaceObject|+ \#aliases [R]\l+ \#attributes [R]\l+ \#child [RW]\l+ \#children [R]\l+ \#class_attributes [RW]\l+ \#class_mixins [R]\l+ \#constants [RW]\l+ \#cvars [RW]\l+ \#groups [RW]\l+ \#included_constants [RW]\l+ \#included_meths [RW]\l+ \#instance_attributes [RW]\l+ \#instance_mixins [R]\l+ \#meths [RW]\l+ \#mixins [RW]\l|+ \#initialize\ \:\ NamespaceObject\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_NamespaceObject {
+        label = "NamespaceObject"; labelloc=b;
+      }
+      YARD_CodeObjects_NamespaceObject -> YARD_CodeObjects_Base;
+      YARD_CodeObjects_ExtraFileObject [label="{class ExtraFileObject|+ \#attributes [RW]\l+ \#filename [RW]\l+ \#locale [RW]\l+ \#name [RW]\l|+ \#\=\=\l+ \#contents\l+ \#contents\=\l+ \#hash\l+ \#initialize\ \:\ ExtraFileObject\l+ \#inspect\l+ \#title\l+ \#type\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ExtraFileObject {
+        label = "ExtraFileObject"; labelloc=b;
+      }
+      YARD_CodeObjects_ClassVariableObject [label="{class ClassVariableObject|+ \#value [RW]\l|}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ClassVariableObject {
+        label = "ClassVariableObject"; labelloc=b;
+      }
+      YARD_CodeObjects_ClassVariableObject -> YARD_CodeObjects_Base;
+      YARD_CodeObjects_ExtendedMethodObject [label="{class ExtendedMethodObject||+ \#initialize\ \:\ ExtendedMethodObject\l+ \#method_missing\l+ \#scope\ \:\ Symbol\l}" rank=sink];
+      subgraph cluster_YARD_CodeObjects_ExtendedMethodObject {
+        label = "ExtendedMethodObject"; labelloc=b;
+      }
+      subgraph cluster_YARD_CodeObjects {
+        label = "CodeObjects"; labelloc=b;
+      }
+      YARD_Handlers [label="{module Handlers||}" rank=sink];
+      YARD_Handlers_HandlerAborted [label="{class HandlerAborted||}" rank=sink];
+      subgraph cluster_YARD_Handlers_HandlerAborted {
+        label = "HandlerAborted"; labelloc=b;
+      }
+      YARD_Handlers_HandlerAborted -> RuntimeError;
+      YARD_Handlers_NamespaceMissingError [label="{class NamespaceMissingError|+ \#object [RW]\l|+ \#initialize\ \:\ NamespaceMissingError\l}" rank=sink];
+      subgraph cluster_YARD_Handlers_NamespaceMissingError {
+        label = "NamespaceMissingError"; labelloc=b;
+      }
+      YARD_Handlers_NamespaceMissingError -> YARD_Parser_UndocumentableError;
+      YARD_Handlers_Base [label="{class Base|+ \#extra_state [R]\l+ \#globals [R]\l+ \#namespace [RW]\l+ \#owner [RW]\l+ \#parser [R]\l+ \#scope [RW]\l+ \#statement [R]\l+ \#visibility [RW]\l|+ clear_subclasses\ \:\ void\l+ handlers\ \:\ Array\l+ handles\l+ handles\?\ \:\ Boolean\l+ in_file\ \:\ void\l+ inherited\l+ matches_file\?\ \:\ Boolean\l+ namespace_only\ \:\ void\l+ namespace_only\?\ \:\ Boolean\l+ process\ \:\ void\l+ subclasses\ \:\ Array\<Base\>\l+ \#abort\!\l+ \#call_params\ \:\ Array\<String\>\l+ \#caller_method\ \:\ String\l+ \#ensure_loaded\!\l+ \#initialize\ \:\ Base\l+ \#parse_block\l+ \#process\ \:\ Array\<CodeObjects\:\:Base\>\l+ \#push_state\l+ \#register\ \:\ CodeObjects\:\:Base\l+ \#register_docstring\ \:\ void\l+ \#register_dynamic\ \:\ void\l+ \#register_ensure_loaded\ \:\ void\l+ \#register_file_info\ \:\ void\l+ \#register_group\ \:\ void\l+ \#register_module_function\l+ \#register_source\ \:\ void\l+ \#register_transitive_tags\ \:\ void\l+ \#register_visibility\l}" rank=sink];
+      subgraph cluster_YARD_Handlers_Base {
+        label = "Base"; labelloc=b;
+      }
+      YARD_Handlers_Processor [label="{class Processor|+ namespace_for_handler [R]\l+ \#extra_state [RW]\l+ \#file [RW]\l+ \#globals [RW]\l+ \#namespace [RW]\l+ \#owner [RW]\l+ \#parser_type [RW]\l+ \#scope [RW]\l+ \#visibility [RW]\l|+ register_handler_namespace\l+ \#find_handlers\ \:\ Array\<Base\>\l+ \#initialize\ \:\ Processor\l+ \#parse_remaining_files\ \:\ void\l+ \#process\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_Handlers_Processor {
+        label = "Processor"; labelloc=b;
+      }
+      subgraph cluster_YARD_Handlers {
+        label = "Handlers"; labelloc=b;
+        YARD_Handlers_C [label="{module C||}" rank=sink];
+        YARD_Handlers_C_Base [label="{class Base||+ handles\?\ \:\ Boolean\l+ statement_class\l+ \#namespace_for_variable\l+ \#namespaces\l+ \#override_comments\l+ \#parse_block\l+ \#process_file\l+ \#processed_files\l+ \#register_docstring\l+ \#register_file_info\l+ \#register_source\l+ \#register_visibility\l+ \#symbols\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_Base {
+          label = "Base"; labelloc=b;
+        }
+        YARD_Handlers_C_Base -> YARD_Handlers_Base;
+        YARD_Handlers_C_InitHandler [label="{class InitHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_InitHandler {
+          label = "InitHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_InitHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_PathHandler [label="{class PathHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_PathHandler {
+          label = "PathHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_PathHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_AliasHandler [label="{class AliasHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_AliasHandler {
+          label = "AliasHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_AliasHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_ClassHandler [label="{class ClassHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_ClassHandler {
+          label = "ClassHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_ClassHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_MixinHandler [label="{class MixinHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_MixinHandler {
+          label = "MixinHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_MixinHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_StructHandler [label="{class StructHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_StructHandler {
+          label = "StructHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_StructHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_SymbolHandler [label="{class SymbolHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_SymbolHandler {
+          label = "SymbolHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_SymbolHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_MethodHandler [label="{class MethodHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_MethodHandler {
+          label = "MethodHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_MethodHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_ModuleHandler [label="{class ModuleHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_ModuleHandler {
+          label = "ModuleHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_ModuleHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_ConstantHandler [label="{class ConstantHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_ConstantHandler {
+          label = "ConstantHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_ConstantHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_AttributeHandler [label="{class AttributeHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_AttributeHandler {
+          label = "AttributeHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_AttributeHandler -> YARD_Handlers_C_Base;
+        YARD_Handlers_C_OverrideCommentHandler [label="{class OverrideCommentHandler||+ \#process\ \:\ void\l+ \#register_docstring\l+ \#register_file_info\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_C_OverrideCommentHandler {
+          label = "OverrideCommentHandler"; labelloc=b;
+        }
+        YARD_Handlers_C_OverrideCommentHandler -> YARD_Handlers_C_Base;
+        subgraph cluster_YARD_Handlers_C {
+          label = "C"; labelloc=b;
+          YARD_Handlers_C_HandlerMethods [label="{module HandlerMethods||+ \#handle_alias\l+ \#handle_attribute\l+ \#handle_class\l+ \#handle_constants\l+ \#handle_method\l+ \#handle_module\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_C_HandlerMethods {
+            label = "HandlerMethods"; labelloc=b;
+          }
+        }
+        YARD_Handlers_Ruby [label="{module Ruby||}" rank=sink];
+        YARD_Handlers_Ruby_HandlesExtension [label="{class HandlesExtension|# \#name [R]\l|+ \#initialize\ \:\ HandlesExtension\l+ \#matches\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_HandlesExtension {
+          label = "HandlesExtension"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_MethodCallWrapper [label="{class MethodCallWrapper||+ \#matches\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_MethodCallWrapper {
+          label = "MethodCallWrapper"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_MethodCallWrapper -> YARD_Handlers_Ruby_HandlesExtension;
+        YARD_Handlers_Ruby_TestNodeWrapper [label="{class TestNodeWrapper||+ \#matches\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_TestNodeWrapper {
+          label = "TestNodeWrapper"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_TestNodeWrapper -> YARD_Handlers_Ruby_HandlesExtension;
+        YARD_Handlers_Ruby_Base [label="{class Base||+ handles\?\ \:\ Boolean\l+ meta_type\ \:\ void\l+ method_call\ \:\ void\l+ \#call_params\l+ \#caller_method\l+ \#parse_block\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_Base {
+          label = "Base"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_Base -> YARD_Handlers_Base;
+        YARD_Handlers_Ruby_DSLHandler [label="{class DSLHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_DSLHandler {
+          label = "DSLHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_DSLHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_AliasHandler [label="{class AliasHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_AliasHandler {
+          label = "AliasHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_AliasHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_YieldHandler [label="{class YieldHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_YieldHandler {
+          label = "YieldHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_YieldHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_MixinHandler [label="{class MixinHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_MixinHandler {
+          label = "MixinHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_MixinHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ClassHandler [label="{class ClassHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ClassHandler {
+          label = "ClassHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ClassHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ExtendHandler [label="{class ExtendHandler||+ \#scope\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ExtendHandler {
+          label = "ExtendHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ExtendHandler -> YARD_Handlers_Ruby_MixinHandler;
+        YARD_Handlers_Ruby_ModuleHandler [label="{class ModuleHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ModuleHandler {
+          label = "ModuleHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ModuleHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_MethodHandler [label="{class MethodHandler||+ \#format_args\l+ \#method_signature\l+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_MethodHandler {
+          label = "MethodHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_MethodHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_CommentHandler [label="{class CommentHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_CommentHandler {
+          label = "CommentHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_CommentHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ConstantHandler [label="{class ConstantHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ConstantHandler {
+          label = "ConstantHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ConstantHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_AttributeHandler [label="{class AttributeHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_AttributeHandler {
+          label = "AttributeHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_AttributeHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ExceptionHandler [label="{class ExceptionHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ExceptionHandler {
+          label = "ExceptionHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ExceptionHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_VisibilityHandler [label="{class VisibilityHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_VisibilityHandler {
+          label = "VisibilityHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_VisibilityHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ClassVariableHandler [label="{class ClassVariableHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ClassVariableHandler {
+          label = "ClassVariableHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ClassVariableHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ModuleFunctionHandler [label="{class ModuleFunctionHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ModuleFunctionHandler {
+          label = "ModuleFunctionHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ModuleFunctionHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_ClassConditionHandler [label="{class ClassConditionHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_ClassConditionHandler {
+          label = "ClassConditionHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_ClassConditionHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_MethodConditionHandler [label="{class MethodConditionHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_MethodConditionHandler {
+          label = "MethodConditionHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_MethodConditionHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_PrivateConstantHandler [label="{class PrivateConstantHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_PrivateConstantHandler {
+          label = "PrivateConstantHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_PrivateConstantHandler -> YARD_Handlers_Ruby_Base;
+        YARD_Handlers_Ruby_PrivateClassMethodHandler [label="{class PrivateClassMethodHandler||+ \#process\ \:\ void\l}" rank=sink];
+        subgraph cluster_YARD_Handlers_Ruby_PrivateClassMethodHandler {
+          label = "PrivateClassMethodHandler"; labelloc=b;
+        }
+        YARD_Handlers_Ruby_PrivateClassMethodHandler -> YARD_Handlers_Ruby_Base;
+        subgraph cluster_YARD_Handlers_Ruby {
+          label = "Ruby"; labelloc=b;
+          YARD_Handlers_Ruby_Legacy [label="{module Legacy||}" rank=sink];
+          YARD_Handlers_Ruby_Legacy_Base [label="{class Base||+ handles\?\ \:\ Boolean\l+ \#call_params\l+ \#caller_method\l+ \#parse_block\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_Base {
+            label = "Base"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_Base -> YARD_Handlers_Base;
+          YARD_Handlers_Ruby_Legacy_DSLHandler [label="{class DSLHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_DSLHandler {
+            label = "DSLHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_DSLHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_AliasHandler [label="{class AliasHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_AliasHandler {
+            label = "AliasHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_AliasHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ClassHandler [label="{class ClassHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ClassHandler {
+            label = "ClassHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ClassHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_YieldHandler [label="{class YieldHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_YieldHandler {
+            label = "YieldHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_YieldHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_MixinHandler [label="{class MixinHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_MixinHandler {
+            label = "MixinHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_MixinHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_MethodHandler [label="{class MethodHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_MethodHandler {
+            label = "MethodHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_MethodHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ExtendHandler [label="{class ExtendHandler||+ \#scope\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ExtendHandler {
+            label = "ExtendHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ExtendHandler -> YARD_Handlers_Ruby_Legacy_MixinHandler;
+          YARD_Handlers_Ruby_Legacy_ModuleHandler [label="{class ModuleHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ModuleHandler {
+            label = "ModuleHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ModuleHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_CommentHandler [label="{class CommentHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_CommentHandler {
+            label = "CommentHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_CommentHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ConstantHandler [label="{class ConstantHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ConstantHandler {
+            label = "ConstantHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ConstantHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ExceptionHandler [label="{class ExceptionHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ExceptionHandler {
+            label = "ExceptionHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ExceptionHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_AttributeHandler [label="{class AttributeHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_AttributeHandler {
+            label = "AttributeHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_AttributeHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_VisibilityHandler [label="{class VisibilityHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_VisibilityHandler {
+            label = "VisibilityHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_VisibilityHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ClassVariableHandler [label="{class ClassVariableHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ClassVariableHandler {
+            label = "ClassVariableHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ClassVariableHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ClassConditionHandler [label="{class ClassConditionHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ClassConditionHandler {
+            label = "ClassConditionHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ClassConditionHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_ModuleFunctionHandler [label="{class ModuleFunctionHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_ModuleFunctionHandler {
+            label = "ModuleFunctionHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_ModuleFunctionHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_PrivateConstantHandler [label="{class PrivateConstantHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_PrivateConstantHandler {
+            label = "PrivateConstantHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_PrivateConstantHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          YARD_Handlers_Ruby_Legacy_PrivateClassMethodHandler [label="{class PrivateClassMethodHandler||+ \#process\ \:\ void\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_Legacy_PrivateClassMethodHandler {
+            label = "PrivateClassMethodHandler"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_Legacy_PrivateClassMethodHandler -> YARD_Handlers_Ruby_Legacy_Base;
+          subgraph cluster_YARD_Handlers_Ruby_Legacy {
+            label = "Legacy"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_DSLHandlerMethods [label="{module DSLHandlerMethods||+ \#handle_comments\l+ \#register_docstring\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_DSLHandlerMethods {
+            label = "DSLHandlerMethods"; labelloc=b;
+          }
+          YARD_Handlers_Ruby_StructHandlerMethods [label="{module StructHandlerMethods||+ \#add_reader_tags\ \:\ String\l+ \#add_writer_tags\ \:\ String\l+ \#create_attributes\l+ \#create_class\ \:\ ClassObject\l+ \#create_member_method\?\ \:\ Boolean\l+ \#create_reader\l+ \#create_writer\l+ \#member_tag_for_member\ \:\ Tags\:\:Tag\l+ \#members_from_tags\ \:\ Array\<String\>\l+ \#return_type_from_tag\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Handlers_Ruby_StructHandlerMethods {
+            label = "StructHandlerMethods"; labelloc=b;
+          }
+        }
+      }
+      YARD_I18n [label="{module I18n||}" rank=sink];
+      YARD_I18n_Text [label="{class Text||+ \#extract_messages\ \:\ void\l+ \#initialize\ \:\ Text\l+ \#translate\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_I18n_Text {
+        label = "Text"; labelloc=b;
+      }
+      YARD_I18n_Locale [label="{class Locale|+ default [RW]\l+ \#name [R]\l|+ \#initialize\ \:\ Locale\l+ \#load\ \:\ Boolean\l+ \#translate\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_I18n_Locale {
+        label = "Locale"; labelloc=b;
+      }
+      YARD_I18n_Message [label="{class Message|+ \#comments [R]\l+ \#id [R]\l+ \#locations [R]\l|+ \#\=\=\ \:\ Boolean\l+ \#add_comment\ \:\ void\l+ \#add_location\ \:\ void\l+ \#initialize\ \:\ Message\l}" rank=sink];
+      subgraph cluster_YARD_I18n_Message {
+        label = "Message"; labelloc=b;
+      }
+      YARD_I18n_Messages [label="{class Messages|# \#messages [R]\l|+ \#\=\=\ \:\ Boolean\l+ \#\[\]\ \:\ Message\l+ \#each\ \:\ void\l+ \#initialize\ \:\ Messages\l+ \#register\ \:\ Message\l}" rank=sink];
+      subgraph cluster_YARD_I18n_Messages {
+        label = "Messages"; labelloc=b;
+      }
+      YARD_I18n_POParser [label="{class POParser||+ available\?\ \:\ Boolean\l+ \#parse\ \:\ Hash\<String\,\ String\>\l}" rank=sink];
+      subgraph cluster_YARD_I18n_POParser {
+        label = "POParser"; labelloc=b;
+      }
+      YARD_I18n_PotGenerator [label="{class PotGenerator|+ \#messages [R]\l|+ \#generate\ \:\ String\l+ \#initialize\ \:\ PotGenerator\l+ \#parse_files\ \:\ void\l+ \#parse_objects\ \:\ void\l}" rank=sink];
+      subgraph cluster_YARD_I18n_PotGenerator {
+        label = "PotGenerator"; labelloc=b;
+      }
+      subgraph cluster_YARD_I18n {
+        label = "I18n"; labelloc=b;
+      }
+      YARD_Parser [label="{module Parser||}" rank=sink];
+      YARD_Parser_Base [label="{class Base||+ parse\l+ \#enumerator\ \:\ Array\l+ \#initialize\ \:\ Base\l+ \#parse\ \:\ Base\l+ \#tokenize\ \:\ Array\l}" rank=sink];
+      subgraph cluster_YARD_Parser_Base {
+        label = "Base"; labelloc=b;
+      }
+      YARD_Parser_UndocumentableError [label="{class UndocumentableError||}" rank=sink];
+      subgraph cluster_YARD_Parser_UndocumentableError {
+        label = "UndocumentableError"; labelloc=b;
+      }
+      YARD_Parser_UndocumentableError -> Exception;
+      YARD_Parser_ParserSyntaxError [label="{class ParserSyntaxError||}" rank=sink];
+      subgraph cluster_YARD_Parser_ParserSyntaxError {
+        label = "ParserSyntaxError"; labelloc=b;
+      }
+      YARD_Parser_ParserSyntaxError -> YARD_Parser_UndocumentableError;
+      YARD_Parser_OrderedParser [label="{class OrderedParser|+ \#files [RW]\l|+ \#initialize\ \:\ OrderedParser\l+ \#parse\l}" rank=sink];
+      subgraph cluster_YARD_Parser_OrderedParser {
+        label = "OrderedParser"; labelloc=b;
+      }
+      YARD_Parser_SourceParser [label="{class SourceParser|+ parser_type [RW]\l+ \#contents [R]\l+ \#file [RW]\l+ \#globals [R]\l+ \#parser_type [RW]\l|+ after_parse_file\ \:\ Proc\l+ after_parse_file_callbacks\ \:\ Array\<Proc\>\l+ after_parse_list\ \:\ Proc\l+ after_parse_list_callbacks\ \:\ Array\<Proc\>\l+ before_parse_file\ \:\ Proc\l+ before_parse_file_callbacks\ \:\ Array\<Proc\>\l+ before_parse_list\ \:\ Proc\l+ before_parse_list_callbacks\ \:\ Array\<Proc\>\l+ parse\ \:\ void\l+ parse_string\l+ parser_type_extensions\ \:\ Hash\l+ parser_type_extensions\=\l+ parser_type_for_extension\ \:\ Symbol\l+ parser_types\ \:\ Hash\{Symbol\=\>Object\}\l+ parser_types\=\l+ register_parser_type\ \:\ void\l+ tokenize\ \:\ Array\l+ validated_parser_type\ \:\ Symbol\l+ \#initialize\ \:\ SourceParser\l+ \#parse\ \:\ Object\l+ \#tokenize\ \:\ Array\l}" rank=sink];
+      subgraph cluster_YARD_Parser_SourceParser {
+        label = "SourceParser"; labelloc=b;
+      }
+      subgraph cluster_YARD_Parser {
+        label = "Parser"; labelloc=b;
+        YARD_Parser_C [label="{module C||}" rank=sink];
+        YARD_Parser_C_CParser [label="{class CParser||+ \#enumerator\l+ \#initialize\ \:\ CParser\l+ \#parse\l+ \#tokenize\l}" rank=sink];
+        subgraph cluster_YARD_Parser_C_CParser {
+          label = "CParser"; labelloc=b;
+        }
+        YARD_Parser_C_CParser -> YARD_Parser_Base;
+        YARD_Parser_C_Statement [label="{class Statement|+ \#comments_hash_flag [RW]\l+ \#file [RW]\l+ \#group [RW]\l+ \#line [RW]\l+ \#source [RW]\l|+ \#comments_range\l+ \#first_line\l+ \#initialize\ \:\ Statement\l+ \#line_range\l+ \#show\l}" rank=sink];
+        subgraph cluster_YARD_Parser_C_Statement {
+          label = "Statement"; labelloc=b;
+        }
+        YARD_Parser_C_BodyStatement [label="{class BodyStatement|+ \#comments [RW]\l|}" rank=sink];
+        subgraph cluster_YARD_Parser_C_BodyStatement {
+          label = "BodyStatement"; labelloc=b;
+        }
+        YARD_Parser_C_BodyStatement -> YARD_Parser_C_Statement;
+        YARD_Parser_C_ToplevelStatement [label="{class ToplevelStatement|+ \#block [RW]\l+ \#comments [RW]\l+ \#declaration [RW]\l|}" rank=sink];
+        subgraph cluster_YARD_Parser_C_ToplevelStatement {
+          label = "ToplevelStatement"; labelloc=b;
+        }
+        YARD_Parser_C_ToplevelStatement -> YARD_Parser_C_Statement;
+        YARD_Parser_C_Comment [label="{class Comment|+ \#overrides [RW]\l+ \#statement [RW]\l+ \#type [RW]\l|+ \#comments\l+ \#initialize\ \:\ Comment\l}" rank=sink];
+        subgraph cluster_YARD_Parser_C_Comment {
+          label = "Comment"; labelloc=b;
+        }
+        YARD_Parser_C_Comment -> YARD_Parser_C_Statement;
+        subgraph cluster_YARD_Parser_C {
+          label = "C"; labelloc=b;
+          YARD_Parser_C_CommentParser [label="{module CommentParser||}" rank=sink];
+          subgraph cluster_YARD_Parser_C_CommentParser {
+            label = "CommentParser"; labelloc=b;
+          }
+        }
+        YARD_Parser_Ruby [label="{module Ruby||+ \#s\l}" rank=sink];
+        YARD_Parser_Ruby_AstNode [label="{class AstNode|+ \#docstring [RW]\l+ \#docstring_hash_flag [RW]\l+ \#docstring_range [RW]\l+ \#file [RW]\l+ \#full_source [RW]\l+ \#group [RW]\l+ \#line_range [RW]\l+ \#parent [RW]\l+ \#source [RW]\l+ \#source_range [RW]\l+ \#type [RW]\l|+ node_class_for\ \:\ Class\l+ \#\=\=\ \:\ Boolean\l+ \#block\?\ \:\ Boolean\l+ \#call\?\ \:\ Boolean\l+ \#children\ \:\ Array\<AstNode\>\l+ \#condition\?\ \:\ Boolean\l+ \#def\?\ \:\ Boolean\l+ \#first_line\ \:\ String\l+ \#has_line\?\ \:\ Boolean\l+ \#initialize\ \:\ AstNode\l+ \#inspect\ \:\ String\l+ \#jump\ \:\ AstNode\l+ \#kw\?\ \:\ Boolean\l+ \#line\ \:\ Fixnum\l+ \#literal\?\ \:\ Boolean\l+ \#loop\?\ \:\ Boolean\l+ \#pretty_print\ \:\ nil\l+ \#ref\?\ \:\ Boolean\l+ \#show\ \:\ String\l+ \#to_s\l+ \#token\?\ \:\ Boolean\l+ \#traverse\ \:\ void\l+ \#unfreeze\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_AstNode {
+          label = "AstNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_AstNode -> Array;
+        YARD_Parser_Ruby_ReferenceNode [label="{class ReferenceNode||+ \#namespace\l+ \#path\l+ \#ref\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_ReferenceNode {
+          label = "ReferenceNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_ReferenceNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_LiteralNode [label="{class LiteralNode||+ \#literal\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_LiteralNode {
+          label = "LiteralNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_LiteralNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_KeywordNode [label="{class KeywordNode||+ \#kw\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_KeywordNode {
+          label = "KeywordNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_KeywordNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_ParameterNode [label="{class ParameterNode||+ \#block_param\l+ \#double_splat_param\l+ \#named_params\l+ \#splat_param\l+ \#unnamed_end_params\l+ \#unnamed_optional_params\l+ \#unnamed_required_params\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_ParameterNode {
+          label = "ParameterNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_ParameterNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_MethodCallNode [label="{class MethodCallNode||+ \#block\l+ \#block_param\l+ \#call\?\ \:\ Boolean\l+ \#method_name\l+ \#namespace\l+ \#parameters\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_MethodCallNode {
+          label = "MethodCallNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_MethodCallNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_MethodDefinitionNode [label="{class MethodDefinitionNode||+ \#def\?\ \:\ Boolean\l+ \#kw\?\ \:\ Boolean\l+ \#method_name\l+ \#namespace\l+ \#parameters\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_MethodDefinitionNode {
+          label = "MethodDefinitionNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_MethodDefinitionNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_ConditionalNode [label="{class ConditionalNode||+ \#condition\l+ \#condition\?\ \:\ Boolean\l+ \#else_block\l+ \#then_block\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_ConditionalNode {
+          label = "ConditionalNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_ConditionalNode -> YARD_Parser_Ruby_KeywordNode;
+        YARD_Parser_Ruby_ClassNode [label="{class ClassNode||+ \#block\l+ \#class_name\l+ \#superclass\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_ClassNode {
+          label = "ClassNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_ClassNode -> YARD_Parser_Ruby_KeywordNode;
+        YARD_Parser_Ruby_ModuleNode [label="{class ModuleNode||+ \#block\l+ \#module_name\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_ModuleNode {
+          label = "ModuleNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_ModuleNode -> YARD_Parser_Ruby_KeywordNode;
+        YARD_Parser_Ruby_LoopNode [label="{class LoopNode||+ \#block\l+ \#condition\l+ \#loop\?\ \:\ Boolean\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_LoopNode {
+          label = "LoopNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_LoopNode -> YARD_Parser_Ruby_KeywordNode;
+        YARD_Parser_Ruby_CommentNode [label="{class CommentNode||+ \#docstring\l+ \#docstring\=\l+ \#first_line\l+ \#source\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_CommentNode {
+          label = "CommentNode"; labelloc=b;
+        }
+        YARD_Parser_Ruby_CommentNode -> YARD_Parser_Ruby_AstNode;
+        YARD_Parser_Ruby_RubyParser [label="{class RubyParser|+ \#encoding_line [R]\l+ \#enumerator [R]\l+ \#shebang_line [R]\l|+ \#initialize\ \:\ RubyParser\l+ \#parse\l+ \#tokenize\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_RubyParser {
+          label = "RubyParser"; labelloc=b;
+        }
+        YARD_Parser_Ruby_RubyParser -> YARD_Parser_Base;
+        YARD_Parser_Ruby_RipperParser [label="{class RipperParser|+ \#ast [R]\l+ \#charno [R]\l+ \#comments [R]\l+ \#encoding_line [R]\l+ \#file [R]\l+ \#shebang_line [R]\l+ \#tokens [R]\l|+ \#enumerator\l+ \#file_encoding\l+ \#initialize\ \:\ RipperParser\l+ \#parse\l}" rank=sink];
+        subgraph cluster_YARD_Parser_Ruby_RipperParser {
+          label = "RipperParser"; labelloc=b;
+        }
+        YARD_Parser_Ruby_RipperParser -> Ripper;
+        subgraph cluster_YARD_Parser_Ruby {
+          label = "Ruby"; labelloc=b;
+          YARD_Parser_Ruby_Legacy [label="{module Legacy||}" rank=sink];
+          YARD_Parser_Ruby_Legacy_RubyLex [label="{class RubyLex|+ \#continue [R]\l+ \#exception_on_syntax_error [RW]\l+ \#indent [R]\l+ \#lex_state [R]\l+ \#read_auto_clean_up [RW]\l+ \#skip_space [RW]\l|+ debug\?\ \:\ Boolean\l+ \#char_no\l+ \#get_read\l+ \#getc\l+ \#getc_of_rests\l+ \#gets\l+ \#identify_comment\l+ \#identify_gvar\l+ \#identify_here_document\l+ \#identify_identifier\l+ \#identify_number\l+ \#identify_quotation\l+ \#identify_string\l+ \#initialize\ \:\ RubyLex\l+ \#lex\l+ \#lex_init\l+ \#lex_int2\l+ \#line_no\l+ \#peek\l+ \#peek_equal\?\ \:\ Boolean\l+ \#read_escape\l+ \#skip_inner_expression\l+ \#token\l+ \#ungetc\l}" rank=sink];
+          YARD_Parser_Ruby_Legacy_RubyLex_BufferedReader [label="{class BufferedReader|+ \#line_num [R]\l|+ \#column\l+ \#divert_read_from\l+ \#get_read\l+ \#getc\l+ \#getc_already_read\l+ \#initialize\ \:\ BufferedReader\l+ \#peek\l+ \#peek_equal\l+ \#ungetc\l}" rank=sink];
+          subgraph cluster_YARD_Parser_Ruby_Legacy_RubyLex_BufferedReader {
+            label = "BufferedReader"; labelloc=b;
+          }
+          subgraph cluster_YARD_Parser_Ruby_Legacy_RubyLex {
+            label = "RubyLex"; labelloc=b;
+          }
+          YARD_Parser_Ruby_Legacy_Statement [label="{class Statement|+ \#block [R]\l+ \#comments [R]\l+ \#comments_hash_flag [RW]\l+ \#comments_range [RW]\l+ \#group [RW]\l+ \#tokens [R]\l|+ \#first_line\l+ \#initialize\ \:\ Statement\l+ \#inspect\l+ \#line\ \:\ Fixnum\l+ \#line_range\ \:\ Range\<Fixnum\>\l+ \#show\l+ \#to_s\l}" rank=sink];
+          subgraph cluster_YARD_Parser_Ruby_Legacy_Statement {
+            label = "Statement"; labelloc=b;
+          }
+          YARD_Parser_Ruby_Legacy_TokenList [label="{class TokenList||+ \#initialize\ \:\ TokenList\l+ \#push\l+ \#squeeze\l+ \#to_s\l}" rank=sink];
+          subgraph cluster_YARD_Parser_Ruby_Legacy_TokenList {
+            label = "TokenList"; labelloc=b;
+          }
+          YARD_Parser_Ruby_Legacy_TokenList -> Array;
+          YARD_Parser_Ruby_Legacy_RubyParser [label="{class RubyParser||+ \#encoding_line\l+ \#enumerator\l+ \#initialize\ \:\ RubyParser\l+ \#parse\l+ \#shebang_line\l+ \#tokenize\l}" rank=sink];
+          subgraph cluster_YARD_Parser_Ruby_Legacy_RubyParser {
+            label = "RubyParser"; labelloc=b;
+          }
+          YARD_Parser_Ruby_Legacy_RubyParser -> YARD_Parser_Base;
+          YARD_Parser_Ruby_Legacy_StatementList [label="{class StatementList|+ \#encoding_line [RW]\l+ \#shebang_line [RW]\l|+ \#initialize\ \:\ StatementList\l}" rank=sink];
+          subgraph cluster_YARD_Parser_Ruby_Legacy_StatementList {
+            label = "StatementList"; labelloc=b;
+          }
+          YARD_Parser_Ruby_Legacy_StatementList -> Array;
+          subgraph cluster_YARD_Parser_Ruby_Legacy {
+            label = "Legacy"; labelloc=b;
+            YARD_Parser_Ruby_Legacy_RubyToken [label="{module RubyToken||+ def_token\l+ \#set_token_position\l+ \#Token\l}" rank=sink];
+            YARD_Parser_Ruby_Legacy_RubyToken_Token [label="{class Token|+ \#char_no [R]\l+ \#lex_state [RW]\l+ \#line_no [R]\l+ \#text [R]\l|+ \#initialize\ \:\ Token\l+ \#set_text\ \:\ Token\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_Token {
+              label = "Token"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkBlockContents [label="{class TkBlockContents||+ \#text\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkBlockContents {
+              label = "TkBlockContents"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkBlockContents -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkStatementEnd [label="{class TkStatementEnd||+ \#text\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkStatementEnd {
+              label = "TkStatementEnd"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkStatementEnd -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkNode [label="{class TkNode|+ \#node [R]\l|}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkNode {
+              label = "TkNode"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkNode -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkWhitespace [label="{class TkWhitespace||}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkWhitespace {
+              label = "TkWhitespace"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkWhitespace -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkId [label="{class TkId|+ \#name [R]\l|+ \#initialize\ \:\ TkId\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkId {
+              label = "TkId"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkId -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkKW [label="{class TkKW||}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkKW {
+              label = "TkKW"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkKW -> YARD_Parser_Ruby_Legacy_RubyToken_TkId;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkVal [label="{class TkVal||+ \#initialize\ \:\ TkVal\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkVal {
+              label = "TkVal"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkVal -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkOp [label="{class TkOp||+ \#name\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkOp {
+              label = "TkOp"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkOp -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkOPASGN [label="{class TkOPASGN|+ \#op [R]\l|+ \#initialize\ \:\ TkOPASGN\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkOPASGN {
+              label = "TkOPASGN"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkOPASGN -> YARD_Parser_Ruby_Legacy_RubyToken_TkOp;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkUnknownChar [label="{class TkUnknownChar|+ \#name [R]\l|+ \#initialize\ \:\ TkUnknownChar\l}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkUnknownChar {
+              label = "TkUnknownChar"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkUnknownChar -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            YARD_Parser_Ruby_Legacy_RubyToken_TkError [label="{class TkError||}" rank=sink];
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken_TkError {
+              label = "TkError"; labelloc=b;
+            }
+            YARD_Parser_Ruby_Legacy_RubyToken_TkError -> YARD_Parser_Ruby_Legacy_RubyToken_Token;
+            subgraph cluster_YARD_Parser_Ruby_Legacy_RubyToken {
+              label = "RubyToken"; labelloc=b;
+            }
+          }
+        }
+      }
+      YARD_Rake [label="{module Rake||}" rank=sink];
+      YARD_Rake_YardocTask [label="{class YardocTask|+ \#after [RW]\l+ \#before [RW]\l+ \#files [RW]\l+ \#name [RW]\l+ \#options [RW]\l+ \#stats_options [RW]\l+ \#verifier [RW]\l|+ \#initialize\ \:\ YardocTask\l}" rank=sink];
+      subgraph cluster_YARD_Rake_YardocTask {
+        label = "YardocTask"; labelloc=b;
+      }
+      YARD_Rake_YardocTask -> Rake_TaskLib;
+      subgraph cluster_YARD_Rake {
+        label = "Rake"; labelloc=b;
+      }
+      YARD_Serializers [label="{module Serializers||}" rank=sink];
+      YARD_Serializers_Base [label="{class Base|+ \#options [R]\l|+ \#after_serialize\ \:\ void\l+ \#before_serialize\ \:\ Boolean\l+ \#exists\?\ \:\ Boolean\l+ \#initialize\ \:\ Base\l+ \#serialize\l+ \#serialized_path\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Serializers_Base {
+        label = "Base"; labelloc=b;
+      }
+      YARD_Serializers_YardocSerializer [label="{class YardocSerializer||+ \#checksums_path\l+ \#deserialize\l+ \#initialize\ \:\ YardocSerializer\l+ \#object_types_path\l+ \#objects_path\l+ \#proxy_types_path\l+ \#serialize\l+ \#serialized_path\l}" rank=sink];
+      subgraph cluster_YARD_Serializers_YardocSerializer {
+        label = "YardocSerializer"; labelloc=b;
+      }
+      YARD_Serializers_YardocSerializer -> YARD_Serializers_FileSystemSerializer;
+      YARD_Serializers_StdoutSerializer [label="{class StdoutSerializer||+ \#initialize\ \:\ StdoutSerializer\l+ \#serialize\l}" rank=sink];
+      subgraph cluster_YARD_Serializers_StdoutSerializer {
+        label = "StdoutSerializer"; labelloc=b;
+      }
+      YARD_Serializers_StdoutSerializer -> YARD_Serializers_Base;
+      YARD_Serializers_ProcessSerializer [label="{class ProcessSerializer||+ \#initialize\ \:\ ProcessSerializer\l+ \#serialize\l}" rank=sink];
+      subgraph cluster_YARD_Serializers_ProcessSerializer {
+        label = "ProcessSerializer"; labelloc=b;
+      }
+      YARD_Serializers_ProcessSerializer -> YARD_Serializers_Base;
+      YARD_Serializers_FileSystemSerializer [label="{class FileSystemSerializer|+ \#basepath [RW]\l+ \#extension [RW]\l|+ \#exists\?\ \:\ Boolean\l+ \#initialize\ \:\ FileSystemSerializer\l+ \#serialize\ \:\ String\l+ \#serialized_path\ \:\ String\l}" rank=sink];
+      subgraph cluster_YARD_Serializers_FileSystemSerializer {
+        label = "FileSystemSerializer"; labelloc=b;
+      }
+      YARD_Serializers_FileSystemSerializer -> YARD_Serializers_Base;
+      subgraph cluster_YARD_Serializers {
+        label = "Serializers"; labelloc=b;
+      }
+      YARD_Templates [label="{module Templates||}" rank=sink];
+      YARD_Templates_Section [label="{class Section|+ \#name [RW]\l|+ \#\=\=\l+ \#\[\]\l+ \#any\l+ \#dup\l+ \#eql\?\ \:\ Boolean\l+ \#initialize\ \:\ Section\l+ \#inspect\l+ \#place\l+ \#push\l+ \#to_a\l+ \#unshift\l}" rank=sink];
+      subgraph cluster_YARD_Templates_Section {
+        label = "Section"; labelloc=b;
+      }
+      YARD_Templates_Section -> Array;
+      YARD_Templates_TemplateOptions [label="{class TemplateOptions|+ \#default_return [RW]\l+ \#embed_mixins [RW]\l+ \#format [RW]\l+ \#globals [RW]\l+ \#hide_void_return [RW]\l+ \#highlight [RW]\l+ \#index [RW]\l+ \#markup [RW]\l+ \#markup_provider [RW]\l+ \#no_highlight [RW]\l+ \#object [RW]\l+ \#owner [RW]\l+ \#page_title [RW]\l+ \#serialize [RW]\l+ \#serializer [RW]\l+ \#template [RW]\l+ \#type [RW]\l+ \#verifier [RW]\l|+ \#embed_mixins_match\?\ \:\ Boolean\l}" rank=sink];
+      subgraph cluster_YARD_Templates_TemplateOptions {
+        label = "TemplateOptions"; labelloc=b;
+      }
+      YARD_Templates_TemplateOptions -> YARD_Options;
+      subgraph cluster_YARD_Templates {
+        label = "Templates"; labelloc=b;
+        YARD_Templates_Helpers [label="{module Helpers||}" rank=sink];
+        subgraph cluster_YARD_Templates_Helpers {
+          label = "Helpers"; labelloc=b;
+          YARD_Templates_Helpers_Markup [label="{module Markup||}" rank=sink];
+          YARD_Templates_Helpers_Markup_RDocMarkup [label="{class RDocMarkup|+ \#from_path [RW]\l|+ \#initialize\ \:\ RDocMarkup\l+ \#to_html\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_Markup_RDocMarkup {
+            label = "RDocMarkup"; labelloc=b;
+          }
+          YARD_Templates_Helpers_Markup_RDocMarkupToHtml [label="{class RDocMarkupToHtml|+ \#from_path [RW]\l|+ \#accept_paragraph\l+ \#handle_special_HYPERLINK\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_Markup_RDocMarkupToHtml {
+            label = "RDocMarkupToHtml"; labelloc=b;
+          }
+          YARD_Templates_Helpers_Markup_RDocMarkdown [label="{class RDocMarkdown||+ \#fix_typewriter\l+ \#initialize\ \:\ RDocMarkdown\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_Markup_RDocMarkdown {
+            label = "RDocMarkdown"; labelloc=b;
+          }
+          YARD_Templates_Helpers_Markup_RDocMarkdown -> YARD_Templates_Helpers_Markup_RDocMarkup;
+          subgraph cluster_YARD_Templates_Helpers_Markup {
+            label = "Markup"; labelloc=b;
+          }
+          YARD_Templates_Helpers_UMLHelper [label="{module UMLHelper||+ \#format_path\ \:\ String\l+ \#h\ \:\ String\l+ \#tidy\ \:\ String\l+ \#uml_visibility\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_UMLHelper {
+            label = "UMLHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_BaseHelper [label="{module BaseHelper|+ \#object [RW]\l+ \#owner [R]\l+ \#serializer [RW]\l|+ \#format_object_title\ \:\ String\l+ \#format_object_type\ \:\ String\l+ \#format_source\ \:\ String\l+ \#format_types\ \:\ String\l+ \#globals\ \:\ OpenStruct\l+ \#h\l+ \#link_file\ \:\ String\l+ \#link_include_file\ \:\ String\l+ \#link_include_object\ \:\ String\l+ \#link_object\ \:\ String\l+ \#link_url\ \:\ String\l+ \#linkify\l+ \#run_verifier\ \:\ Array\<CodeObjects\:\:Base\>\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_BaseHelper {
+            label = "BaseHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_HtmlHelper [label="{module HtmlHelper||+ \#anchor_for\ \:\ String\l+ \#charset\ \:\ String\l+ \#format_object_name_list\ \:\ String\l+ \#format_types\ \:\ String\l+ \#h\ \:\ String\l+ \#html_markup_asciidoc\ \:\ String\l+ \#html_markup_html\ \:\ String\l+ \#html_markup_markdown\ \:\ String\l+ \#html_markup_none\ \:\ String\l+ \#html_markup_pre\ \:\ String\l+ \#html_markup_rdoc\ \:\ String\l+ \#html_markup_ruby\ \:\ String\l+ \#html_markup_text\ \:\ String\l+ \#html_markup_textile\ \:\ String\l+ \#html_markup_textile_strict\ \:\ String\l+ \#html_syntax_highlight\ \:\ String\l+ \#html_syntax_highlight_plain\ \:\ String\l+ \#htmlify\ \:\ String\l+ \#htmlify_line\ \:\ String\l+ \#link_file\ \:\ String\l+ \#link_include_file\ \:\ String\l+ \#link_include_object\ \:\ String\l+ \#link_object\ \:\ String\l+ \#link_url\ \:\ String\l+ \#resolve_links\ \:\ String\l+ \#signature\ \:\ String\l+ \#signature_types\ \:\ String\l+ \#url_for\ \:\ String\l+ \#url_for_file\ \:\ String\l+ \#url_for_frameset\ \:\ String\l+ \#url_for_index\ \:\ String\l+ \#url_for_list\ \:\ String\l+ \#url_for_main\ \:\ String\l+ \#urlencode\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_HtmlHelper {
+            label = "HtmlHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_TextHelper [label="{module TextHelper||+ \#align_right\ \:\ String\l+ \#h\ \:\ String\l+ \#hr\ \:\ String\l+ \#indent\ \:\ String\l+ \#signature\ \:\ String\l+ \#title_align_right\ \:\ String\l+ \#wrap\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_TextHelper {
+            label = "TextHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_FilterHelper [label="{module FilterHelper||+ \#is_class\?\ \:\ Boolean\l+ \#is_method\?\ \:\ Boolean\l+ \#is_module\?\ \:\ Boolean\l+ \#is_namespace\?\ \:\ Boolean\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_FilterHelper {
+            label = "FilterHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_MarkupHelper [label="{module MarkupHelper|+ markup_cache [RW]\l|+ clear_markup_cache\ \:\ void\l+ \#load_markup_provider\ \:\ Boolean\l+ \#markup_class\ \:\ Class\l+ \#markup_file_contents\ \:\ String\l+ \#markup_for_file\ \:\ Symbol\l+ \#markup_provider\ \:\ Symbol\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_MarkupHelper {
+            label = "MarkupHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_MethodHelper [label="{module MethodHelper||+ \#format_args\ \:\ String\l+ \#format_block\ \:\ String\l+ \#format_code\ \:\ String\l+ \#format_constant\ \:\ String\l+ \#format_lines\ \:\ String\l+ \#format_return_types\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_MethodHelper {
+            label = "MethodHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_ModuleHelper [label="{module ModuleHelper||+ \#prune_method_listing\ \:\ Array\<CodeObjects\:\:Base\>\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_ModuleHelper {
+            label = "ModuleHelper"; labelloc=b;
+          }
+          YARD_Templates_Helpers_HtmlSyntaxHighlightHelper [label="{module HtmlSyntaxHighlightHelper||+ \#html_syntax_highlight_ruby\ \:\ String\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Helpers_HtmlSyntaxHighlightHelper {
+            label = "HtmlSyntaxHighlightHelper"; labelloc=b;
+          }
+        }
+        YARD_Templates_Engine [label="{module Engine|+ template_paths [RW]\l|+ generate\ \:\ void\l+ register_template_path\ \:\ void\l+ render\ \:\ String\l+ template\ \:\ Template\l+ template\!\ \:\ Template\l+ with_serializer\l}" rank=sink];
+        subgraph cluster_YARD_Templates_Engine {
+          label = "Engine"; labelloc=b;
+        }
+        YARD_Templates_Template [label="{module Template|+ extra_includes [RW]\l+ \#class [RW]\l+ \#options [RW]\l+ \#section [RW]\l|+ include_extra\ \:\ void\l+ included\l+ \#erb\ \:\ String\l+ \#file\ \:\ String\l+ \#init\l+ \#initialize\l+ \#inspect\l+ \#run\ \:\ String\l+ \#sections\l+ \#superb\ \:\ String\l+ \#T\ \:\ Template\l+ \#yieldall\l}" rank=sink];
+        subgraph cluster_YARD_Templates_Template {
+          label = "Template"; labelloc=b;
+          YARD_Templates_Template_ClassMethods [label="{module ClassMethods|+ \#full_path [RW]\l+ \#path [RW]\l|+ \#find_file\ \:\ String\l+ \#find_nth_file\ \:\ String\l+ \#full_paths\ \:\ Array\<String\>\l+ \#initialize\l+ \#is_a\?\ \:\ Boolean\l+ \#new\l+ \#reset_full_paths\l+ \#run\l+ \#S\l+ \#T\l}" rank=sink];
+          subgraph cluster_YARD_Templates_Template_ClassMethods {
+            label = "ClassMethods"; labelloc=b;
+          }
+        }
+        YARD_Templates_ErbCache [label="{module ErbCache||+ clear\!\l+ method_for\l}" rank=sink];
+        subgraph cluster_YARD_Templates_ErbCache {
+          label = "ErbCache"; labelloc=b;
+        }
+      }
+    }
+    Gem [label="{module Gem||+ source_index\l}" rank=sink];
+    Gem_Specification [label="{class Specification|+ \#has_rdoc [RW]\l|+ \#_dump_with_rdoc\l+ \#has_rdoc\?\ \:\ Boolean\l+ \#has_yardoc\l+ \#has_yardoc\=\l}" rank=sink];
+    subgraph cluster_Gem_Specification {
+      label = "Specification"; labelloc=b;
+    }
+    Gem_SourceIndex [label="{class SourceIndex|+ \#gems [R]\l+ \#spec_dirs [RW]\l|+ from_gems_in\l+ from_installed_gems\l+ installed_spec_directories\l+ load_specification\l+ \#\=\=\l+ \#add_spec\l+ \#add_specs\l+ \#all_gems\l+ \#dump\l+ \#each\l+ \#find_name\l+ \#gem_signature\l+ \#index_signature\l+ \#initialize\ \:\ SourceIndex\l+ \#latest_specs\l+ \#load_gems_in\l+ \#old_initialize\l+ \#outdated\l+ \#prerelease_gems\l+ \#prerelease_specs\l+ \#refresh\!\l+ \#released_gems\l+ \#released_specs\l+ \#remove_spec\l+ \#search\l+ \#size\l+ \#specification\l}" rank=sink];
+    subgraph cluster_Gem_SourceIndex {
+      label = "SourceIndex"; labelloc=b;
+    }
+    Gem_DocManager [label="{class DocManager||+ load_yardoc\l+ \#install_rdoc_yard\l+ \#install_ri_yard\l+ \#install_yardoc\l+ \#run_yardoc\l+ \#setup_rdoc\l}" rank=sink];
+    subgraph cluster_Gem_DocManager {
+      label = "DocManager"; labelloc=b;
+    }
+    subgraph cluster_Gem {
+      label = "Gem"; labelloc=b;
+    }
+  }
+}
